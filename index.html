@@ -421,19 +421,31 @@ section{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
+  gap:16px;
+  flex-wrap:wrap;
 }
 
 .footer-inner img{
-  height:28px;
-  width:auto;
-  opacity:0.85;
+  height:auto;
+  width:160px;
+  opacity:1;
+  filter: brightness(1.45) contrast(1.15);
+  flex:0 0 auto;
 }
 
 .footer-inner span{
   font-size:.82rem;
   color:#c7b7ae;
 }
+
+@media (max-width:700px){
+  .footer-inner{
+    gap:10px;
+  }
+
+  .footer-inner img{
+    width:130px;
+  }
   
 footer{
   background:var(--dark);
