@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A.J. Beckett | Author</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BK1WT2198"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2BK1WT2198');
+</script>
+
+<link rel="icon" type="image/png" href="aj-seal.png">
+
+<meta name="description" content="A.J. Beckett writes emotionally charged romance centered on connection, restraint, longing, and the moments that change everything.">
+
+<meta property="og:title" content="A.J. Beckett | Author">
+<meta property="og:description" content="Stories about connection, desire, and the moments that change everything.">
+<meta property="og:url" content="https://www.ajbeckettwrites.com">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.ajbeckettwrites.com/aj-seal.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="A.J. Beckett | Author">
+<meta name="twitter:description" content="Stories about connection, desire, and the moments that change everything.">
+<meta name="twitter:image" content="https://www.ajbeckettwrites.com/aj-seal.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
+<style>
+:root{
+  --bg:#fbfaf8;
+  --surface:#ffffff;
+  --text:#1d1b1a;
+  --muted:#6c6662;
+  --accent:#6b2f2a;
+  --accent-dark:#51211d;
+  --border:#e8e1db;
+  --soft:#f3eeea;
+  --dark:#241f1d;
+  --shadow:0 20px 50px rgba(0,0,0,.12);
+  --max:1160px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{color:inherit}
+
+.container{
+  width:min(var(--max), calc(100% - 2rem));
+  margin:0 auto;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(251,250,248,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  text-decoration:none;
+}
+
+.brand-seal{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  border-radius:50%;
+}
+
+.brand-text{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;
+  letter-spacing:.02em;
+  color:var(--accent);
+}
+
+.nav-links{
+  display:flex;
+  gap:2rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.nav-links a{
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:1rem;
+  font-weight:600;
+  color:var(--accent);
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+}
+
+.hero{
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--border);
+  background:
+    linear-gradient(rgba(15,9,7,.75), rgba(15,9,7,.65)),
+    url('barn-hero.JPG');
+  background-size:cover;
+  background-position:65% center;
+  color:#fff7f2;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:auto 0 0 0;
+  height:120px;
+  background:linear-gradient(to bottom, rgba(251,250,248,0), var(--bg));
+}
+
+.hero-inner{
+  position:relative;
+  z-index:1;
+  padding:8rem 0 6rem;
+  max-width:760px;
+}
+
+.eyebrow{
+  margin:0 0 1rem;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.24em;
+  color:#f3d9c8;
+  font-weight:600;
+}
+
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  line-height:1.1;
+  margin:0;
+}
+
+h1{
+  font-size:clamp(3rem, 6vw, 5.2rem);
+  margin-bottom:1.4rem;
+  line-height:1.15;
+  text-shadow:0 4px 24px rgba(0,0,0,.35);
+}
+
+.hero-copy{
+  max-width:680px;
+}
+
+.hero-copy p.hero-text{
+  max-width:42rem;
+  margin:0 0 1.7rem;
+  font-size:1.08rem;
+  color:#f4e8df;
+  text-shadow:0 2px 12px rgba(0,0,0,.18);
+}
+
+.hero-actions{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:4rem;
+}
+
+.btn{
+  display:inline-block;
+  padding:1rem 1.35rem;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.74rem;
+  font-weight:700;
+  border-radius:999px;
+  transition:.2s ease;
+  border:1px solid transparent;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--accent-dark);
+  transform:translateY(-1px);
+}
+
+.btn-secondary{
+  color:#fff;
+  border-color:rgba(255,248,242,.42);
+  background:rgba(255,255,255,.08);
+}
+
+.btn-secondary:hover{
+  background:rgba(255,255,255,.14);
+}
+
+section{
+  padding:5.5rem 0;
+}
+
+.section-heading{
+  text-align:center;
+  max-width:780px;
+  margin:0 auto 2.5rem;
+}
+
+.about-copy{
+  max-width:760px;
+  margin:3rem auto 0 auto;
+  text-align:center;
+}
+
+.about-copy p{
+  margin:0 0 1rem;
+  color:var(--muted);
+  font-size:1.02rem;
+}
+
+ #about{
+  padding-bottom:1.5rem;
+}
+  
+.section-heading h2{
+  font-size:clamp(2rem, 4vw, 3rem);
+  margin-bottom:.8rem;
+}
+
+.section-heading p{
+  margin:0;
+  color:var(--muted);
+}
+
+.about-copy{
+  max-width:760px;
+  margin:3rem auto 0 auto;
+  text-align:center;
+}
+
+.about-copy p{
+  margin:0 0 1rem;
+  color:var(--muted);
+  font-size:1.02rem;
+}
+
+.series-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(320px,420px));
+  gap:3rem;
+  justify-content:center;
+}
+
+.book-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column;
+}
+
+.book-image{
+  aspect-ratio:2/3;
+  background:var(--dark);
+  max-width:420px;
+  margin:auto;
+  width:100%;
+}
+
+.book-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.book-body{
+  padding:1.5rem 1.4rem 1.7rem;
+  display:flex;
+  flex-direction:column;
+  flex:1;
+}
+
+.book-body h3{
+  font-size:1.8rem;
+  margin-bottom:.65rem;
+}
+
+.book-body p{
+  margin:0;
+  color:var(--muted);
+  font-size:.97rem;
+}
+
+.book-body .btn{
+  margin-top:1.4rem;
+  align-self:flex-start;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:2rem;
+  max-width:860px;
+  margin:0 auto;
+}
+
+.contact-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:2rem;
+}
+
+.contact-card h3{
+  font-size:1.6rem;
+  margin-bottom:.9rem;
+}
+
+.contact-card p{
+  margin:0 0 1rem;
+  color:var(--muted);
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  margin-top:1rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:1rem;
+  border:1px solid #d7ccc4;
+  border-radius:12px;
+  font:inherit;
+  background:#fff;
+  color:var(--text);
+}
+
+.contact-form textarea{
+  min-height:140px;
+  resize:vertical;
+}
+
+.social-links{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1.4rem;
+}
+
+.social-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:.55rem;
+  padding:.85rem 1.1rem;
+  border:1px solid var(--border);
+  border-radius:999px;
+  text-decoration:none;
+  font-size:.84rem;
+  font-weight:600;
+  color:var(--text);
+  background:#fff;
+  transition:.2s ease;
+}
+
+.social-btn img{
+  width:16px;
+  height:16px;
+  display:block;
+  opacity:.85;
+}
+
+.social-btn:hover{
+  border-color:#d3c3b9;
+  color:var(--accent);
+}
+
+.social-btn:hover img{
+  opacity:1;
+}
+
+footer{
+  background:var(--dark);
+  color:#c7b7ae;
+  text-align:center;
+  padding:2.4rem 1rem;
+  font-size:.82rem;
+}
+
+@media (max-width: 980px){
+  .series-grid{
+    grid-template-columns:1fr;
+    max-width:420px;
+    margin:0 auto;
+  }
+
+  .hero-inner{
+    padding:4.75rem 0 5.5rem;
+  }
+}
+
+@media (min-width: 1100px){
+  .hero-copy{
+    margin-left:-13rem;
+  }   
+}
+  
+@media (max-width: 700px){
+  .nav-inner{
+    min-height:auto;
+    padding:.9rem 0;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .nav-links{
+    justify-content:center;
+    gap:1rem;
+  }
+
+  .brand{
+    flex-direction:column;
+    gap:.4rem;
+  }
+
+  .hero{
+    background-position:center center;
+  }
+
+  .hero-inner{
+    text-align:center;
+    padding:4.25rem 0 5rem;
+  }
+
+  h1{
+    max-width:none;
+  }
+
+  .hero-copy{
+    margin:0 auto;
+  }
+
+  .hero-copy p.hero-text{
+    font-size:1rem;
+  }
+
+  .hero-actions{
+    justify-content:center;
+  }
+
+  section{
+    padding:4.2rem 0;
+  }
+
+  .contact-card{
+    padding:1.5rem;
+  }
+
+  .contact-form .btn{
+    width:100%;
+    text-align:center;
+  }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a class="brand" href="#">
+      <img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal">
+      <span class="brand-text">A.J. Beckett</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#books">Books</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="container hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow">  </p>
+
+      <h1>Stories about connection, desire, and the moments that change everything.</h1>
+
+      <div class="hero-actions">
+       <a href="#books" class="btn btn-primary"
+          onclick="gtag('event','click_explore_books');">
+           Explore the Books
+        </a>
+
+         <a href="#contact" class="btn btn-primary"
+         onclick="gtag('event','click_contact_hero');">
+          Contact
+          </a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+  <div class="container">
+
+    <div class="section-heading">
+      <h2>About the Author</h2>
+    </div>
+
+    <div class="about-copy">
+      <p>
+        A.J. Beckett writes romance centered on the tension and intimacy that grow when two people are drawn together before they are ready to admit it.
+      </p>
+
+      <p>
+        The work explores chemistry, restraint, emotional risk, and the kinds of connection that quietly reshape a life.
+      </p>
+
+      <p>
+        A.J. Beckett lives and writes in Northern Alabama.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+  <section id="books">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Books by A.J. Beckett</h2>
+        <p>
+          Stories about connection, endurance, and the unexpected ways love
+          reshapes a life.
+        </p>
+      </div>
+
+      <div class="series-grid">
+
+        <article class="book-card">
+          <div class="book-image">
+            <img src="becoming_website.png" alt="Becoming book cover">
+          </div>
+
+          <div class="book-body">
+            <h3>Becoming</h3>
+
+            
+             <p>
+              Harlow University, 1996.  
+              A chance meeting sparks a connection that’s impossible to ignore—pulling two people into something intense, uncertain, and impossible to forget.
+             </p>
+
+            <a href="https://www.amazon.com" target="_blank" class="btn btn-primary" onclick="gtag('event','click_becoming_amazon');">View on Amazon</a>
+          </div>
+        </article>
+
+      <article class="book-card">
+          <div class="book-image">
+            <img src="run-naked-web.png" alt="Run Naked book cover">
+          </div>
+
+          <div class="book-body">
+            <h3>Run Naked</h3>
+
+            <p>
+              A romance about endurance, vulnerability, and the unexpected
+              connection that forms when two runners discover that love,
+              like distance, is built one mile at a time.
+            </p>
+
+            <a href="#" class="btn btn-primary" onclick="gtag('event','click_run_naked');">Coming Soon</a>
+          </div>
+        </article>
+      
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Contact</h2>
+        <p>Reader mail and business inquiries are welcome.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Connect</h3>
+
+          <p>
+            Use the form below to get in touch.
+          </p>
+
+          <form class="contact-form" action="https://formsubmit.co/fb07360255d92ee0180d62b7e41e01f9" method="POST">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+
+            <input type="text" name="_honey" style="display:none">
+            <input type="hidden" name="_next" value="https://www.ajbeckettwrites.com">
+            <input type="hidden" name="_subject" value="New message from A.J. Beckett website">
+
+            <button type="submit" class="btn btn-primary" onclick="gtag('event','submit_contact_form');">Send Message</button>
+          </form>
+
+          <div class="social-links">
+              <a href="https://www.instagram.com/ajbeckettwrites/" target="_blank" rel="noopener noreferrer" class="social-btn" onclick="gtag('event','click_instagram'); setTimeout(() => window.open(this.href, '_blank'), 150); return false;">
+              <img src="instagram-icon.svg" alt="Instagram icon">
+              <span>Instagram</span>
+              </a>
+              <a href="https://www.facebook.com/ajbeckettwrites" target="_blank" rel="noopener noreferrer" class="social-btn" onclick="gtag('event','click_facebook'); setTimeout(() => window.open(this.href, '_blank'), 150); return false;">
+              <img src="facebook-icon.svg" alt="Facebook icon">
+              <span>Facebook</span>
+              </a>
+      </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 A.J. Beckett. All Rights Reserved.
+</footer>
+
+</body>
+</html>
