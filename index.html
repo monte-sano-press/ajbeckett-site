@@ -417,17 +417,24 @@ section{
   opacity:1;
 }
 
-  .publisher-mark{
-  margin-bottom:12px;
+.footer-inner{
   display:flex;
+  align-items:center;
   justify-content:center;
+  gap:12px;
 }
 
-.publisher-mark img{
-  height:34px;
+.footer-inner img{
+  height:28px;
   width:auto;
-  opacity:0.7;
+  opacity:0.85;
 }
+
+.footer-inner span{
+  font-size:.82rem;
+  color:#c7b7ae;
+}
+  
 footer{
   background:var(--dark);
   color:#c7b7ae;
@@ -678,11 +685,10 @@ footer{
 </main>
 
 <footer>
-  <div class="publisher-mark">
+  <div class="footer-inner">
     <img src="monte-sano-press-web-dark.png" alt="Monte Sano Press">
+    <span>© 2026 A.J. Beckett. All Rights Reserved.</span>
   </div>
-
-  © 2026 A.J. Beckett. All Rights Reserved.
 </footer>
 
 </body>
