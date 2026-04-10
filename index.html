@@ -32,7 +32,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+  
 <style>
 :root{
   --bg:#fbfaf8;
@@ -109,13 +109,6 @@ nav{
   color:#5a2622;
 }
 
-.nav-links{
-  display:flex;
-  gap:2.4rem;
-  flex-wrap:wrap;
-  align-items:center;
-}
-
 .nav-links a{
   text-decoration:none;
   text-transform:uppercase;
@@ -123,6 +116,13 @@ nav{
   font-size:1.05rem;
   font-weight:650;
   color:#5a2622;
+}
+
+.nav-links{
+  display:flex;
+  gap:2.4rem;
+  flex-wrap:wrap;
+  align-items:center;
 }
 
 .nav-links a:hover{
@@ -156,15 +156,6 @@ nav{
   max-width:760px;
 }
 
-.eyebrow{
-  margin:0 0 1rem;
-  font-size:.78rem;
-  text-transform:uppercase;
-  letter-spacing:.24em;
-  color:#f3d9c8;
-  font-weight:600;
-}
-
 h1,h2,h3,h4{
   font-family:'Playfair Display',serif;
   line-height:1.1;
@@ -182,19 +173,11 @@ h1{
   max-width:680px;
 }
 
-.hero-copy p.hero-text{
-  max-width:44rem;
-  margin:0 0 1.7rem;
-  font-size:1.08rem;
-  color:#f4e8df;
-  text-shadow:0 2px 12px rgba(0,0,0,.18);
-}
-
 .hero-actions{
   display:flex;
   gap:1rem;
   flex-wrap:wrap;
-  margin-top:3rem;
+  margin-top:4rem;
 }
 
 .btn{
@@ -250,16 +233,6 @@ section{
   margin:0 auto 2.5rem;
 }
 
-.section-heading h2{
-  font-size:clamp(2rem, 4vw, 3rem);
-  margin-bottom:.8rem;
-}
-
-.section-heading p{
-  margin:0;
-  color:var(--muted);
-}
-
 .about-copy{
   max-width:760px;
   margin:3rem auto 0 auto;
@@ -274,6 +247,16 @@ section{
 
 #about{
   padding-bottom:1.5rem;
+}
+  
+.section-heading h2{
+  font-size:clamp(2rem, 4vw, 3rem);
+  margin-bottom:.8rem;
+}
+
+.section-heading p{
+  margin:0;
+  color:var(--muted);
 }
 
 .series-grid{
@@ -337,6 +320,13 @@ section{
 .book-body .btn{
   margin-top:1.4rem;
   align-self:flex-start;
+}
+
+.book-actions{
+  display:flex;
+  gap:.8rem;
+  flex-wrap:wrap;
+  margin-top:1.4rem;
 }
 
 .info-band{
@@ -506,7 +496,7 @@ footer .container{
   letter-spacing:.02em;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-shadow:0 0 0.35px rgba(0,0,0,.35);
+  text-shadow: 0 0 0.35px rgba(0,0,0,.35);
 }
 
 .footer-logo{
@@ -517,7 +507,7 @@ footer .container{
   filter:brightness(1.05) contrast(1.02);
   flex:0 0 auto;
 }
-
+  
 @media (max-width: 980px){
   .series-grid{
     grid-template-columns:1fr;
@@ -537,9 +527,9 @@ footer .container{
 @media (min-width: 1100px){
   .hero-copy{
     margin-left:-13rem;
-  }
+  }   
 }
-
+  
 @media (max-width: 700px){
   .nav-inner{
     min-height:auto;
@@ -573,10 +563,6 @@ footer .container{
 
   .hero-copy{
     margin:0 auto;
-  }
-
-  .hero-copy p.hero-text{
-    font-size:1rem;
   }
 
   .hero-actions{
@@ -621,6 +607,7 @@ footer .container{
     opacity:1;
   }
 }
+  
 </style>
 </head>
 <body>
@@ -643,20 +630,16 @@ footer .container{
 <header class="hero">
   <div class="container hero-inner">
     <div class="hero-copy">
-      <p class="eyebrow">Current work in progress</p>
-
       <h1>Stories about connection, desire, and the moments that change everything.</h1>
 
-      <p class="hero-text">
-        A.J. Beckett writes contemporary romance about longing, chemistry, restraint, and emotional risk. Current project: <em>Becoming</em>, a 1996-set romance of tension, vulnerability, and heat that has to earn its way onto the page.
-      </p>
-
       <div class="hero-actions">
-        <a href="#becoming-details" class="btn btn-primary" onclick="gtag('event','click_about_becoming_hero');">
-          About Becoming
+        <a href="#books" class="btn btn-primary"
+           onclick="gtag('event','click_explore_books');">
+          Explore the Books
         </a>
 
-        <a href="#contact" class="btn btn-secondary" onclick="gtag('event','click_contact_hero');">
+        <a href="#contact" class="btn btn-primary"
+           onclick="gtag('event','click_contact_hero');">
           Contact
         </a>
       </div>
@@ -668,28 +651,31 @@ footer .container{
 
   <section id="about">
     <div class="container">
+
       <div class="section-heading">
         <h2>About the Author</h2>
       </div>
 
       <div class="about-copy">
         <p>
-          A.J. Beckett writes romance centered on the tension and intimacy that grow when two people are drawn together before they are ready to admit it.
+          A.J. Beckett writes contemporary romance where emotion lives in both the body and the mind, where silence carries as much meaning as dialogue, and where characters become more fully themselves through the people they cannot ignore.
         </p>
 
         <p>
-          The work explores chemistry, restraint, emotional risk, and the kinds of connection that quietly reshape a life.
+          The work is warm, restrained, and deeply character-driven. It trusts tension, physical awareness, and the ordinary moments that change everything.
         </p>
 
         <p>
           A.J. Beckett lives and writes in Northern Alabama.
         </p>
       </div>
+
     </div>
   </section>
 
   <section id="books">
     <div class="container">
+
       <div class="section-heading">
         <h2>Books by A.J. Beckett</h2>
         <p>
@@ -709,14 +695,10 @@ footer .container{
             <h3>Becoming</h3>
 
             <p>
-              Harlow University, 1996. A chance meeting sparks a connection that’s impossible to ignore—pulling two people into something intense, uncertain, and impossible to forget.
+              Harlow University, 1996. Shelby Marsh arrives at college determined to become someone different than the version of herself curated by an overbearing mother. Tanner Cole is on a path that cannot afford distractions. A chance encounter changes both of them forever.
             </p>
 
-            <p style="margin-top:1rem;">
-              Slow-burn, emotionally grounded, and unapologetically open-door, <em>Becoming</em> is the current novel in progress.
-            </p>
-
-            <div style="display:flex; gap:.8rem; flex-wrap:wrap; margin-top:1.4rem;">
+            <div class="book-actions">
               <a href="#becoming-details" class="btn btn-primary" onclick="gtag('event','click_becoming_learn_more');">Learn More</a>
               <a href="#contact" class="btn btn-soft" onclick="gtag('event','click_becoming_get_updates');">Get Updates</a>
             </div>
@@ -733,14 +715,17 @@ footer .container{
             <h3>Run Naked</h3>
 
             <p>
-              A romance about endurance, vulnerability, and the unexpected connection that forms when two runners discover that love, like distance, is built one mile at a time.
+              A romance about endurance, vulnerability, and the unexpected
+              connection that forms when two runners discover that love,
+              like distance, is built one mile at a time.
             </p>
 
             <a href="#books" class="btn btn-primary" onclick="gtag('event','click_run_naked');">Coming Soon</a>
           </div>
         </article>
-
+      
       </div>
+
     </div>
   </section>
 
@@ -751,22 +736,22 @@ footer .container{
         <h3><em>Becoming</em></h3>
 
         <p>
-          Set in 1996, <em>Becoming</em> is a contemporary romance about longing, vulnerability, and the dangerous comfort of being seen too clearly.
+          At Harlow University in 1996, two people moving in very different directions find in each other something neither of them was prepared for. For Shelby, it is the safety to become bolder, more honest, and more fully herself. For Tanner, it is the disruption that finally makes room for balance, intimacy, and a life bigger than the one he planned.
         </p>
 
         <p>
-          It is emotionally intimate and sexually candid, beginning in tension and desire, then deepening into a relationship that has to earn every step of its heat.
+          <em>Becoming</em> is a story about unexpected attraction, restraint, and the shifts that become impossible to undo once they begin. It is emotionally intimate and sexually candid. The tension and desire earn their place alongside the forming of a new relationship between characters you will be rooting for to succeed.
         </p>
 
         <div class="info-grid">
           <div class="info-box">
             <h4>What kind of romance is this?</h4>
-            <p>Slow-burn, character-driven, emotionally grounded, and open-door.</p>
+            <p>Slow-burn, open-door, New Adult contemporary romance with explicit desire, earned heat, and strong emotional architecture.</p>
           </div>
 
           <div class="info-box">
             <h4>Status</h4>
-            <p>Currently in development. The site follows the project as the novel takes shape.</p>
+            <p>Currently in progress.</p>
           </div>
         </div>
       </div>
@@ -775,6 +760,7 @@ footer .container{
 
   <section id="contact">
     <div class="container">
+
       <div class="section-heading">
         <h2>Contact</h2>
         <p>Reader mail and business inquiries are welcome.</p>
@@ -812,6 +798,7 @@ footer .container{
           </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -824,4 +811,5 @@ footer .container{
   </div>
 </footer>
 
-</body
+</body>
+</html>
