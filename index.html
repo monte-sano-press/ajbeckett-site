@@ -564,43 +564,30 @@ section{
   justify-content:center;
 }
 
-.goodreads-pill{
+.goodreads-btn{
   width:176px;
   height:56px;
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0;
-  background:#fff;
+  padding:0 .9rem;
+  background:#f3e2df;
   border:1px solid #cfaeaa;
   border-radius:999px;
-  box-shadow:0 8px 18px rgba(0,0,0,.045);
-  overflow:hidden;
+  transition:.2s ease;
 }
 
-.goodreads-scale{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  line-height:1;
-  font-size:0;
+.goodreads-btn:hover{
+  background:#ead3cf;
+  transform:translateY(-1px);
 }
 
-#gr_add_to_books,
-.gr_custom_each_container_{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin:0;
-  padding:0;
-  font-size:0;
-  line-height:1;
-}
-
-.goodreads-pill img{
+.goodreads-btn img{
+  max-width:145px;
+  max-height:40px;
+  width:auto;
+  height:auto;
   display:block;
-  transform:scale(1.12);
-  transform-origin:center center;
 }
   
 #about{
@@ -884,30 +871,19 @@ footer .container{
             </p>
             <p class="series-note"><em>Book one in the Harlow series.</em></p>
 
-          <div class="book-actions">
+         <div class="book-actions">
   <a href="#contact" class="btn btn-primary" onclick="gtag('event','click_becoming_join_list');">Join the List</a>
   <a href="#becoming-details" class="btn btn-soft" onclick="gtag('event','click_becoming_learn_more');">Learn More</a>
 </div>
 
 <div class="goodreads-add">
-  <div class="goodreads-pill">
-    <div class="goodreads-scale">
-      <div id="gr_add_to_books">
-        <div class="gr_custom_each_container_">
-          <a target="_blank"
-             style="border:none"
-             rel="nofollow noopener noreferrer"
-             href="https://www.goodreads.com/book/show/253807024-becoming"
-             onclick="gtag('event','click_goodreads_add_becoming');">
-            <img alt="Add Becoming to Goodreads"
-                 src="https://s.gr-assets.com/images/atmb_add_book-70x25.png">
-          </a>
-        </div>
-      </div>
-
-      <script src="https://www.goodreads.com/book/add_to_books_widget_frame/253807024?atmb_widget%5Bbutton%5D=atmb_widget_1.png"></script>
-    </div>
-  </div>
+  <a href="https://www.goodreads.com/book/show/253807024-becoming"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="goodreads-btn"
+     onclick="gtag('event','click_goodreads_becoming');">
+    <img src="goodreads_logo.png" alt="Add Becoming to Goodreads">
+  </a>
 </div>
           </div>
         </article>
