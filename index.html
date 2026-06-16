@@ -558,6 +558,25 @@ section{
   opacity:1;
 }
 
+  .goodreads-add{
+  margin-top:1.1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:.45rem;
+}
+
+.goodreads-label{
+  margin:0;
+  font-size:.88rem;
+  color:var(--muted);
+  text-align:center;
+}
+
+.goodreads-add img{
+  display:block;
+}
+  
 #about{
   background:var(--soft);
   border-top:1px solid var(--border);
@@ -937,7 +956,26 @@ footer .container{
       </div>
     </div>
   </section>
+  
+<div class="goodreads-add">
+  <p class="goodreads-label">Add <em>Becoming</em> on Goodreads</p>
 
+  <div id="gr_add_to_books">
+    <div class="gr_custom_each_container_">
+      <a target="_blank"
+         style="border:none"
+         rel="nofollow noopener noreferrer"
+         href="https://www.goodreads.com/book/show/253807024-becoming"
+         onclick="gtag('event','click_goodreads_add_becoming');">
+        <img alt="Add Becoming to Goodreads"
+             src="https://s.gr-assets.com/images/atmb_add_book-70x25.png">
+      </a>
+    </div>
+  </div>
+
+  <script src="https://www.goodreads.com/book/add_to_books_widget_frame/253807024?atmb_widget%5Bbutton%5D=atmb_widget_1.png"></script>
+</div>
+  
   <section id="contact">
     <div class="container">
 
