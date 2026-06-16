@@ -570,23 +570,22 @@ section{
   display:inline-flex;
   align-items:center;
   justify-content:center;
-  padding:0 .9rem;
-  background:#f3e2df;
-  border:1px solid #cfaeaa;
-  border-radius:999px;
+  padding:0;
+  background:transparent;
+  border:0;
+  text-decoration:none;
   transition:.2s ease;
 }
 
 .goodreads-btn:hover{
-  background:#ead3cf;
   transform:translateY(-1px);
+  opacity:.9;
 }
 
 .goodreads-btn img{
-  max-width:158px;
-  max-height:42px;
-  width:auto;
-  height:auto;
+  width:176px;
+  height:56px;
+  object-fit:contain;
   display:block;
 }
   
@@ -881,7 +880,8 @@ footer .container{
      target="_blank"
      rel="noopener noreferrer"
      class="goodreads-btn"
-     onclick="gtag('event','click_goodreads_becoming');">
+     onclick="gtag('event','click_goodreads_becoming');"
+     aria-label="Add Becoming on Goodreads">
     <img src="goodreads_logo.png" alt="Add Becoming to Goodreads">
   </a>
 </div>
