@@ -752,9 +752,10 @@ footer .container{
 @media (max-width: 700px){
   .nav-inner{
     min-height:auto;
-    padding:.9rem 0;
+    padding:.55rem 0 .65rem;
     flex-direction:column;
     justify-content:center;
+    gap:.4rem;
   }
   
   .book-actions{
@@ -765,25 +766,34 @@ footer .container{
   width:100%;
 }
 
- .nav-links{
-  justify-content:center;
-  gap:1.15rem;
+  .nav-links{
+   justify-content:center;
+   gap:.9rem;
 }
 
-.nav-links a{
-  font-size:.9rem;
-  letter-spacing:.18em;
-}
+ .nav-links a{
+   font-size:.78rem;
+   letter-spacing:.15em;
+ }
   
   .nav-instagram-icon{
   width:22px;
   height:22px;
 }
 
-  .brand{
-    flex-direction:column;
-    gap:.4rem;
-  }
+   .brand{
+   flex-direction:column;
+   gap:.2rem;
+}
+
+ .brand-seal{
+   width:44px;
+   height:44px;
+ }
+
+ .brand-text{
+   font-size:1.65rem;
+ }
 
   .hero{
     background-position:center center;
@@ -791,11 +801,14 @@ footer .container{
 
   .hero-inner{
     text-align:center;
-    padding:4.25rem 0 5rem;
+    padding:2.8rem 0 3.4rem;
   }
 
   h1{
     max-width:none;
+    font-size:clamp(2.05rem, 9.2vw, 2.9rem);
+    line-height:1.08;
+    margin-bottom:1rem;
   }
 
   .hero-copy{
@@ -804,6 +817,11 @@ footer .container{
 
   .hero-actions{
     justify-content:center;
+    margin-top:2.1rem;
+  }
+
+  .hero-actions .btn{
+    padding:.85rem 1.15rem;
   }
 
   section{
