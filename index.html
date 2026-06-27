@@ -319,12 +319,16 @@ section{
 
 .series-grid{
   display:grid;
-  grid-template-columns:repeat(2, minmax(300px,390px));
+  grid-template-columns:repeat(2, minmax(340px, 460px));
   gap:4.5rem;
   justify-content:center;
+  align-items:stretch;
 }
 
 .book-card{
+  width:100%;
+  max-width:460px;
+  margin:0 auto;
   background:var(--surface);
   border:1px solid var(--border);
   border-radius:24px;
@@ -334,25 +338,14 @@ section{
   flex-direction:column;
 }
 
-  .book-image{
-    max-width:300px;
-    width:84%;
-    margin:0 auto;
-    border-radius:20px;
-    overflow:hidden;
-  }
-
-  .book-card{
-    max-width:340px;
-    margin:0 auto;
-  }
-  
-  .book-image{
+.book-image{
   aspect-ratio:2/3;
   background:var(--dark);
-  max-width:390px;
-  margin:auto;
-  width:100%;
+  width:78%;
+  max-width:320px;
+  margin:1.5rem auto 0;
+  border-radius:20px;
+  overflow:hidden;
 }
 
 .book-image img{
@@ -362,68 +355,30 @@ section{
 }
 
 .book-body{
-  padding:1.5rem 1.4rem 1.7rem;
+  padding:1.5rem 1.7rem 1.9rem;
   display:flex;
   flex-direction:column;
   flex:1;
 }
 
-.book-label{
-  margin:0 0 .55rem;
-  font-size:.72rem;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-weight:700;
-  color:#8b7568;
-}
-
-.book-body h3{
-  font-size:1.8rem;
-  margin-bottom:.65rem;
-}
-
-.book-body p{
-  margin:0;
-  color:var(--muted);
-  font-size:.97rem;
-}
-
-.book-body p + p{
-  margin-top:.85rem;
-}
-
-.series-note{
-  color:#8b7568;
-  font-size:.93rem;
-}
-  .series-note span{
-  font-style:italic;
-  font-weight:400;
-}
-
-.book-body .btn{
-  margin-top:1.4rem;
-  align-self:flex-start;
-}
-
 .book-actions{
   display:grid;
-  grid-template-columns:repeat(2, 176px);
+  grid-template-columns:repeat(2, minmax(0, 1fr));
   justify-content:center;
   align-items:center;
   gap:1rem;
   margin-top:auto;
   padding-top:1.6rem;
+  width:100%;
 }
 
 .book-actions .btn{
-  width:176px;
+  width:100%;
   margin-top:0;
   text-align:center;
-  padding-left:0;
-  padding-right:0;
+  padding-left:.85rem;
+  padding-right:.85rem;
 }
-
 .info-band{
   background:var(--soft);
   border-top:1px solid var(--border);
@@ -986,7 +941,7 @@ footer .container{
             <p class="series-note"><em>Book one in the Harlow series.</em></p>
 
          <div class="book-actions">
-  <a href="#contact" class="btn btn-primary" onclick="gtag('event','click_becoming_join_list');">Join the List</a>
+  <a href="becoming-preorder.html" class="btn btn-primary" onclick="gtag('event','click_becoming_preorder_card');">Preorder Now</a>
   <a href="#becoming-details" class="btn btn-soft" onclick="gtag('event','click_becoming_learn_more');">Learn More</a>
 </div>
 
