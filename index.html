@@ -873,13 +873,15 @@ footer .container{
 
 <nav>
   <div class="container nav-inner">
-    <a class="brand" href="#">
+    <a class="brand" href="index.html">
       <img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal">
       <span class="brand-text">A.J. Beckett</span>
     </a>
 
     <div class="nav-links">
       <a href="#books">Books</a>
+      <a href="read/" onclick="gtag('event','click_read_chapter_nav_home');">Read Chapter 1</a>
+      <a href="becoming-preorder.html" onclick="gtag('event','click_preorder_nav_home');">Preorder</a>
       <a href="#contact">ARC / Updates</a>
       <a href="#about">About</a>
       <a href="https://www.instagram.com/ajbeckettwrites/"
@@ -905,7 +907,12 @@ footer .container{
     Preorder Becoming
   </a>
 
-  <a href="#contact" class="btn btn-secondary"
+  <a href="read/" class="btn btn-secondary"
+     onclick="gtag('event','click_read_chapter_home_hero');">
+    Read Chapter One
+  </a>
+
+  <a href="#contact" class="btn btn-soft"
      onclick="gtag('event','click_join_list_hero');">
     Get Updates
   </a>
@@ -944,7 +951,7 @@ footer .container{
 
         <div class="book-actions">
   <a href="becoming-preorder.html" class="btn btn-primary" onclick="gtag('event','click_becoming_preorder_card');">Preorder Now</a>
-  <a href="#contact" class="btn btn-soft" onclick="gtag('event','click_becoming_join_list_card');">Get Updates</a>
+  <a href="read/" class="btn btn-soft" onclick="gtag('event','click_read_chapter_bookcard');">Read Chapter One</a>
 </div>
 
 <div class="goodreads-add">
@@ -1042,7 +1049,7 @@ footer .container{
 
           <div class="info-box status-box">
             <h4>Status</h4>
-            <p>Direct paperback preorders are open now.</p>
+            <p>Direct preorders are open now.</p>
             <p>Release scheduled for September 18.</p>
             <p>Signed and standard paperback options are available.</p>
           </div>
