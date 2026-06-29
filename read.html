@@ -29,7 +29,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
 :root{--bg:#fbfaf8;--surface:#ffffff;--text:#1d1b1a;--muted:#6c6662;--accent:#6b2f2a;--accent-dark:#51211d;--border:#e8e1db;--soft:#f3eeea;--dark:#241f1d;--max:1160px;}
@@ -49,9 +49,50 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0} .btn{
   border:1px solid transparent;
   text-align:center;
 }
-  .btn-primary{background:var(--accent);color:#fff} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)} .btn-soft{color:var(--accent);border-color:#cfaeaa;background:#f3e2df} .btn-soft:hover{background:#ead3cf;transform:translateY(-1px)}
-.read-hero{padding:4.6rem 0 3.8rem;border-bottom:1px solid var(--border);background:linear-gradient(rgba(251,250,248,.84), rgba(251,250,248,.94)),url('barn-hero.JPG');background-size:cover;background-position:center center} .read-layout{display:grid;grid-template-columns:minmax(240px,340px) minmax(0,1fr);gap:3.25rem;align-items:center} .cover-wrap{background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:1.1rem;box-shadow:0 18px 45px rgba(0,0,0,.08)} .cover-wrap img{border-radius:20px;width:100%} .read-copy{max-width:720px} .book-label{margin:0 0 .7rem;font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:750;color:#8b7568} .read-copy h1{font-size:clamp(2.7rem,5vw,4.4rem);color:#5a2622;margin-bottom:.8rem} .subtitle{font-size:1.16rem;color:var(--muted);margin:0 0 1rem} .release-line{font-weight:700;color:#5a2622;margin:0 0 1.2rem} .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
-.chapter-shell{padding:4.8rem 0} .chapter-card{max-width:780px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:clamp(1.5rem,4vw,3.2rem);box-shadow:0 12px 30px rgba(0,0,0,.05)} .chapter-kicker{text-align:center;margin:0 0 .35rem;color:#8b7568;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:750} .chapter-card h2{text-align:center;font-size:clamp(2.1rem,4vw,3.1rem);color:#5a2622;margin-bottom:.45rem} .chapter-subtitle{text-align:center;margin:0 0 2.6rem;color:var(--muted);font-weight:600} .chapter-text{font-family:'Playfair Display',serif;font-size:1.18rem;line-height:1.9;color:#282321} .chapter-text p{margin:0 0 1.35rem} .scene-break{text-align:center;letter-spacing:.35em;color:#8b7568;margin:2.2rem 0;font-family:'Inter',sans-serif;font-size:.85rem} .after-chapter{
+  .btn-primary{background:var(--accent);color:#fff} 
+  
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)} 
+  
+  .btn-soft{color:var(--accent);border-color:#cfaeaa;background:#f3e2df} 
+  
+  .btn-soft:hover{background:#ead3cf;transform:translateY(-1px)}
+  
+  .read-hero{padding:4.6rem 0 3.8rem;border-bottom:1px solid var(--border);background:linear-gradient(rgba(251,250,248,.84), rgba(251,250,248,.94)),url('barn-hero.JPG');background-size:cover;background-position:center center} 
+  
+  .read-layout{display:grid;grid-template-columns:minmax(240px,340px) minmax(0,1fr);gap:3.25rem;align-items:center} 
+  
+  .cover-wrap{background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:1.1rem;box-shadow:0 18px 45px rgba(0,0,0,.08)} 
+  
+  .cover-wrap img{border-radius:20px;width:100%} .read-copy{max-width:720px} 
+  
+  .book-label{margin:0 0 .7rem;font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:750;color:#8b7568} 
+  
+  .read-copy h1{font-size:clamp(2.7rem,5vw,4.4rem);color:#5a2622;margin-bottom:.8rem} 
+  
+  .subtitle{font-size:1.16rem;color:var(--muted);margin:0 0 1rem} 
+  
+  .release-line{font-weight:700;color:#5a2622;margin:0 0 1.2rem} 
+  
+  .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
+  
+  .chapter-shell{padding:4.8rem 0} 
+  
+  .chapter-card{max-width:780px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:clamp(1.5rem,4vw,3.2rem);box-shadow:0 12px 30px rgba(0,0,0,.05)} 
+  
+  .chapter-kicker{text-align:center;margin:0 0 .35rem;color:#8b7568;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:750} 
+  
+  .chapter-card h2{text-align:center;font-size:clamp(2.1rem,4vw,3.1rem);color:#5a2622;margin-bottom:.45rem} 
+  
+  .chapter-subtitle{text-align:center;margin:0 0 2.6rem;color:var(--muted);font-weight:600} 
+  
+  .chapter-text{
+    font-family:"EB Garamond", Georgia, serif;
+    font-size:1.3rem;
+    line-height:1.85;
+    color:#282321;
+}
+  
+  .chapter-text p{margin:0 0 1.35rem} .scene-break{text-align:center;letter-spacing:.35em;color:#8b7568;margin:2.2rem 0;font-family:'Inter',sans-serif;font-size:.85rem} .after-chapter{
     margin-top:4rem;
     padding-top:3rem;
     border-top:1px solid var(--border);
