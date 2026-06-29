@@ -257,6 +257,10 @@ h1,h2,h3,h4{
   margin-top:1.8rem;
 }
 
+.hero-actions .btn{
+  min-width:190px;
+}
+
 .preorder-section{
   padding:4.5rem 0;
 }
@@ -567,8 +571,8 @@ footer .container{
 
     <div class="nav-links">
       <a href="index.html#books">Books</a>
-      <a href="index.html#contact">ARC / Updates</a>
-      <a href="index.html#about">About</a>
+      <a href="read/" onclick="gtag('event','click_read_nav_preorder');">Read</a>
+      <a href="index.html#contact" onclick="gtag('event','click_contact_arc_nav_preorder');">Contact / ARC</a>
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
@@ -611,7 +615,12 @@ footer .container{
             Choose Your Copy
           </a>
 
-          <a href="index.html#contact" class="btn btn-soft"
+          <a href="read/" class="btn btn-primary"
+             onclick="gtag('event','click_read_chapter_preorder_top');">
+            Read Chapter One
+          </a>
+
+          <a href="index.html#contact" class="btn btn-primary"
              onclick="gtag('event','click_join_list_preorder_top');">
             Get Updates
           </a>
@@ -630,6 +639,37 @@ footer .container{
       </div>
     </div>
   </header>
+
+
+  <section class="preorder-section" id="read-chapter-one">
+    <div class="container">
+      <div class="details-card">
+        <p class="book-label" style="margin-bottom:.45rem;">Read Before You Preorder</p>
+        <h2>Read Chapter One Free</h2>
+
+        <p>
+          Not sure yet? Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to choose your preorder.
+        </p>
+
+        <div class="hero-actions" style="margin-top:1.5rem;">
+          <a href="#preorder-options" class="btn btn-primary"
+             onclick="gtag('event','click_preorder_before_read_prompt');">
+            Choose Your Copy
+          </a>
+
+          <a href="read/" class="btn btn-primary"
+             onclick="gtag('event','click_read_chapter_preorder_midpage');">
+            Read Chapter One
+          </a>
+
+          <a href="#preorder-options" class="btn btn-primary"
+             onclick="gtag('event','click_preorder_after_read_prompt');">
+            Preorder Becoming
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="preorder-options" class="preorder-section">
     <div class="container">
@@ -741,14 +781,19 @@ footer .container{
         </div>
 
         <div class="hero-actions" style="margin-top:2rem;">
-          <a href="index.html#contact" class="btn btn-soft"
-             onclick="gtag('event','click_join_list_preorder_details');">
-            Get Updates
+          <a href="#preorder-options" class="btn btn-primary"
+             onclick="gtag('event','click_preorder_details_bottom');">
+            Choose Your Copy
           </a>
 
-          <a href="index.html" class="btn btn-soft"
-             onclick="gtag('event','click_return_home_preorder');">
-            Return Home
+          <a href="read/" class="btn btn-primary"
+             onclick="gtag('event','click_read_chapter_preorder_details');">
+            Read Chapter One
+          </a>
+
+          <a href="index.html#contact" class="btn btn-primary"
+             onclick="gtag('event','click_join_list_preorder_details');">
+            Get Updates
           </a>
         </div>
 
