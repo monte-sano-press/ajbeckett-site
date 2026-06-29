@@ -37,7 +37,35 @@
 nav{position:sticky;top:0;z-index:1000;background:rgba(251,250,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)} .nav-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem} .brand{display:flex;align-items:center;gap:2rem;text-decoration:none} .brand-seal{width:64px;height:64px;object-fit:contain;border-radius:50%} .brand-text{font-family:'Playfair Display',serif;font-size:2.2rem;letter-spacing:.02em;color:#5a2622} .nav-links{display:flex;gap:2.4rem;flex-wrap:wrap;align-items:center} .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.2em;font-size:1.05rem;font-weight:650;color:#5a2622} .nav-links a:hover{color:var(--accent)} .nav-icon-link{display:inline-flex;align-items:center;justify-content:center} .nav-instagram-icon{width:24px;height:24px;display:block}
 h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0} .btn{display:inline-block;padding:1rem 1.35rem;text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:700;border-radius:999px;transition:.2s ease;border:1px solid transparent;text-align:center} .btn-primary{background:var(--accent);color:#fff} .btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)} .btn-soft{color:var(--accent);border-color:#cfaeaa;background:#f3e2df} .btn-soft:hover{background:#ead3cf;transform:translateY(-1px)}
 .read-hero{padding:4.6rem 0 3.8rem;border-bottom:1px solid var(--border);background:linear-gradient(rgba(251,250,248,.84), rgba(251,250,248,.94)),url('barn-hero.JPG');background-size:cover;background-position:center center} .read-layout{display:grid;grid-template-columns:minmax(240px,340px) minmax(0,1fr);gap:3.25rem;align-items:center} .cover-wrap{background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:1.1rem;box-shadow:0 18px 45px rgba(0,0,0,.08)} .cover-wrap img{border-radius:20px;width:100%} .read-copy{max-width:720px} .book-label{margin:0 0 .7rem;font-size:.76rem;text-transform:uppercase;letter-spacing:.18em;font-weight:750;color:#8b7568} .read-copy h1{font-size:clamp(2.7rem,5vw,4.4rem);color:#5a2622;margin-bottom:.8rem} .subtitle{font-size:1.16rem;color:var(--muted);margin:0 0 1rem} .release-line{font-weight:700;color:#5a2622;margin:0 0 1.2rem} .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.8rem}
-.chapter-shell{padding:4.8rem 0} .chapter-card{max-width:780px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:clamp(1.5rem,4vw,3.2rem);box-shadow:0 12px 30px rgba(0,0,0,.05)} .chapter-kicker{text-align:center;margin:0 0 .35rem;color:#8b7568;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:750} .chapter-card h2{text-align:center;font-size:clamp(2.1rem,4vw,3.1rem);color:#5a2622;margin-bottom:.45rem} .chapter-subtitle{text-align:center;margin:0 0 2.6rem;color:var(--muted);font-weight:600} .chapter-text{font-family:'Playfair Display',serif;font-size:1.18rem;line-height:1.9;color:#282321} .chapter-text p{margin:0 0 1.35rem} .scene-break{text-align:center;letter-spacing:.35em;color:#8b7568;margin:2.2rem 0;font-family:'Inter',sans-serif;font-size:.85rem} .after-chapter{margin-top:3rem;padding-top:2.2rem;border-top:1px solid var(--border);text-align:center} .after-chapter h3{font-size:2rem;color:#5a2622;margin-bottom:.6rem} .after-chapter p{margin:0 auto 1.2rem;max-width:620px;color:var(--muted)} .after-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap} .teaser{margin-top:2rem;font-family:'Playfair Display',serif;font-size:1.5rem;color:#5a2622}
+.chapter-shell{padding:4.8rem 0} .chapter-card{max-width:780px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:28px;padding:clamp(1.5rem,4vw,3.2rem);box-shadow:0 12px 30px rgba(0,0,0,.05)} .chapter-kicker{text-align:center;margin:0 0 .35rem;color:#8b7568;text-transform:uppercase;letter-spacing:.18em;font-size:.76rem;font-weight:750} .chapter-card h2{text-align:center;font-size:clamp(2.1rem,4vw,3.1rem);color:#5a2622;margin-bottom:.45rem} .chapter-subtitle{text-align:center;margin:0 0 2.6rem;color:var(--muted);font-weight:600} .chapter-text{font-family:'Playfair Display',serif;font-size:1.18rem;line-height:1.9;color:#282321} .chapter-text p{margin:0 0 1.35rem} .scene-break{text-align:center;letter-spacing:.35em;color:#8b7568;margin:2.2rem 0;font-family:'Inter',sans-serif;font-size:.85rem} .after-chapter{
+    margin-top:4rem;
+    padding-top:3rem;
+    border-top:1px solid var(--border);
+    text-align:center;
+}
+
+.after-chapter h3{
+    font-size:2.35rem;
+    color:#5a2622;
+    margin:0 0 1.5rem;
+}
+
+.after-chapter .teaser{
+    font-family:'Playfair Display',serif;
+    font-size:1.6rem;
+    color:var(--text);
+    margin:0 0 2.5rem;
+}
+
+.after-actions{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:1rem;
+    flex-wrap:wrap;
+}
+  
+  .teaser{margin-top:2rem;font-family:'Playfair Display',serif;font-size:1.5rem;color:#5a2622}
 footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,255,.08);padding:.25rem 0} footer .container{width:min(1100px, calc(100% - 2.5rem));margin:0 auto} .footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:0} .footer-copy{margin:0;font-size:.95rem;color:#f3e3cf;font-weight:550;letter-spacing:.02em} .footer-logo{display:block;width:185px;height:auto;opacity:.95;filter:brightness(1.05) contrast(1.02);flex:0 0 auto}
 @media (max-width:900px){.read-layout{grid-template-columns:1fr;max-width:520px;margin:0 auto;text-align:center}.cover-wrap{max-width:340px;margin:0 auto}.hero-actions{justify-content:center}}
 @media (max-width:700px){.nav-inner{min-height:auto;padding:.55rem 0 .65rem;flex-direction:column;justify-content:center;gap:.4rem}.brand{flex-direction:column;gap:.2rem}.brand-seal{width:44px;height:44px}.brand-text{font-size:1.65rem}.nav-links{justify-content:center;gap:.9rem}.nav-links a{font-size:.78rem;letter-spacing:.15em}.nav-instagram-icon{width:22px;height:22px}.read-hero{padding:2.8rem 0 3.4rem}.hero-actions .btn,.after-actions .btn{width:100%}.chapter-text{font-size:1.08rem;line-height:1.85}.footer-inner{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.35rem;padding:.65rem 0}.footer-logo{order:1;width:155px;max-width:70vw}.footer-copy{order:2;white-space:normal;font-size:.8rem;font-weight:500;line-height:1.25}}
@@ -145,7 +173,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
             <p>Outside the window, the campus settles into evening. I can hear voices and laughter. In the distance, someone is playing a guitar. The pothos on the sill stretches its long vines toward the window, reaching for the last of the warmth in the glass.</p>
             <p>I close my eyes. I’m so afraid and so excited that I can’t tell which is which. I’m going to let them be the same thing.</p>
             <p><em>Take a chance. Find out.</em></p>
-          </div><div class="after-chapter">
+          <div class="after-chapter">
     <h3>Ready to keep reading?</h3>
 
     <p class="teaser">
