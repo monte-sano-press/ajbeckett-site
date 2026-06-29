@@ -184,7 +184,7 @@ nav{
   
 .nav-links{
   display:flex;
-  gap:2.4rem;
+  gap:2.1rem;
   flex-wrap:wrap;
   align-items:center;
 }
@@ -815,6 +815,8 @@ footer .container{
 
   .hero-actions .btn{
     padding:.78rem 1.05rem;
+    min-width:0;
+    width:100%;
   }
 
   section{
@@ -880,10 +882,8 @@ footer .container{
 
     <div class="nav-links">
       <a href="#books">Books</a>
-      <a href="read/" onclick="gtag('event','click_read_chapter_nav_home');">Read Chapter 1</a>
-      <a href="becoming-preorder.html" onclick="gtag('event','click_preorder_nav_home');">Preorder</a>
-      <a href="#contact">ARC / Updates</a>
-      <a href="#about">About</a>
+      <a href="read/" onclick="gtag('event','click_read_chapter_nav_home');">Read</a>
+      <a href="#contact" onclick="gtag('event','click_contact_arc_nav_home');">Contact / ARC</a>
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
@@ -907,12 +907,12 @@ footer .container{
     Preorder Becoming
   </a>
 
-  <a href="read/" class="btn btn-secondary"
+  <a href="read/" class="btn btn-primary"
      onclick="gtag('event','click_read_chapter_home_hero');">
     Read Chapter One
   </a>
 
-  <a href="#contact" class="btn btn-soft"
+  <a href="#contact" class="btn btn-primary"
      onclick="gtag('event','click_join_list_hero');">
     Get Updates
   </a>
@@ -1049,7 +1049,7 @@ footer .container{
 
           <div class="info-box status-box">
             <h4>Status</h4>
-            <p>Direct preorders are open now.</p>
+            <p>Direct paperback preorders are open now.</p>
             <p>Release scheduled for September 18.</p>
             <p>Signed and standard paperback options are available.</p>
           </div>
