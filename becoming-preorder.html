@@ -720,13 +720,24 @@ footer .container{
         <h2>Not sure yet? Read Chapter One Free</h2>
 
         <p>
-          Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to choose your preorder.
-        </p>
+  Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to choose your preorder.
+</p>
 
-        <a href="read.html" class="btn btn-primary"
-   onclick="gtag('event','click_read_chapter_preorder_midpage');">
-  Read Chapter One
-</a>
+<div class="read-prompt-actions">
+
+  <a href="read.html"
+     class="btn btn-primary"
+     onclick="gtag('event','click_read_chapter_preorder_midpage');">
+    Read Chapter One
+  </a>
+
+  <a href="#preorder-options"
+     class="btn btn-primary"
+     onclick="gtag('event','click_preorder_after_read_prompt');">
+    Preorder Becoming
+  </a>
+
+</div>
 
           <a href="#preorder-options" class="btn btn-primary"
              onclick="gtag('event','click_preorder_after_read_prompt');">
