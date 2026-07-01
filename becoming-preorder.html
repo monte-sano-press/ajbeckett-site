@@ -887,6 +887,47 @@ footer .container{
     </a>
   </div>
 </footer>
+<script>
+(function(){
+  const fired = new Set();
 
+  function sendEvent(name){
+    if (fired.has(name)) return;
+    fired.add(name);
+
+    if (typeof gtag === 'function') {
+      gtag('event', name, {
+        page_title: 'Preorder Becoming',
+        page_location: window.location.href
+      });
+    }
+  }
+
+  function watch(selector, eventName, threshold){
+    const el = document.querySelector(selector);
+    if (!el || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          sendEvent(eventName);
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: threshold || 0.35
+    });
+
+    observer.observe(el);
+  }
+
+  watch('#read-chapter-one', 'view_preorder_read_prompt', 0.35);
+  watch('#preorder-options', 'view_preorder_options', 0.25);
+  watch('.option-card.featured', 'view_signed_preorder_option', 0.45);
+  watch('.option-card:not(.featured)', 'view_standard_preorder_option', 0.45);
+  watch('.details-band', 'view_preorder_details', 0.25);
+})();
+</script>
+  
 </body>
 </html>
