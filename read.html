@@ -241,5 +241,58 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     <div class="after-actions"><a href="becoming-preorder.html" class="btn btn-primary" onclick="gtag('event','click_preorder_after_chapter');">Preorder <em>Becoming</em></a><a href="index.html#contact" class="btn btn-soft" onclick="gtag('event','click_join_list_after_chapter');">Get Updates</a></div></div></section>
 </main>
 <footer><div class="container footer-inner"><span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span><a href="https://www.montesano-press.com/" target="_blank" rel="noopener noreferrer"><img src="monte-sano-press-web-dark-tm.png" alt="Monte Sano Press" class="footer-logo"></a></div></footer>
+<script>
+(function(){
+  const fired = new Set();
+
+  function sendEvent(name){
+    if (fired.has(name)) return;
+    fired.add(name);
+
+    if (typeof gtag === 'function') {
+      gtag('event', name, {
+        page_title: 'Read Chapter One of Becoming',
+        page_location: window.location.href
+      });
+    }
+  }
+
+  function checkScrollDepth(){
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const windowHeight = window.innerHeight;
+    const documentHeight = Math.max(
+      document.body.scrollHeight,
+      document.documentElement.scrollHeight
+    );
+
+    const percent = ((scrollTop + windowHeight) / documentHeight) * 100;
+
+    if (percent >= 25) sendEvent('read_chapter_25');
+    if (percent >= 50) sendEvent('read_chapter_50');
+    if (percent >= 75) sendEvent('read_chapter_75');
+    if (percent >= 90) sendEvent('read_chapter_90');
+  }
+
+  window.addEventListener('scroll', checkScrollDepth, { passive: true });
+  window.addEventListener('load', checkScrollDepth);
+
+  const afterChapter = document.querySelector('.after-chapter');
+
+  if (afterChapter && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          sendEvent('read_chapter_finished');
+          observer.disconnect();
+        }
+      });
+    }, {
+      threshold: 0.35
+    });
+
+    observer.observe(afterChapter);
+  }
+})();
+</script>
 </body>
 </html>
