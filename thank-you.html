@@ -298,7 +298,14 @@ h1,h2,h3,h4{
 .small-note a:hover{
   text-decoration:underline;
 }
-
+  
+.share-fallback{
+  margin:1rem 0 0;
+  color:#5a2622;
+  font-size:.95rem;
+  font-weight:650;
+}
+  
 footer{
   background:var(--dark);
   color:#c7b7ae;
@@ -483,59 +490,55 @@ footer .container{
       </div>
 
       <div class="thank-you-card">
-        <p class="book-label">Preorder received</p>
+  <p class="book-label">Preorder received</p>
 
-        <h1>Thank you for preordering <em>Becoming</em>.</h1>
+  <h1>Thank you for preordering <em>Becoming</em>.</h1>
 
-        <p>
-          Your direct preorder means more than a sale. It helps support an independent author, an independent press, and the launch of a story that has been built one careful page at a time.
-        </p>
+  <p>
+    Seriously, thank you. Direct preorders make a real difference for indie authors, and I’m grateful you chose to support this book.
+  </p>
 
-        <p>
-          <em>Becoming</em> releases September 18, 2026. Direct preorder copies are expected to ship in late September or early October after print copies arrive.
-        </p>
+  <p>
+    <em>Becoming</em> releases September 18, 2026. Your copy is expected to ship after print copies arrive.
+  </p>
 
-        <p>
-          A receipt should arrive by email from Stripe. If there are any production or shipping updates, preorder customers will be notified by email.
-        </p>
+  <div class="support-box">
+    <h2>Want to help spread the word?</h2>
 
-        <div class="support-box">
-          <h2>Want to help <em>Becoming</em> reach more readers?</h2>
+    <p>
+      Share <em>Becoming</em> with someone who loves slow-burn romance, first-love energy, and 1990s college nostalgia.
+    </p>
 
-          <p>
-            Share the preorder page with a friend, a book club, or someone who loves slow-burn romance, first-love energy, and 1990s college nostalgia.
-          </p>
+    <p class="discount-code">
+      They can use <strong>THANKS10</strong> for 10% off a direct preorder.
+    </p>
 
-          <p class="discount-code">
-            They can use code <strong>THANKS10</strong> for 10% off a direct preorder.
-          </p>
+    <div class="thank-you-actions">
+     <p class="share-fallback" id="share-fallback" hidden>
+  Link copied. Share it anywhere and tell them to use <strong>THANKS10</strong>.
+</p>
+      <button type="button"
+        class="btn btn-primary"
+        id="share-becoming-button">
+  Share Becoming
+</button>
 
-          <div class="thank-you-actions">
-            <a href="https://www.instagram.com/ajbeckettwrites/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="btn btn-primary"
-               onclick="gtag('event','click_instagram_thank_you');">
-              Share on Instagram
-            </a>
+      <a href="index.html"
+         class="btn btn-soft"
+         onclick="gtag('event','click_home_thank_you_button');">
+        Back to Homepage
+      </a>
+    </div>
+  </div>
 
-            <a href="index.html"
-               class="btn btn-soft"
-               onclick="gtag('event','click_home_thank_you_button');">
-              Back to A.J. Beckett
-            </a>
-          </div>
-        </div>
-
-        <p class="small-note">
-          Questions about your preorder? Message
-          <a href="https://www.instagram.com/ajbeckettwrites/"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_instagram_thank_you_questions');">@ajbeckettwrites</a>
-          or use the contact form on the A.J. Beckett site.
-        </p>
-      </div>
+  <p class="small-note">
+    Questions? Message
+    <a href="https://www.instagram.com/ajbeckettwrites/"
+       target="_blank"
+       rel="noopener noreferrer"
+       onclick="gtag('event','click_instagram_thank_you_questions');">@ajbeckettwrites</a>.
+  </p>
+</div>
 
     </div>
   </section>
@@ -558,6 +561,55 @@ footer .container{
     });
   }
 </script>
+<script>
+(function(){
+  const shareButton = document.getElementById('share-becoming-button');
+  const fallback = document.getElementById('share-fallback');
 
+  if (!shareButton) return;
+
+  const shareText = "I just preordered Becoming by A.J. Beckett — a 1996 college slow-burn romance. Use THANKS10 for 10% off a direct preorder.";
+  const shareUrl = "https://www.ajbeckettwrites.com/becoming-preorder";
+
+  shareButton.addEventListener('click', async function(){
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_share_becoming_thank_you');
+    }
+
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: "Becoming by A.J. Beckett",
+          text: shareText,
+          url: shareUrl
+        });
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'share_becoming_completed_thank_you');
+        }
+      } catch (err) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'share_becoming_cancelled_thank_you');
+        }
+      }
+    } else {
+      try {
+        await navigator.clipboard.writeText(shareText + " " + shareUrl);
+
+        if (fallback) {
+          fallback.hidden = false;
+        }
+
+        if (typeof gtag === 'function') {
+          gtag('event', 'copy_share_link_thank_you');
+        }
+      } catch (err) {
+        window.location.href = shareUrl;
+      }
+    }
+  });
+})();
+</script>
+  
 </body>
 </html>
