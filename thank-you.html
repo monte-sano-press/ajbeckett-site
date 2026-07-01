@@ -160,6 +160,7 @@ h1,h2,h3,h4{
   transition:.2s ease;
   border:1px solid transparent;
   text-align:center;
+  cursor:pointer;
 }
 
 .btn-primary{
@@ -514,21 +515,22 @@ footer .container{
     </p>
 
     <div class="thank-you-actions">
-     <p class="share-fallback" id="share-fallback" hidden>
+  <button type="button"
+          class="btn btn-primary"
+          id="share-becoming-button">
+    Share Becoming
+  </button>
+
+  <a href="index.html"
+     class="btn btn-soft"
+     onclick="gtag('event','click_home_thank_you_button');">
+    Back to Homepage
+  </a>
+</div>
+
+<p class="share-fallback" id="share-fallback" hidden>
   Link copied. Share it anywhere and tell them to use <strong>THANKS10</strong>.
 </p>
-      <button type="button"
-        class="btn btn-primary"
-        id="share-becoming-button">
-  Share <em>Becoming</em>
-</button>
-
-      <a href="index.html"
-         class="btn btn-soft"
-         onclick="gtag('event','click_home_thank_you_button');">
-        Back to Homepage
-      </a>
-    </div>
   </div>
 
   <p class="small-note">
