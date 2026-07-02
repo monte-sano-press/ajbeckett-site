@@ -608,6 +608,7 @@ function hideRecallTab(){
   document.querySelectorAll('a[href*="becoming-preorder"]').forEach(function(link){
     link.addEventListener('click', function(){
       sessionStorage.setItem('read_preorder_clicked', 'true');
+        hideRecallTab();
     });
   });
 
@@ -641,10 +642,11 @@ function hideRecallTab(){
     nudgeClose.addEventListener('click', function(){
       if (nudge) nudge.hidden = true;
 
-      if (currentNudgeType === 'visit') {
-        sessionStorage.setItem('read_becoming10_nudge_dismissed', 'true');
-        sendEvent('dismiss_read_becoming10_nudge');
-      }
+     if (currentNudgeType === 'visit') {
+  sessionStorage.setItem('read_becoming10_nudge_dismissed', 'true');
+  sendEvent('dismiss_read_becoming10_nudge');
+  showRecallTab();
+}
 
       if (currentNudgeType === 'tanner') {
         sessionStorage.setItem('read_tanner10_nudge_dismissed', 'true');
@@ -653,6 +655,21 @@ function hideRecallTab(){
     });
   }
 
+  if (recallTab) {
+  recallTab.addEventListener('click', function(){
+    currentNudgeType = 'visit';
+    currentCode = 'BECOMING10';
+
+    nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors!';
+    codeText.textContent = 'BECOMING10';
+
+    if (nudge) nudge.hidden = false;
+    hideRecallTab();
+
+    sendEvent('recall_read_becoming10_nudge');
+  });
+}
+  
   window.addEventListener('scroll', checkScrollDepth, { passive: true });
   window.addEventListener('load', checkScrollDepth);
 
