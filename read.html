@@ -440,7 +440,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
             type="button"
             id="conversion-code-copy">
       <span class="copy-icon">📋</span>
-      <span id="conversion-code-text">VISIT10</span>
+      <span id="conversion-code-text">BECOMING10</span>
     </button>
   </div>
 
@@ -490,18 +490,18 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     if (preorderWasClicked()) return;
 
     if (type === 'visit') {
-      if (sessionStorage.getItem('read_visit10_nudge_dismissed') === 'true') return;
-      if (sessionStorage.getItem('read_visit10_nudge_shown') === 'true') return;
+      if (sessionStorage.getItem('read_becoming10_nudge_dismissed') === 'true') return;
+      if (sessionStorage.getItem('read_becoming10_nudge_shown') === 'true') return;
 
       currentNudgeType = 'visit';
-      currentCode = 'VISIT10';
+      currentCode = 'BECOMING1010';
 
-      nudgeMessage.innerHTML = 'Thanks for visiting. Use <strong>VISIT10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.';
-      codeText.textContent = 'VISIT10';
+      nudgeMessage.innerHTML = 'Thanks for visiting. Use <strong>BECOMING1010</strong> for 10% off your direct preorder. Thanks for supporting indie authors!';
+      codeText.textContent = 'BECOMING1010';
             nudge.hidden = false;
 
-      sessionStorage.setItem('read_visit10_nudge_shown', 'true');
-      sendEvent('view_read_visit10_nudge');
+      sessionStorage.setItem('read_becoming10_nudge_shown', 'true');
+      sendEvent('view_read_becoming10_nudge');
 
       setTimeout(function(){
         if (currentNudgeType === 'visit' && nudge && !nudge.hidden) {
@@ -577,7 +577,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     nudgeLink.addEventListener('click', function(){
       sessionStorage.setItem('read_preorder_clicked', 'true');
 
-      if (currentNudgeType === 'visit') sendEvent('click_read_visit10_nudge');
+      if (currentNudgeType === 'visit') sendEvent('click_read_becoming10_nudge');
       if (currentNudgeType === 'tanner') sendEvent('click_read_tanner10_nudge');
     });
   }
@@ -587,7 +587,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
       if (!currentCode) return;
 
       navigator.clipboard.writeText(currentCode).then(function(){
-        if (currentNudgeType === 'visit') sendEvent('copy_read_visit10_code');
+        if (currentNudgeType === 'visit') sendEvent('copy_read_becoming10_code');
         if (currentNudgeType === 'tanner') sendEvent('copy_read_tanner10_code');
 
         codeText.textContent = 'Copied!';
@@ -603,8 +603,8 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
       if (nudge) nudge.hidden = true;
 
       if (currentNudgeType === 'visit') {
-        sessionStorage.setItem('read_visit10_nudge_dismissed', 'true');
-        sendEvent('dismiss_read_visit10_nudge');
+        sessionStorage.setItem('read_becoming10_nudge_dismissed', 'true');
+        sendEvent('dismiss_read_becoming10_nudge');
       }
 
       if (currentNudgeType === 'tanner') {
