@@ -1457,7 +1457,7 @@ footer .container{
   }, 5000);
 
   setTimeout(function(){
-    sendEvent('home_stayed_10_seconds', { seconds_on_page: 10 });
+    sendEvent('home_stayed_6_seconds', { seconds_on_page: 6 });
 
     if (!nudge) return;
     if (actionWasTaken()) return;
@@ -1472,8 +1472,8 @@ footer .container{
       if (nudge && !nudge.hidden) {
         nudge.hidden = true;
       }
-    }, 15000);
-  }, 10000);
+    }, 20000);
+  }, 6000);
 
   setTimeout(function(){
     sendEvent('home_stayed_15_seconds', { seconds_on_page: 15 });
