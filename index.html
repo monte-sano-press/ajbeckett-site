@@ -1449,7 +1449,8 @@ footer .container{
   const nudgeLink = document.getElementById('conversion-nudge-link');
   const codeCopy = document.getElementById('conversion-code-copy');
   const codeText = document.getElementById('conversion-code-text');
-
+  const recallTab = document.getElementById('discount-recall-tab');
+  
   function sendEvent(name, extra){
     if (fired.has(name)) return;
     fired.add(name);
@@ -1470,6 +1471,16 @@ footer .container{
     return sessionStorage.getItem('home_primary_action_taken') === 'true';
   }
 
+function showRecallTab(){
+  if (!recallTab) return;
+  if (actionWasTaken()) return;
+  recallTab.hidden = false;
+}
+
+function hideRecallTab(){
+  if (recallTab) recallTab.hidden = true;
+}
+  
   document.querySelectorAll(
     'a[href*="becoming-preorder"], a[href*="read.html"], a[href="#contact"]'
   ).forEach(function(link){
