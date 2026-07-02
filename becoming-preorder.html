@@ -733,6 +733,114 @@ footer .container{
     display:block;
   }
 }
+
+.conversion-nudge{
+  position:fixed;
+  left:50%;
+  bottom:1rem;
+  transform:translateX(-50%);
+  z-index:2000;
+  width:min(760px, calc(100% - 2rem));
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 14px 38px rgba(0,0,0,.16);
+  padding:1rem 1.15rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.conversion-nudge[hidden],
+.discount-recall-tab[hidden]{
+  display:none;
+}
+
+.nudge-copy{
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+}
+
+.conversion-nudge p{
+  margin:0;
+  color:var(--text);
+  font-size:.96rem;
+  line-height:1.45;
+}
+
+.conversion-nudge strong{
+  color:#5a2622;
+  letter-spacing:.06em;
+}
+
+.conversion-nudge a{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.promo-code-pill,
+.discount-recall-tab{
+  border:1px solid #cfaeaa;
+  background:#f3e2df;
+  color:#5a2622;
+  border-radius:999px;
+  padding:.45rem .8rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  cursor:pointer;
+}
+
+.promo-code-pill{
+  align-self:flex-start;
+}
+
+.discount-recall-tab{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:1999;
+  box-shadow:0 10px 28px rgba(0,0,0,.14);
+}
+
+.copy-icon{
+  margin-right:.25rem;
+}
+
+.nudge-close{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:1.35rem;
+  line-height:1;
+  cursor:pointer;
+  padding:.25rem;
+}
+
+@media (max-width:700px){
+  .conversion-nudge{
+    align-items:flex-start;
+    flex-direction:column;
+    bottom:.75rem;
+    padding:1.2rem;
+  }
+
+  .conversion-nudge p{
+    padding-right:1.8rem;
+  }
+
+  .conversion-nudge a{
+    width:100%;
+    text-align:center;
+  }
+
+  .nudge-close{
+    position:absolute;
+    top:.65rem;
+    right:.8rem;
+  }
+}
   
 </style>
 </head>
@@ -1005,6 +1113,41 @@ footer .container{
 
 </main>
 
+<div class="conversion-nudge" id="conversion-nudge" hidden>
+  <button class="nudge-close"
+          type="button"
+          id="conversion-nudge-close"
+          aria-label="Dismiss message">
+    ×
+  </button>
+
+  <div class="nudge-copy">
+    <p>
+      A small gift for visiting. Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
+    </p>
+
+    <button class="promo-code-pill"
+            type="button"
+            id="conversion-code-copy">
+      <span class="copy-icon">📋</span>
+      <span id="conversion-code-text">BECOMING10</span>
+    </button>
+  </div>
+
+  <a href="#preorder-options"
+     class="btn btn-primary"
+     id="conversion-nudge-link">
+    Choose Your Copy
+  </a>
+</div>
+
+<button class="discount-recall-tab"
+        type="button"
+        id="discount-recall-tab"
+        hidden>
+  10% Off
+</button>
+
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
@@ -1016,16 +1159,52 @@ footer .container{
 <script>
 (function(){
   const fired = new Set();
+  const nudge = document.getElementById('conversion-nudge');
+  const nudgeClose = document.getElementById('conversion-nudge-close');
+  const nudgeLink = document.getElementById('conversion-nudge-link');
+  const codeCopy = document.getElementById('conversion-code-copy');
+  const codeText = document.getElementById('conversion-code-text');
+  const recallTab = document.getElementById('discount-recall-tab');
 
-  function sendEvent(name){
+  function sendEvent(name, extra){
     if (fired.has(name)) return;
     fired.add(name);
 
     if (typeof gtag === 'function') {
-      gtag('event', name, {
+      gtag('event', name, Object.assign({
         page_title: 'Preorder Becoming',
         page_location: window.location.href
-      });
+      }, extra || {}));
+    }
+  }
+
+  function preorderWasClicked(){
+    return sessionStorage.getItem('preorder_clicked') === 'true';
+  }
+
+  function markPreorderClicked(){
+    sessionStorage.setItem('preorder_clicked', 'true');
+    if (nudge) nudge.hidden = true;
+    if (recallTab) recallTab.hidden = true;
+  }
+
+  function showRecallTab(){
+    if (!recallTab) return;
+    if (preorderWasClicked()) return;
+    recallTab.hidden = false;
+  }
+
+  function showNudge(source){
+    if (!nudge) return;
+    if (preorderWasClicked()) return;
+
+    nudge.hidden = false;
+    if (recallTab) recallTab.hidden = true;
+
+    if (source === 'recall') {
+      sendEvent('recall_preorder_becoming10_nudge');
+    } else {
+      sendEvent('view_preorder_becoming10_nudge');
     }
   }
 
@@ -1045,6 +1224,82 @@ footer .container{
     });
 
     observer.observe(el);
+  }
+
+  setTimeout(function(){
+    sendEvent('preorder_stayed_5_seconds', { seconds_on_page: 5 });
+  }, 5000);
+
+  setTimeout(function(){
+    sendEvent('preorder_stayed_8_seconds', { seconds_on_page: 8 });
+
+    if (sessionStorage.getItem('preorder_becoming10_nudge_shown') === 'true') return;
+    if (preorderWasClicked()) return;
+
+    sessionStorage.setItem('preorder_becoming10_nudge_shown', 'true');
+    showNudge('timer');
+
+    setTimeout(function(){
+      if (nudge && !nudge.hidden && !preorderWasClicked()) {
+        nudge.hidden = true;
+        showRecallTab();
+      }
+    }, 20000);
+  }, 8000);
+
+  setTimeout(function(){
+    sendEvent('preorder_stayed_15_seconds', { seconds_on_page: 15 });
+  }, 15000);
+
+  setTimeout(function(){
+    sendEvent('preorder_stayed_30_seconds', { seconds_on_page: 30 });
+  }, 30000);
+
+  setTimeout(function(){
+    sendEvent('preorder_stayed_60_seconds', { seconds_on_page: 60 });
+  }, 60000);
+
+  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(link){
+    link.addEventListener('click', markPreorderClicked);
+  });
+
+  document.querySelectorAll('a[href*="read.html"]').forEach(function(link){
+    link.addEventListener('click', function(){
+      sessionStorage.setItem('preorder_read_clicked', 'true');
+    });
+  });
+
+  if (nudgeLink) {
+    nudgeLink.addEventListener('click', function(){
+      sendEvent('click_preorder_becoming10_nudge');
+    });
+  }
+
+  if (codeCopy) {
+    codeCopy.addEventListener('click', function(){
+      navigator.clipboard.writeText('BECOMING10').then(function(){
+        sendEvent('copy_preorder_becoming10_code');
+
+        codeText.textContent = 'Copied!';
+        setTimeout(function(){
+          codeText.textContent = 'BECOMING10';
+        }, 2000);
+      });
+    });
+  }
+
+  if (nudgeClose) {
+    nudgeClose.addEventListener('click', function(){
+      if (nudge) nudge.hidden = true;
+      sendEvent('dismiss_preorder_becoming10_nudge');
+      showRecallTab();
+    });
+  }
+
+  if (recallTab) {
+    recallTab.addEventListener('click', function(){
+      showNudge('recall');
+    });
   }
 
   watch('#read-chapter-one', 'view_preorder_read_prompt', 0.35);
