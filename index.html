@@ -976,7 +976,8 @@ footer .container{
   gap:1rem;
 }
 
-.conversion-nudge[hidden]{
+.conversion-nudge[hidden],
+.discount-recall-tab[hidden]{
   display:none;
 }
 
@@ -1015,6 +1016,22 @@ footer .container{
   cursor:pointer;
 }
 
+.discount-recall-tab{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:1999;
+  border:1px solid #cfaeaa;
+  background:#f3e2df;
+  color:#5a2622;
+  border-radius:999px;
+  padding:.45rem .8rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  cursor:pointer;
+  box-shadow:0 10px 28px rgba(0,0,0,.14);
+}
+  
 .copy-icon{
   margin-right:.25rem;
 }
@@ -1390,7 +1407,7 @@ footer .container{
 
   <div class="nudge-copy">
     <p>
-      Thanks for stopping by! Use </strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
+      Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
     </p>
 
     <button class="promo-code-pill"
@@ -1408,6 +1425,13 @@ footer .container{
   </a>
 </div>
 
+<button class="discount-recall-tab"
+        type="button"
+        id="discount-recall-tab"
+        hidden>
+  10% Off
+</button>
+  
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
