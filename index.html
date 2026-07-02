@@ -1469,8 +1469,8 @@ footer .container{
     sessionStorage.setItem('home_visit10_nudge_shown', 'true');
     sendEvent('view_home_visit10_nudge');
 
-    setTimeout(function(){
-      if (nudge && !nudge.hidden) {
+        setTimeout(function(){
+      if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'welcome') {
         nudge.hidden = true;
       }
     }, 20000);
