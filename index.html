@@ -957,6 +957,101 @@ footer .container{
     opacity:1;
   }
 }
+
+.conversion-nudge{
+  position:fixed;
+  left:50%;
+  bottom:1rem;
+  transform:translateX(-50%);
+  z-index:2000;
+  width:min(760px, calc(100% - 2rem));
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  box-shadow:0 14px 38px rgba(0,0,0,.16);
+  padding:1rem 1.15rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+
+.conversion-nudge[hidden]{
+  display:none;
+}
+
+.nudge-copy{
+  display:flex;
+  flex-direction:column;
+  gap:.55rem;
+}
+
+.conversion-nudge p{
+  margin:0;
+  color:var(--text);
+  font-size:.96rem;
+  line-height:1.45;
+}
+
+.conversion-nudge strong{
+  color:#5a2622;
+  letter-spacing:.06em;
+}
+
+.conversion-nudge a{
+  flex:0 0 auto;
+  white-space:nowrap;
+}
+
+.promo-code-pill{
+  align-self:flex-start;
+  border:1px solid #cfaeaa;
+  background:#f3e2df;
+  color:#5a2622;
+  border-radius:999px;
+  padding:.45rem .8rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  cursor:pointer;
+}
+
+.copy-icon{
+  margin-right:.25rem;
+}
+
+.nudge-close{
+  border:0;
+  background:transparent;
+  color:var(--muted);
+  font-size:1.35rem;
+  line-height:1;
+  cursor:pointer;
+  padding:.25rem;
+}
+
+@media (max-width:700px){
+  .conversion-nudge{
+    align-items:flex-start;
+    flex-direction:column;
+    bottom:.75rem;
+    padding:1.2rem;
+  }
+
+  .conversion-nudge p{
+    padding-right:1.8rem;
+  }
+
+  .conversion-nudge a{
+    width:100%;
+    text-align:center;
+  }
+
+  .nudge-close{
+    position:absolute;
+    top:.65rem;
+    right:.8rem;
+  }
+}
   
 </style>
 </head>
@@ -1285,6 +1380,34 @@ footer .container{
 
 </main>
 
+<div class="conversion-nudge" id="conversion-nudge" hidden>
+  <button class="nudge-close"
+          type="button"
+          id="conversion-nudge-close"
+          aria-label="Dismiss message">
+    ×
+  </button>
+
+  <div class="nudge-copy">
+    <p>
+      Thanks for stopping by! Use <strong>VISIT10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
+    </p>
+
+    <button class="promo-code-pill"
+            type="button"
+            id="conversion-code-copy">
+      <span class="copy-icon">📋</span>
+      <span id="conversion-code-text">VISIT10</span>
+    </button>
+  </div>
+
+  <a href="becoming-preorder.html#preorder-options"
+     class="btn btn-primary"
+     id="conversion-nudge-link">
+    Preorder <em>Becoming</em>
+  </a>
+</div>
+
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
@@ -1293,6 +1416,106 @@ footer .container{
     </a>
   </div>
 </footer>
+
+<script>
+(function(){
+  const fired = new Set();
+  const nudge = document.getElementById('conversion-nudge');
+  const nudgeClose = document.getElementById('conversion-nudge-close');
+  const nudgeLink = document.getElementById('conversion-nudge-link');
+  const codeCopy = document.getElementById('conversion-code-copy');
+  const codeText = document.getElementById('conversion-code-text');
+
+  function sendEvent(name, extra){
+    if (fired.has(name)) return;
+    fired.add(name);
+
+    if (typeof gtag === 'function') {
+      gtag('event', name, Object.assign({
+        page_title: 'A.J. Beckett | Becoming & The Harlow Series',
+        page_location: window.location.href
+      }, extra || {}));
+    }
+  }
+
+  function markActionTaken(){
+    sessionStorage.setItem('home_primary_action_taken', 'true');
+  }
+
+  function actionWasTaken(){
+    return sessionStorage.getItem('home_primary_action_taken') === 'true';
+  }
+
+  document.querySelectorAll(
+    'a[href*="becoming-preorder"], a[href*="read.html"], a[href="#contact"]'
+  ).forEach(function(link){
+    link.addEventListener('click', markActionTaken);
+  });
+
+  setTimeout(function(){
+    sendEvent('home_stayed_5_seconds', { seconds_on_page: 5 });
+  }, 5000);
+
+  setTimeout(function(){
+    sendEvent('home_stayed_10_seconds', { seconds_on_page: 10 });
+
+    if (!nudge) return;
+    if (actionWasTaken()) return;
+    if (sessionStorage.getItem('home_visit10_nudge_dismissed') === 'true') return;
+    if (sessionStorage.getItem('home_visit10_nudge_shown') === 'true') return;
+
+    nudge.hidden = false;
+    sessionStorage.setItem('home_visit10_nudge_shown', 'true');
+    sendEvent('view_home_visit10_nudge');
+
+    setTimeout(function(){
+      if (nudge && !nudge.hidden) {
+        nudge.hidden = true;
+      }
+    }, 15000);
+  }, 10000);
+
+  setTimeout(function(){
+    sendEvent('home_stayed_15_seconds', { seconds_on_page: 15 });
+  }, 15000);
+
+  setTimeout(function(){
+    sendEvent('home_stayed_30_seconds', { seconds_on_page: 30 });
+  }, 30000);
+
+  setTimeout(function(){
+    sendEvent('home_stayed_60_seconds', { seconds_on_page: 60 });
+  }, 60000);
+
+  if (nudgeLink) {
+    nudgeLink.addEventListener('click', function(){
+      markActionTaken();
+      sendEvent('click_home_visit10_nudge');
+    });
+  }
+
+  if (codeCopy) {
+    codeCopy.addEventListener('click', function(){
+      navigator.clipboard.writeText('VISIT10').then(function(){
+        sendEvent('copy_home_visit10_code');
+
+        codeText.textContent = 'Copied!';
+        setTimeout(function(){
+          codeText.textContent = 'VISIT10';
+        }, 2000);
+      });
+    });
+  }
+
+  if (nudgeClose) {
+    nudgeClose.addEventListener('click', function(){
+      if (nudge) nudge.hidden = true;
+      sessionStorage.setItem('home_visit10_nudge_dismissed', 'true');
+      sendEvent('dismiss_home_visit10_nudge');
+    });
+  }
+})();
+</script>
 
 </body>
 </html>
