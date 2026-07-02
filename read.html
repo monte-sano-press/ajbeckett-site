@@ -35,8 +35,27 @@
 <style>
 :root{--bg:#fbfaf8;--surface:#ffffff;--text:#1d1b1a;--muted:#6c6662;--accent:#6b2f2a;--accent-dark:#51211d;--border:#e8e1db;--soft:#f3eeea;--dark:#241f1d;--max:1160px;}
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7} img{max-width:100%;display:block} a{color:inherit} .container{width:min(var(--max), calc(100% - 2rem));margin:0 auto}
-nav{position:sticky;top:0;z-index:1000;background:rgba(251,250,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)} .nav-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem} .brand{display:flex;align-items:center;gap:2rem;text-decoration:none} .brand-seal{width:64px;height:64px;object-fit:contain;border-radius:50%} .brand-text{font-family:'Playfair Display',serif;font-size:2.2rem;letter-spacing:.02em;color:#5a2622} .nav-links{display:flex;gap:2.4rem;flex-wrap:wrap;align-items:center} .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.2em;font-size:1.05rem;font-weight:650;color:#5a2622} .nav-links a:hover{color:var(--accent)} .nav-icon-link{display:inline-flex;align-items:center;justify-content:center} .nav-instagram-icon{width:24px;height:24px;display:block}
-h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0} .btn{
+nav{position:sticky;top:0;z-index:1000;background:rgba(251,250,248,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--border)} 
+ 
+  .nav-inner{min-height:92px;display:flex;align-items:center;justify-content:space-between;gap:2rem} 
+  
+  .brand{display:flex;align-items:center;gap:2rem;text-decoration:none} 
+  
+  .brand-seal{width:64px;height:64px;object-fit:contain;border-radius:50%} 
+  
+  .brand-text{font-family:'Playfair Display',serif;font-size:2.2rem;letter-spacing:.02em;color:#5a2622} 
+  
+  .nav-links{display:flex;gap:2.4rem;flex-wrap:wrap;align-items:center} 
+  
+  .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.2em;font-size:1.05rem;font-weight:650;color:#5a2622} 
+  
+  .nav-links a:hover{color:var(--accent)} .nav-icon-link{display:inline-flex;align-items:center;justify-content:center} 
+  
+  .nav-instagram-icon{width:24px;height:24px;display:block}
+
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0} 
+
+  .btn{
   display:inline-block;
   padding:1rem 1.35rem;
   text-decoration:none;
@@ -57,6 +76,13 @@ h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0} .btn{
   .btn-soft{color:var(--accent);border-color:#cfaeaa;background:#f3e2df} 
   
   .btn-soft:hover{background:#ead3cf;transform:translateY(-1px)}
+
+  .sample-reassurance{
+  margin:.85rem 0 0;
+  color:var(--muted);
+  font-size:.95rem;
+  font-weight:600;
+}
   
   .read-hero{padding:4.6rem 0 3.8rem;border-bottom:1px solid var(--border);background:linear-gradient(rgba(251,250,248,.84), rgba(251,250,248,.94)),url('barn-hero.JPG');background-size:cover;background-position:center center} 
   
@@ -246,6 +272,9 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   Preorder <em>Becoming</em>
 </a>
 </div>
+  <p class="sample-reassurance">
+  No email required. Just start reading.
+</p>
 </div>
 </div>
 </header>
@@ -400,6 +429,39 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   const nudge = document.getElementById('conversion-nudge');
   const nudgeClose = document.getElementById('conversion-nudge-close');
 
+function sendTimedEvent(name, seconds){
+  if (fired.has(name)) return;
+  fired.add(name);
+
+  if (typeof gtag === 'function') {
+    gtag('event', name, {
+      page_title: 'Read Chapter One of Becoming',
+      page_location: window.location.href,
+      seconds_on_page: seconds
+    });
+  }
+}
+
+setTimeout(function(){
+  sendTimedEvent('read_stayed_5_seconds', 5);
+}, 5000);
+
+setTimeout(function(){
+  sendTimedEvent('read_stayed_15_seconds', 15);
+}, 15000);
+
+setTimeout(function(){
+  sendTimedEvent('read_stayed_30_seconds', 30);
+}, 30000);
+
+setTimeout(function(){
+  sendTimedEvent('read_stayed_60_seconds', 60);
+}, 60000);
+
+setTimeout(function(){
+  sendTimedEvent('read_stayed_120_seconds', 120);
+}, 120000);
+  
   function sendEvent(name){
     if (fired.has(name)) return;
     fired.add(name);
@@ -463,6 +525,23 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   window.addEventListener('scroll', checkScrollDepth, { passive: true });
   window.addEventListener('load', checkScrollDepth);
 
+const chapterOne = document.getElementById('chapter-one');
+
+if (chapterOne && 'IntersectionObserver' in window) {
+  const chapterObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        sendEvent('read_started_chapter');
+        chapterObserver.disconnect();
+      }
+    });
+  }, {
+    threshold: 0.2
+  });
+
+  chapterObserver.observe(chapterOne);
+}
+  
   const afterChapter = document.querySelector('.after-chapter');
 
   if (afterChapter && 'IntersectionObserver' in window) {
