@@ -1390,14 +1390,14 @@ footer .container{
 
   <div class="nudge-copy">
     <p>
-      Thanks for stopping by! Use <strong>VISIT10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
+      Thanks for stopping by! Use </strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
     </p>
 
     <button class="promo-code-pill"
             type="button"
             id="conversion-code-copy">
       <span class="copy-icon">📋</span>
-      <span id="conversion-code-text">VISIT10</span>
+      <span id="conversion-code-text">BECOMING10</span>
     </button>
   </div>
 
@@ -1461,13 +1461,13 @@ footer .container{
 
     if (!nudge) return;
     if (actionWasTaken()) return;
-    if (sessionStorage.getItem('home_visit10_nudge_dismissed') === 'true') return;
-    if (sessionStorage.getItem('home_visit10_nudge_shown') === 'true') return;
+    if (sessionStorage.getItem('home_becoming10_nudge_dismissed') === 'true') return;
+    if (sessionStorage.getItem('home_becoming10_nudge_shown') === 'true') return;
 
        nudge.dataset.nudgeType = 'welcome';
     nudge.hidden = false;
-    sessionStorage.setItem('home_visit10_nudge_shown', 'true');
-    sendEvent('view_home_visit10_nudge');
+    sessionStorage.setItem('home_becoming10_nudge_shown', 'true');
+    sendEvent('view_home_becoming10_nudge');
 
         setTimeout(function(){
       if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'welcome') {
@@ -1492,24 +1492,24 @@ footer .container{
     nudgeLink.addEventListener('click', function(){
       markActionTaken();
             if (nudge.dataset.nudgeType === 'reader-reactions') {
-        sendEvent('click_home_reader_reactions_visit10_nudge');
+        sendEvent('click_home_reader_reactions_becoming10_nudge');
       } else {
-        sendEvent('click_home_visit10_nudge');
+        sendEvent('click_home_becoming10_nudge');
       }
     });
   }
 
   if (codeCopy) {
     codeCopy.addEventListener('click', function(){
-      navigator.clipboard.writeText('VISIT10').then(function(){
+      navigator.clipboard.writeText('BECOMING10').then(function(){
                 if (nudge.dataset.nudgeType === 'reader-reactions') {
-          sendEvent('copy_home_reader_reactions_visit10_code');
+          sendEvent('copy_home_reader_reactions_becoming10_code');
         } else {
-          sendEvent('copy_home_visit10_code');
+          sendEvent('copy_home_becoming10_code');
         }
         codeText.textContent = 'Copied!';
         setTimeout(function(){
-          codeText.textContent = 'VISIT10';
+          codeText.textContent = 'BECOMING10';
         }, 2000);
       });
     });
@@ -1521,10 +1521,10 @@ footer .container{
 
       if (nudge.dataset.nudgeType === 'reader-reactions') {
         sessionStorage.setItem('home_reader_reactions_nudge_dismissed', 'true');
-        sendEvent('dismiss_home_reader_reactions_visit10_nudge');
+        sendEvent('dismiss_home_reader_reactions_becoming10_nudge');
       } else {
-        sessionStorage.setItem('home_visit10_nudge_dismissed', 'true');
-        sendEvent('dismiss_home_visit10_nudge');
+        sessionStorage.setItem('home_becoming10_nudge_dismissed', 'true');
+        sendEvent('dismiss_home_becoming10_nudge');
       }
     });
   }
@@ -1561,12 +1561,12 @@ footer .container{
 
         const nudgeParagraph = nudge.querySelector('.nudge-copy p');
         if (nudgeParagraph) {
-          nudgeParagraph.innerHTML = 'Readers are already falling for <em>Becoming</em>. Use <strong>VISIT10</strong> for 10% off your direct preorder.';
+          nudgeParagraph.innerHTML = 'Readers are already falling for <em>Becoming</em>. Use <strong>BECOMING10</strong> for 10% off your direct preorder.';
         }
 
         nudge.hidden = false;
         sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
-        sendEvent('view_home_reader_reactions_visit10_nudge');
+        sendEvent('view_home_reader_reactions_becoming10_nudge');
                 setTimeout(function(){
           if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
             nudge.hidden = true;
