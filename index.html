@@ -1622,6 +1622,26 @@ hideRecallTab();
 
     readerObserver.observe(readerReactions);
   }
+if (recallTab) {
+  recallTab.addEventListener('click', function(){
+
+    const nudgeParagraph = nudge.querySelector('.nudge-copy p');
+
+    nudge.dataset.nudgeType = 'welcome';
+
+    if (nudgeParagraph) {
+      nudgeParagraph.innerHTML =
+        'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.';
+    }
+
+    codeText.textContent = 'BECOMING10';
+
+    nudge.hidden = false;
+    hideRecallTab();
+
+    sendEvent('recall_home_becoming10_nudge');
+  });
+}
 })();
 </script>
 
