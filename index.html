@@ -1464,6 +1464,7 @@ footer .container{
     if (sessionStorage.getItem('home_visit10_nudge_dismissed') === 'true') return;
     if (sessionStorage.getItem('home_visit10_nudge_shown') === 'true') return;
 
+       nudge.dataset.nudgeType = 'welcome';
     nudge.hidden = false;
     sessionStorage.setItem('home_visit10_nudge_shown', 'true');
     sendEvent('view_home_visit10_nudge');
@@ -1490,15 +1491,22 @@ footer .container{
   if (nudgeLink) {
     nudgeLink.addEventListener('click', function(){
       markActionTaken();
-      sendEvent('click_home_visit10_nudge');
+            if (nudge.dataset.nudgeType === 'reader-reactions') {
+        sendEvent('click_home_reader_reactions_visit10_nudge');
+      } else {
+        sendEvent('click_home_visit10_nudge');
+      }
     });
   }
 
   if (codeCopy) {
     codeCopy.addEventListener('click', function(){
       navigator.clipboard.writeText('VISIT10').then(function(){
-        sendEvent('copy_home_visit10_code');
-
+                if (nudge.dataset.nudgeType === 'reader-reactions') {
+          sendEvent('copy_home_reader_reactions_visit10_code');
+        } else {
+          sendEvent('copy_home_visit10_code');
+        }
         codeText.textContent = 'Copied!';
         setTimeout(function(){
           codeText.textContent = 'VISIT10';
@@ -1507,12 +1515,66 @@ footer .container{
     });
   }
 
-  if (nudgeClose) {
+    if (nudgeClose) {
     nudgeClose.addEventListener('click', function(){
       if (nudge) nudge.hidden = true;
-      sessionStorage.setItem('home_visit10_nudge_dismissed', 'true');
-      sendEvent('dismiss_home_visit10_nudge');
+
+      if (nudge.dataset.nudgeType === 'reader-reactions') {
+        sessionStorage.setItem('home_reader_reactions_nudge_dismissed', 'true');
+        sendEvent('dismiss_home_reader_reactions_visit10_nudge');
+      } else {
+        sessionStorage.setItem('home_visit10_nudge_dismissed', 'true');
+        sendEvent('dismiss_home_visit10_nudge');
+      }
     });
+  }
+    const readerReactions = document.querySelector('.reader-reactions');
+
+  if (readerReactions && 'IntersectionObserver' in window) {
+    const readerObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+
+        sendEvent('home_reached_reader_reactions');
+
+        if (!nudge) {
+          readerObserver.disconnect();
+          return;
+        }
+
+        if (actionWasTaken()) {
+          readerObserver.disconnect();
+          return;
+        }
+
+        if (sessionStorage.getItem('home_reader_reactions_nudge_dismissed') === 'true') {
+          readerObserver.disconnect();
+          return;
+        }
+
+        if (sessionStorage.getItem('home_reader_reactions_nudge_shown') === 'true') {
+          readerObserver.disconnect();
+          return;
+        }
+
+        nudge.dataset.nudgeType = 'reader-reactions';
+
+        const nudgeParagraph = nudge.querySelector('.nudge-copy p');
+        if (nudgeParagraph) {
+          nudgeParagraph.innerHTML = 'Readers are already falling for <em>Becoming</em>. Use <strong>VISIT10</strong> for 10% off your direct preorder.';
+        }
+
+        nudge.hidden = false;
+        sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
+        sendEvent('view_home_reader_reactions_visit10_nudge');
+
+        readerObserver.disconnect();
+      });
+    }, {
+      threshold: 0.35
+    });
+
+    readerObserver.observe(readerReactions);
   }
 })();
 </script>
