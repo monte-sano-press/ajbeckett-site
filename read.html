@@ -486,6 +486,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   const nudgeLink = document.getElementById('conversion-nudge-link');
   const codeCopy = document.getElementById('conversion-code-copy');
   const codeText = document.getElementById('conversion-code-text');
+  const recallTab = document.getElementById('discount-recall-tab');
 
   let currentNudgeType = null;
   let currentCode = null;
@@ -507,8 +508,18 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   }
 
   function preorderWasClicked(){
-    return sessionStorage.getItem('read_preorder_clicked') === 'true';
-  }
+  return sessionStorage.getItem('read_preorder_clicked') === 'true';
+}
+
+function showRecallTab(){
+  if (!recallTab) return;
+  if (preorderWasClicked()) return;
+  recallTab.hidden = false;
+}
+
+function hideRecallTab(){
+  if (recallTab) recallTab.hidden = true;
+}
 
   function showNudge(type){
     if (!nudge || !nudgeMessage || !codeText) return;
