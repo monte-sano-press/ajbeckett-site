@@ -1506,9 +1506,10 @@ hideRecallTab();
     sendEvent('view_home_becoming10_nudge');
 
         setTimeout(function(){
-      if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'welcome') {
-        nudge.hidden = true;
-      }
+     if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'welcome') {
+    nudge.hidden = true;
+    showRecallTab();
+}
     }, 20000);
   }, 6000);
 
@@ -1606,8 +1607,9 @@ hideRecallTab();
         sendEvent('view_home_reader_reactions_becoming10_nudge');
                 setTimeout(function(){
           if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
-            nudge.hidden = true;
-          }
+    nudge.hidden = true;
+    showRecallTab();
+}
         }, 20000);
 
         readerObserver.disconnect();
