@@ -439,13 +439,10 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 
     if (percent >= 25) sendEvent('read_chapter_25');
     if (percent >= 50) sendEvent('read_chapter_50');
-
-    if (percent >= 75) {
-      sendEvent('read_chapter_75');
-      showTannerNudge();
-    }
-
-    if (percent >= 90) sendEvent('read_chapter_90');
+    if (percent >= 75) sendEvent('read_chapter_75');
+    if (percent >= 90) {
+      sendEvent('read_chapter_90');
+      showTannerNudge();                
   }
 
   document.querySelectorAll('a[href*="becoming-preorder"]').forEach(function(link){
