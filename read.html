@@ -498,10 +498,16 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 
       nudgeMessage.innerHTML = 'Thanks for visiting. Use <strong>VISIT10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.';
       codeText.textContent = 'VISIT10';
-      nudge.hidden = false;
+            nudge.hidden = false;
 
       sessionStorage.setItem('read_visit10_nudge_shown', 'true');
       sendEvent('view_read_visit10_nudge');
+
+      setTimeout(function(){
+        if (currentNudgeType === 'visit' && nudge && !nudge.hidden) {
+          nudge.hidden = true;
+        }
+      }, 15000);
     }
 
     if (type === 'tanner') {
