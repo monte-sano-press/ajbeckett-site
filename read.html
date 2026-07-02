@@ -535,6 +535,7 @@ function hideRecallTab(){
       nudgeMessage.innerHTML = 'Thanks for stopping by! Use BECOMING10 for 10% off your direct preorder. Thanks for supporting indie authors!';
       codeText.textContent = 'BECOMING10';
             nudge.hidden = false;
+              hideRecallTab();
 
       sessionStorage.setItem('read_becoming10_nudge_shown', 'true');
       sendEvent('view_read_becoming10_nudge');
