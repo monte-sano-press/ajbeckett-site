@@ -1559,9 +1559,11 @@ hideRecallTab();
       if (nudge.dataset.nudgeType === 'reader-reactions') {
         sessionStorage.setItem('home_reader_reactions_nudge_dismissed', 'true');
         sendEvent('dismiss_home_reader_reactions_becoming10_nudge');
+        showRecallTab();
       } else {
         sessionStorage.setItem('home_becoming10_nudge_dismissed', 'true');
         sendEvent('dismiss_home_becoming10_nudge');
+        showRecallTab();
       }
     });
   }
