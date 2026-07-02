@@ -541,10 +541,11 @@ function hideRecallTab(){
       sendEvent('view_read_becoming10_nudge');
 
       setTimeout(function(){
-        if (currentNudgeType === 'visit' && nudge && !nudge.hidden) {
-          nudge.hidden = true;
-        }
-      }, 15000);
+  if (currentNudgeType === 'visit' && nudge && !nudge.hidden) {
+    nudge.hidden = true;
+    showRecallTab();
+  }
+}, 15000);
     }
 
     if (type === 'tanner') {
@@ -613,6 +614,7 @@ function hideRecallTab(){
   if (nudgeLink) {
     nudgeLink.addEventListener('click', function(){
       sessionStorage.setItem('read_preorder_clicked', 'true');
+        hideRecallTab();
 
       if (currentNudgeType === 'visit') sendEvent('click_read_becoming10_nudge');
       if (currentNudgeType === 'tanner') sendEvent('click_read_tanner10_nudge');
