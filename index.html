@@ -1501,6 +1501,7 @@ function hideRecallTab(){
 
        nudge.dataset.nudgeType = 'welcome';
     nudge.hidden = false;
+hideRecallTab();
     sessionStorage.setItem('home_becoming10_nudge_shown', 'true');
     sendEvent('view_home_becoming10_nudge');
 
@@ -1600,6 +1601,7 @@ function hideRecallTab(){
         }
 
         nudge.hidden = false;
+hideRecallTab();
         sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
         sendEvent('view_home_reader_reactions_becoming10_nudge');
                 setTimeout(function(){
