@@ -382,6 +382,10 @@ section{
   padding-right:.85rem;
 }
 
+.reader-reactions .container{
+  width:min(1280px, calc(100% - 2rem));
+}
+  
   .reader-reactions{
   padding:4.5rem 0;
   background:#fbf7f4;
@@ -408,15 +412,17 @@ section{
 
 .testimonial-grid{
   display:grid;
-  grid-template-columns:repeat(4, 1fr);
-  gap:1.25rem;
+  grid-template-columns:repeat(4, minmax(0, 1fr));
+  gap:1.35rem;
+  max-width:1200px;
+  margin:0 auto;
 }
 
 .testimonial-card{
   background:#fff;
   border:1px solid var(--border);
   border-radius:24px;
-  padding:1.5rem;
+  padding:1.65rem 1.45rem;
   box-shadow:0 10px 24px rgba(0,0,0,.045);
 }
 
@@ -424,17 +430,17 @@ section{
   margin:0;
   color:var(--text);
   font-family:'Playfair Display',serif;
-  font-size:1.35rem;
-  line-height:1.35;
+  font-size:1.12rem;
+  line-height:1.42;
   font-style:italic;
 }
 
 .testimonial-card cite{
   display:block;
-  margin-top:1rem;
+  margin-top:1.05rem;
   color:var(--muted);
   font-family:'Inter',sans-serif;
-  font-size:.82rem;
+  font-size:.76rem;
   font-style:normal;
   font-weight:700;
   text-transform:uppercase;
@@ -1081,14 +1087,14 @@ footer .container{
 
       <figure class="testimonial-card">
         <blockquote>
-          “I instantly connected with Shelby.”
+          “I loved the South Carolina setting. Greenville, Columbia, and Charleston feel alive.”
         </blockquote>
         <cite>— Early reader</cite>
       </figure>
 
       <figure class="testimonial-card">
         <blockquote>
-          “I loved the South Carolina setting. Greenville, Columbia, and Charleston feel alive.”
+          “I instantly connected with Shelby.”
         </blockquote>
         <cite>— Early reader</cite>
       </figure>
