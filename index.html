@@ -1567,6 +1567,11 @@ footer .container{
         nudge.hidden = false;
         sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
         sendEvent('view_home_reader_reactions_visit10_nudge');
+                setTimeout(function(){
+          if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
+            nudge.hidden = true;
+          }
+        }, 20000);
 
         readerObserver.disconnect();
       });
