@@ -187,7 +187,8 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   gap:1rem;
 }
 
-.conversion-nudge[hidden]{
+.conversion-nudge[hidden],
+.discount-recall-tab[hidden]{
   display:none;
 }
 
@@ -261,6 +262,22 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 
 .copy-icon{
   margin-right:.25rem;
+}
+
+.discount-recall-tab{
+  position:fixed;
+  right:1rem;
+  bottom:1rem;
+  z-index:1999;
+  border:1px solid #cfaeaa;
+  background:#f3e2df;
+  color:#5a2622;
+  border-radius:999px;
+  padding:.45rem .8rem;
+  font-weight:800;
+  letter-spacing:.08em;
+  cursor:pointer;
+  box-shadow:0 10px 28px rgba(0,0,0,.14);
 }
   
 </style>
@@ -451,7 +468,15 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   </a>
 </div>
 
-<footer><div class="container footer-inner"><span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span><a href="https://www.montesano-press.com/" target="_blank" rel="noopener noreferrer"><img src="monte-sano-press-web-dark-tm.png" alt="Monte Sano Press" class="footer-logo"></a></div></footer>
+<button class="discount-recall-tab"
+        type="button"
+        id="discount-recall-tab"
+        hidden>
+  10% Off
+</button>
+
+<footer>
+  <div class="container footer-inner"><span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span><a href="https://www.montesano-press.com/" target="_blank" rel="noopener noreferrer"><img src="monte-sano-press-web-dark-tm.png" alt="Monte Sano Press" class="footer-logo"></a></div></footer>
 <script>
 (function(){
   const fired = new Set();
