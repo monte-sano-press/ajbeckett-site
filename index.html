@@ -381,6 +381,66 @@ section{
   padding-left:.85rem;
   padding-right:.85rem;
 }
+
+  .reader-reactions{
+  padding:4.5rem 0;
+  background:#fbf7f4;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.reader-reactions .section-kicker{
+  text-align:center;
+  margin:0 0 .65rem;
+  font-size:.76rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:750;
+  color:#8b7568;
+}
+
+.reader-reactions h2{
+  text-align:center;
+  font-size:clamp(2.1rem, 4vw, 3.1rem);
+  color:#5a2622;
+  margin:0 0 2.25rem;
+}
+
+.testimonial-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1.25rem;
+}
+
+.testimonial-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:1.5rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.045);
+}
+
+.testimonial-card blockquote{
+  margin:0;
+  color:var(--text);
+  font-family:'Playfair Display',serif;
+  font-size:1.35rem;
+  line-height:1.35;
+  font-style:italic;
+}
+
+.testimonial-card cite{
+  display:block;
+  margin-top:1rem;
+  color:var(--muted);
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;
+  font-style:normal;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+  
 .info-band{
   background:var(--soft);
   border-top:1px solid var(--border);
@@ -829,6 +889,18 @@ footer .container{
   padding:1.5rem;
 }
 
+  .testimonial-grid{
+  grid-template-columns:1fr;
+}
+
+.reader-reactions{
+  padding:3.2rem 0;
+}
+
+.testimonial-card blockquote{
+  font-size:1.22rem;
+}
+  
   .playlist-callout{
     flex-direction:column;
     align-items:flex-start;
@@ -994,6 +1066,36 @@ footer .container{
     </div>
   </section>
 
+  <section class="reader-reactions">
+  <div class="container">
+    <p class="section-kicker">Early reader reactions</p>
+    <h2>Readers are already falling for <em>Becoming</em>.</h2>
+
+    <div class="testimonial-grid">
+      <figure class="testimonial-card">
+        <blockquote>
+          “I read it in one sitting and was pulled in right away.”
+        </blockquote>
+        <cite>— Early reader</cite>
+      </figure>
+
+      <figure class="testimonial-card">
+        <blockquote>
+          “I instantly connected with Shelby.”
+        </blockquote>
+        <cite>— Early reader</cite>
+      </figure>
+
+      <figure class="testimonial-card">
+        <blockquote>
+          “I’m loving the chemistry between Shelby and Tanner.”
+        </blockquote>
+        <cite>— Early reader</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+  
   <section id="becoming-details" class="info-band">
     <div class="container">
       <div class="info-card">
