@@ -1464,8 +1464,9 @@ footer .container{
   }
 
   function markActionTaken(){
-    sessionStorage.setItem('home_primary_action_taken', 'true');
-  }
+  sessionStorage.setItem('home_primary_action_taken', 'true');
+  hideRecallTab();
+}
 
   function actionWasTaken(){
     return sessionStorage.getItem('home_primary_action_taken') === 'true';
