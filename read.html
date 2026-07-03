@@ -649,10 +649,11 @@ function hideRecallTab(){
   showRecallTab();
 }
 
-      if (currentNudgeType === 'tanner') {
-        sessionStorage.setItem('read_tanner10_nudge_dismissed', 'true');
-        sendEvent('dismiss_read_tanner10_nudge');
-      }
+     if (currentNudgeType === 'tanner') {
+  sessionStorage.setItem('read_tanner10_nudge_dismissed', 'true');
+  sendEvent('dismiss_read_tanner10_nudge');
+  showRecallTab();
+}
     });
   }
 
