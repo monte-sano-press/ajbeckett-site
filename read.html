@@ -657,18 +657,23 @@ function hideRecallTab(){
     });
   }
 
-  if (recallTab) {
+ if (recallTab) {
   recallTab.addEventListener('click', function(){
-    currentNudgeType = 'visit';
-    currentCode = 'BECOMING10';
-
-    nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors!';
-    codeText.textContent = 'BECOMING10';
+    if (currentNudgeType === 'tanner') {
+      currentCode = 'TANNER10';
+      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct preorder.';
+      codeText.textContent = 'TANNER10';
+      sendEvent('recall_read_tanner10_nudge');
+    } else {
+      currentNudgeType = 'visit';
+      currentCode = 'BECOMING10';
+      nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors!';
+      codeText.textContent = 'BECOMING10';
+      sendEvent('recall_read_becoming10_nudge');
+    }
 
     if (nudge) nudge.hidden = false;
     hideRecallTab();
-
-    sendEvent('recall_read_becoming10_nudge');
   });
 }
   
