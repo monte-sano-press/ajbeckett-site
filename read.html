@@ -532,7 +532,7 @@ function hideRecallTab(){
       currentNudgeType = 'visit';
       currentCode = 'BECOMING10';
 
-      nudgeMessage.innerHTML = 'Thanks for stopping by! Use BECOMING10 for 10% off your direct preorder. Thanks for supporting indie authors!';
+      nudgeMessage.innerHTML = 'Thanks for stopping by! Use BECOMING10 for 10% off your direct paperback preorder. Thanks for supporting indie authors!';
       codeText.textContent = 'BECOMING10';
             nudge.hidden = false;
               hideRecallTab();
@@ -555,7 +555,7 @@ function hideRecallTab(){
       currentNudgeType = 'tanner';
       currentCode = 'TANNER10';
 
-      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct preorder.';
+      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct paperback preorder.';
       codeText.textContent = 'TANNER10';
       nudge.hidden = false;
         hideRecallTab();
@@ -661,13 +661,13 @@ function hideRecallTab(){
   recallTab.addEventListener('click', function(){
     if (currentNudgeType === 'tanner') {
       currentCode = 'TANNER10';
-      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct preorder.';
+      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct paperback preorder.';
       codeText.textContent = 'TANNER10';
       sendEvent('recall_read_tanner10_nudge');
     } else {
       currentNudgeType = 'visit';
       currentCode = 'BECOMING10';
-      nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors!';
+      nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct paperback preorder. Thanks for supporting indie authors!';
       codeText.textContent = 'BECOMING10';
       sendEvent('recall_read_becoming10_nudge');
     }
