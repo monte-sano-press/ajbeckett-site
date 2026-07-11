@@ -383,6 +383,10 @@ section{
   padding-right:.85rem;
 }
 
+.becoming-actions .btn:first-child{
+  grid-column:1 / -1;
+}
+  
 .reader-reactions .container{
   width:min(1180px, calc(100% - 2rem));
 }
@@ -1150,9 +1154,26 @@ footer .container{
               Fall 1996, Columbia, South Carolina, Harlow University. Shelby Marsh arrives at college determined to become someone different than the version of herself curated by an overbearing mother. Tanner Cole is on a path that cannot afford distractions. A chance encounter changes both of them forever.
             </p>
             
-        <div class="book-actions">
-  <a href="becoming-preorder.html" class="btn btn-primary" onclick="gtag('event','click_becoming_preorder_card');">Preorder Now</a>
-  <a href="read.html" class="btn btn-soft" onclick="gtag('event','click_read_chapter_bookcard');">Read Chapter One</a>
+       <div class="book-actions becoming-actions">
+  <a href="becoming-preorder.html#preorder-options"
+     class="btn btn-primary"
+     onclick="gtag('event','click_becoming_direct_preorder_card');">
+    Direct Paperback Preorder
+  </a>
+
+  <a href="https://a.co/d/02BUR0zT"
+     class="btn btn-soft"
+     target="_blank"
+     rel="noopener noreferrer"
+     onclick="gtag('event','click_becoming_kindle_preorder_card');">
+    Kindle Preorder
+  </a>
+
+  <a href="read.html"
+     class="btn btn-soft"
+     onclick="gtag('event','click_read_chapter_bookcard');">
+    Read Chapter One
+  </a>
 </div>
 
 <div class="goodreads-add">
@@ -1240,7 +1261,7 @@ footer .container{
         <h3><em>Becoming</em></h3>
 
         <p>
-          Columbia, South Carolina. </br>Harlow University. Fall 1996.
+          Columbia, South Carolina.<br>Harlow University. Fall 1996.
         </p>
 
         <p>
@@ -1293,11 +1314,11 @@ footer .container{
           </div>
 
           <div class="status-box">
-  <p><strong>Direct preorders are open now.</strong></p>
-  <p>Signed and standard paperback copies are available for U.S. shipping.</p>
+  <p><strong>Preorders are open now.</strong></p>
+  <p>Signed and standard paperbacks are available directly from A.J. Beckett for U.S. shipping.</p>
+  <p>U.S. and International Kindle preorders are now available through Amazon.</p>
   <p><em>Becoming</em> releases September 18, 2026.</p>
 </div>
-        </div>
 
       </div>
     </div>
