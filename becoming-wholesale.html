@@ -223,16 +223,20 @@ h4{
   padding:4.6rem 0 3.8rem;
   border-bottom:1px solid var(--border);
   background:
-    linear-gradient(rgba(251,250,248,.84), rgba(251,250,248,.94)),
+    linear-gradient(rgba(255,248,242,.80), rgba(251,244,239,.91)),
     url('barn-hero.JPG');
   background-size:cover;
   background-position:center center;
 }
 
+.wholesale-hero .container{
+  width:min(1480px, calc(100% - 4rem));
+}
+
 .wholesale-layout{
   display:grid;
-  grid-template-columns:minmax(260px, 360px) minmax(0, 1fr);
-  gap:3.25rem;
+  grid-template-columns:minmax(330px, 430px) minmax(0, 1fr);
+  gap:4rem;
   align-items:center;
 }
 
@@ -250,7 +254,8 @@ h4{
 }
 
 .wholesale-copy{
-  max-width:760px;
+  width:100%;
+  max-width:900px;
 }
 
 .book-label{
@@ -263,10 +268,65 @@ h4{
 }
 
 .wholesale-copy h1{
-  font-size:clamp(2.7rem, 5vw, 4.4rem);
+  margin:0 0 .9rem;
   color:#5a2622;
-  margin-bottom:1rem;
+  font-size:clamp(2.7rem, 4.4vw, 4.25rem);
+  line-height:1.02;
+  letter-spacing:-.015em;
 }
+
+.wholesale-title-line{
+  display:block;
+  margin-top:.35rem;
+  font-family:'Inter',sans-serif;
+  font-size:clamp(1.1rem, 2vw, 1.55rem);
+  font-style:normal;
+  font-weight:600;
+  letter-spacing:.08em;
+  line-height:1.3;
+  text-transform:uppercase;
+}
+
+.hero-tropes{
+  margin:0 0 1rem;
+  color:#6b2f2a;
+  font-size:.78rem;
+  font-weight:750;
+  letter-spacing:.07em;
+  line-height:1.45;
+  text-transform:uppercase;
+}
+
+.wholesale-hook{
+  margin:0 0 1rem;
+  color:#5a2622;
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.35rem, 2.2vw, 1.8rem);
+  font-style:italic;
+  line-height:1.4;
+}
+
+.wholesale-blurb{
+  width:100%;
+  max-width:900px;
+  margin:0 0 1.35rem;
+  padding:1.5rem 1.75rem;
+  background:rgba(255,250,246,.88);
+  border-left:4px solid #b66d61;
+  border-radius:0 20px 20px 0;
+  box-shadow:0 10px 28px rgba(78,43,35,.08);
+}
+
+.wholesale-blurb p{
+  margin:0 0 .85rem;
+  color:#4f4945;
+  font-size:1rem;
+  line-height:1.6;
+}
+
+.wholesale-blurb p:last-child{
+  margin-bottom:0;
+}  
 
 .subtitle{
   font-size:1.17rem;
@@ -385,6 +445,47 @@ h4{
   margin:0;
   font-size:.97rem;
 }
+
+ .wholesale-economics-grid{
+  display:grid;
+  grid-template-columns:repeat(4,minmax(180px,1fr));
+  gap:1.15rem;
+  margin:2rem 0;
+}
+
+.economics-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:1.5rem 1.4rem;
+  text-align:center;
+  box-shadow:0 10px 24px rgba(0,0,0,.05);
+}
+
+.economics-label{
+  display:block;
+  margin-bottom:.6rem;
+  color:#8b7568;
+  font-size:.74rem;
+  font-weight:700;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+.economics-card strong{
+  display:block;
+  color:#5a2622;
+  font-size:2rem;
+  font-family:'Playfair Display',serif;
+  margin-bottom:.45rem;
+}
+
+.economics-card p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+  line-height:1.45;
+} 
 
 .proof-callout{
   margin-top:1.6rem;
@@ -555,6 +656,10 @@ footer .container{
   }
 }
 
+  .wholesale-economics-grid{
+  grid-template-columns:repeat(2,minmax(220px,1fr));
+}
+  
 @media (max-width:900px){
   .wholesale-layout{
     grid-template-columns:1fr;
@@ -578,6 +683,10 @@ footer .container{
 }
 
 @media (max-width:700px){
+  .wholesale-economics-grid{
+  grid-template-columns:1fr;
+  }
+  
   .nav-inner{
     min-height:auto;
     padding:.55rem 0 .65rem;
@@ -740,47 +849,70 @@ footer .container{
 
       <div class="wholesale-copy">
 
-        <p class="book-label">
-          
-        </p>
+  <p class="book-label">
+    Private Bookstore Ordering
+  </p>
 
-        <h1>
-          <em>Becoming</em> Wholesale Orders
-        </h1>
+  <h1>
+    <em>Becoming</em>
+    <span class="wholesale-title-line">Wholesale Bookstore Orders</span>
+  </h1>
 
-        <p class="subtitle">
-          Signed paperback bundles of <em>Becoming</em> are available for bookstores, libraries, and retail organizations placing multi-copy orders.
-        </p>
+  <p class="hero-tropes">
+    South Carolina • 1990s Nostalgia • Slow-Burn College Romance • Found Family
+  </p>
 
-        <p class="subtitle">
-          Set on the small South Carolina campus of Harlow University in 1996, <em>Becoming</em> is a slow-burn first-love romance filled with emotional intimacy, sharp banter, unforgettable friendships, and the kind of tension that keeps readers turning pages.
-        </p>
+  <p class="wholesale-hook">
+    Some people change you the moment you meet them.
+  </p>
 
-        <p class="release-line">
-          Releases September 18, 2026
-        </p>
+  <div class="wholesale-blurb">
+    <p>
+      Shelby Marsh has spent eighteen years becoming exactly who her mother wanted her to be.
+    </p>
 
-        <div class="hero-actions">
+    <p>
+      College is her first real chance to decide who she wants to become.
+    </p>
 
-          <a
-            href="#wholesale-bundles"
-            class="btn btn-primary"
-            onclick="gtag('event','click_choose_wholesale_bundle_top');"
-          >
-            Choose Bundle
-          </a>
+    <p>
+      Tanner Cole has built his life around discipline, certainty, and a future he cannot afford to lose.
+    </p>
 
-          <a
-            href="#bookstore-value"
-            class="btn btn-soft"
-            onclick="gtag('event','click_bookstore_value_top');"
-          >
-            Why Signed Copies
-          </a>
+    <p>
+      The connection between them is immediate and terrifying in completely different ways.
+    </p>
 
-        </div>
+    <p>
+      Walking away should be easy. It isn’t.
+    </p>
+  </div>
 
-      </div>
+  <p class="release-line">
+    Releases September 18, 2026
+  </p>
+
+  <div class="hero-actions">
+
+    <a
+      href="#wholesale-terms"
+      class="btn btn-primary"
+      onclick="gtag('event','click_wholesale_pricing_top');"
+    >
+      View Wholesale Pricing
+    </a>
+
+    <a
+      href="#wholesale-story"
+      class="btn btn-soft"
+      onclick="gtag('event','click_about_book_top');"
+    >
+      About the Book
+    </a>
+
+  </div>
+
+</div>
     </div>
   </header>
 
@@ -793,47 +925,48 @@ footer .container{
 
       <div class="info-card">
 
-        <p
-          class="book-label"
-          style="margin-bottom:.45rem;"
-        >
-          The Story
-        </p>
+  <p
+    class="book-label"
+    style="margin-bottom:.45rem;"
+  >
+    About the Book
+  </p>
 
-        <h2>
-          A first-love romance about being seen for the first time.
-        </h2>
+  <h2>
+    A story readers remember long after the last page.
+  </h2>
 
-        <p class="story-hook">
-          Shelby spent eighteen years under the roof of a mother who believed love meant correction.
-        </p>
+  <p class="story-copy">
+    Set at Harlow University in South Carolina during the fall of 1996,
+    <em>Becoming</em> follows two students discovering first love while
+    learning who they are apart from everyone else's expectations.
+  </p>
 
-        <p class="story-copy">
-          Stand up straight. Be proper. Smile more. Speak less.
-        </p>
+  <div class="details-list">
 
-        <p class="story-copy">
-          College is Shelby’s first chance to find out who she is without someone adjusting her.
-        </p>
-
-        <p class="story-copy">
-          Tanner has a plan for everything: pre-law track, swim team captain, and a future built on discipline and focus. He has spent years making sure nothing knocks him off course.
-        </p>
-
-        <p class="story-copy">
-          The connection between them is immediate and terrifying in completely different ways.
-        </p>
-
-        <p class="story-copy">
-          Shelby has spent her life wondering whether she is worthy of being loved. Tanner has spent his life avoiding anything that might derail the future he has worked so hard to build. Walking away should be easy. It isn’t.
-        </p>
-
-        <p class="story-copy">
-          <em>Becoming</em> is a dual-POV story of first love, finding yourself, emotional intimacy, unforgettable friendships, sharp banter, late-night adventures, and the kind of slow-burn tension that earns every single page.
-        </p>
-
-      </div>
+    <div class="detail-box">
+      <h4>Setting</h4>
+      <p>South Carolina • Fall 1996</p>
     </div>
+
+    <div class="detail-box">
+      <h4>Genre</h4>
+      <p>College slow-burn contemporary romance</p>
+    </div>
+
+    <div class="detail-box">
+      <h4>Readers Will Love</h4>
+      <p>Found family, emotional intimacy, sharp banter, first love</p>
+    </div>
+
+    <div class="detail-box">
+      <h4>Point of View</h4>
+      <p>Dual POV</p>
+    </div>
+
+  </div>
+
+</div>
   </section>
 
   <section
@@ -845,34 +978,64 @@ footer .container{
 
       <div class="info-card">
 
-        <p
-          class="book-label"
-          style="margin-bottom:.45rem;"
-        >
-          For Bookstores and Libraries
-        </p>
+  <p
+    class="book-label"
+    style="margin-bottom:.45rem;"
+  >
+    The Bookstore Economics
+  </p>
 
-        <h2>
-          Signed copies give readers a reason to buy in person.
-        </h2>
+  <h2>
+    A straightforward wholesale offer with added shelf value.
+  </h2>
 
-        <p>
-          More than 80% of direct paperback customers selected the signed edition over the standard unsigned copy.
-        </p>
+  <p>
+    Wholesale copies of <em>Becoming</em> are available for $13 per paperback.
+    Using the $18.99 standard paperback retail price as a benchmark, that leaves
+    a potential gross return of $5.99 per copy before shipping and other store expenses.
+  </p>
 
-        <p>
-          Every wholesale copy will be hand-signed by A.J. Beckett at no additional cost, giving stores and libraries a distinctive edition connected directly to the author.
-        </p>
+  <p>
+    Every wholesale copy will also be hand-signed by A.J. Beckett at no additional
+    cost. The signature gives stores an added selling feature without increasing
+    the wholesale price.
+  </p>
 
-        <p>
-          The book is a strong fit for romance shelves, Southern fiction displays, college-town collections, local-author sections, nostalgic 1990s tables, and book clubs looking for an emotionally intimate slow-burn romance.
-        </p>
+  <div class="wholesale-economics-grid">
 
-        <div class="proof-callout">
-          <strong>Direct reader preference:</strong>
-          Over 80% of direct paperback orders have been for signed copies.
-        </div>
+    <div class="economics-card">
+      <span class="economics-label">Wholesale Cost</span>
+      <strong>$13.00</strong>
+      <p>Per paperback copy</p>
+    </div>
 
+    <div class="economics-card">
+      <span class="economics-label">Retail Benchmark</span>
+      <strong>$18.99</strong>
+      <p>Standard paperback retail price</p>
+    </div>
+
+    <div class="economics-card">
+      <span class="economics-label">Potential Gross Return</span>
+      <strong>$5.99</strong>
+      <p>Per copy before store expenses</p>
+    </div>
+
+    <div class="economics-card">
+      <span class="economics-label">Added Value</span>
+      <strong>Hand-Signed</strong>
+      <p>Included at no additional cost</p>
+    </div>
+
+  </div>
+
+  <div class="proof-callout">
+    <strong>Reader preference:</strong>
+    More than 80% of direct paperback customers have selected the signed edition
+    over the standard unsigned copy.
+  </div>
+
+</div>
         <div class="details-list">
 
           <div class="detail-box">
@@ -1060,16 +1223,17 @@ footer .container{
       <div class="section-heading">
 
         <h2>
-          Choose a Wholesale Bundle
-        </h2>
+  Wholesale Pricing
+</h2>
 
-        <p>
-          Each bundle includes signed paperback copies of <em>Becoming</em> at $13 per copy.
-        </p>
+<p>
+  Every bundle is priced at <strong>$13 per paperback copy</strong>.
+  Hand-signing is included at no additional cost.
+</p>
 
-        <p>
-          Shipping and any applicable taxes are calculated during Stripe checkout.
-        </p>
+<p>
+  Shipping and any applicable taxes are calculated during secure Stripe checkout.
+</p>
 
       </div>
 
@@ -1079,14 +1243,29 @@ footer .container{
 
           <h3>5 Copies</h3>
 
-          <p class="bundle-price">
-            $65
-          </p>
+<p class="bundle-price">
+  $65
+</p>
 
-          <p>
-            Five signed paperback copies at $13 per copy.
-          </p>
+<p>
+  Wholesale investment
+</p>
 
+<hr class="bundle-divider">
+
+<p>
+  Suggested retail value:<br>
+  <strong>$94.95</strong>
+</p>
+
+<p>
+  Potential gross return:<br>
+  <strong>$29.95</strong>
+</p>
+
+<p class="bundle-note">
+  Hand-signed copies included at no additional cost.
+</p>
           <p>
             Shipping is calculated during checkout.
           </p>
@@ -1107,13 +1286,29 @@ footer .container{
 
           <h3>10 Copies</h3>
 
-          <p class="bundle-price">
-            $130
-          </p>
+<p class="bundle-price">
+  $130
+</p>
 
-          <p>
-            Ten signed paperback copies at $13 per copy.
-          </p>
+<p>
+  Wholesale investment
+</p>
+
+<hr class="bundle-divider">
+
+<p>
+  Suggested retail value:<br>
+  <strong>$189.90</strong>
+</p>
+
+<p>
+  Potential gross return:<br>
+  <strong>$59.90</strong>
+</p>
+
+<p class="bundle-note">
+  Hand-signed copies included at no additional cost.
+</p>
 
           <p>
             Shipping is calculated during checkout.
@@ -1135,13 +1330,29 @@ footer .container{
 
           <h3>15 Copies</h3>
 
-          <p class="bundle-price">
-            $195
-          </p>
+<p class="bundle-price">
+  $195
+</p>
 
-          <p>
-            Fifteen signed paperback copies at $13 per copy.
-          </p>
+<p>
+  Wholesale investment
+</p>
+
+<hr class="bundle-divider">
+
+<p>
+  Suggested retail value:<br>
+  <strong>$284.85</strong>
+</p>
+
+<p>
+  Potential gross return:<br>
+  <strong>$89.85</strong>
+</p>
+
+<p class="bundle-note">
+  Hand-signed copies included at no additional cost.
+</p>
 
           <p>
             Shipping is calculated during checkout.
@@ -1163,13 +1374,29 @@ footer .container{
 
           <h3>20 Copies</h3>
 
-          <p class="bundle-price">
-            $260
-          </p>
+<p class="bundle-price">
+  $260
+</p>
 
-          <p>
-            Twenty signed paperback copies at $13 per copy.
-          </p>
+<p>
+  Wholesale investment
+</p>
+
+<hr class="bundle-divider">
+
+<p>
+  Suggested retail value:<br>
+  <strong>$379.80</strong>
+</p>
+
+<p>
+  Potential gross return:<br>
+  <strong>$119.80</strong>
+</p>
+
+<p class="bundle-note">
+  Hand-signed copies included at no additional cost.
+</p>
 
           <p>
             Shipping is calculated during checkout.
@@ -1216,43 +1443,7 @@ footer .container{
     </div>
   </section>
 
-  <section
-    class="wholesale-section soft-band"
-    id="book-details"
-  >
-
-    <div class="container">
-
-      <div class="info-card">
-
-        <p
-          class="book-label"
-          style="margin-bottom:.45rem;"
-        >
-          Book Details
-        </p>
-
-        <h2>
-          <em>Becoming</em>
-        </h2>
-
-        <p>
-          <strong>Author:</strong> A.J. Beckett<br>
-          <strong>Series:</strong> The Harlow Series, Book One<br>
-          <strong>Genre:</strong> College slow-burn contemporary romance<br>
-          <strong>Setting:</strong> South Carolina, 1996<br>
-          <strong>Point of View:</strong> Dual POV<br>
-          <strong>Release Date:</strong> September 18, 2026<br>
-          <strong>Wholesale Price:</strong> $13 per signed paperback copy<br>
-          <strong>Amazon Paperback Retail:</strong> $18.99<br>
-          <strong>Direct Standard Paperback Retail:</strong> $17.99<br>
-          <strong>Direct Signed Paperback Retail:</strong> $24.99<br>
-          <strong>Publisher:</strong> Monte Sano Press
-        </p>
-
-      </div>
-    </div>
-  </section>
+ 
 
   <section
     class="wholesale-section"
