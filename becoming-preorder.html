@@ -195,7 +195,7 @@ h1,h2,h3,h4{
 
 .preorder-layout{
   display:grid;
-  grid-template-columns:minmax(260px, 360px) minmax(0, 1fr);
+  grid-template-columns:minmax(240px, 320px) minmax(0, 1fr);
   gap:3.25rem;
   align-items:center;
 }
@@ -885,24 +885,31 @@ footer .container{
 
       <div class="preorder-copy">
         <p class="book-label">Preorders Open Now</p>
-        <h1>Preorder <em>Becoming</em></h1>
+        <h1>See Preorder Options
 
         <p class="subtitle">
-  Columbia, South Carolina. Fall 1996, Harlow University. Shelby Marsh arrives at college determined to become someone different than the version of herself curated by an overbearing mother. Tanner Cole is on a path that cannot afford distractions. A chance encounter changes both of them forever.
+  Shelby spent eighteen years under the roof of a mother who believed love meant correction.<br><br>
+  College is her first chance to find out who she is without someone adjusting her.<br><br>
+  Tanner has spent years making sure nothing knocks him off course.<br><br>
+  The connection between them is immediate—and terrifying in completely different ways.
 </p>
 
 <p class="trope-line">
-  Slow-burn, open-door New Adult contemporary romance with explicit desire, earned heat, and deep emotional intimacy.
+  First love • Dual POV • Found family • Slow burn • Open door • 1996 college setting
 </p>
 
-        <p class="release-line">
-          Releases September 18, 2026
-        </p>
+<p class="release-line">
+  Releases September 18, 2026
+</p>
+
+<p class="subtitle">
+  Signed paperback, standard paperback, and Kindle preorders available now.
+</p>
 
         <div class="read-prompt-actions">
           <a href="#preorder-options" class="btn btn-primary"
              onclick="gtag('event','click_choose_preorder_option_top');">
-            Choose Your Copy
+            Preorder <em/>Becoming<em>
           </a>
 
           <a href="read.html" class="btn btn-soft"
@@ -930,7 +937,7 @@ footer .container{
 
       <div class="option-grid">
 
-        <article class="option-card featured">
+        <article class="option-card featured signed-option">
           <h3>Signed Paperback</h3>
           <p class="price">$24.99</p>
 
@@ -955,7 +962,7 @@ footer .container{
           </a>
         </article>
 
-        <article class="option-card">
+        <article class="option-card standard-option">
           <h3 class="standard-title">Standard Paperback</h3>
           <p class="price">$17.99</p>
 
@@ -980,7 +987,7 @@ footer .container{
           </a>
         </article>
 
-                <article class="option-card">
+        <article class="option-card kindle-option">
           <h3>Kindle Edition</h3>
           <p class="price">Amazon preorder</p>
 
@@ -1243,7 +1250,31 @@ footer .container{
 
     observer.observe(el);
   }
+function trackOptionEngagement(selector, eventName){
+  const option = document.querySelector(selector);
 
+  if (!option) return;
+
+  let engaged = false;
+
+  function fire(method){
+    if (engaged) return;
+
+    engaged = true;
+
+    sendEvent(eventName, {
+      interaction_method: method
+    });
+  }
+
+  option.addEventListener('mouseenter', function(){
+    fire('mouse_hover');
+  });
+
+  option.addEventListener('focusin', function(){
+    fire('keyboard_focus');
+  });
+}
   setTimeout(function(){
     sendEvent('preorder_stayed_5_seconds', { seconds_on_page: 5 });
   }, 5000);
@@ -1277,9 +1308,11 @@ footer .container{
     sendEvent('preorder_stayed_60_seconds', { seconds_on_page: 60 });
   }, 60000);
 
-  document.querySelectorAll('a[href*="buy.stripe.com"]').forEach(function(link){
-    link.addEventListener('click', markPreorderClicked);
-  });
+ document.querySelectorAll(
+  'a[href*="buy.stripe.com"], a[href*="amazon.com/dp/"]'
+).forEach(function(link){
+  link.addEventListener('click', markPreorderClicked);
+});
 
   document.querySelectorAll('a[href*="read.html"]').forEach(function(link){
     link.addEventListener('click', function(){
@@ -1320,11 +1353,29 @@ footer .container{
     });
   }
 
+  watch('.preorder-hero', 'view_preorder_hero', 0.35);
   watch('#read-chapter-one', 'view_preorder_read_prompt', 0.35);
   watch('#preorder-options', 'view_preorder_options', 0.25);
-  watch('.option-card.featured', 'view_signed_preorder_option', 0.45);
-  watch('.option-card:not(.featured)', 'view_standard_preorder_option', 0.45);
-  watch('.details-band', 'view_preorder_details', 0.25);
+  watch('.signed-option', 'view_signed_preorder_option', 0.45);
+  watch('.standard-option', 'view_standard_preorder_option', 0.45);
+  watch('.kindle-option', 'view_kindle_preorder_option', 0.45);
+
+  trackOptionEngagement(
+  '.signed-option',
+  'engage_signed_preorder_option'
+);
+
+  trackOptionEngagement(
+  '.standard-option',
+  'engage_standard_preorder_option'
+);
+
+  trackOptionEngagement(
+  '.kindle-option',
+  'engage_kindle_preorder_option'
+);
+
+watch('.details-band', 'view_preorder_details', 0.25);
 })();
 </script>
   
