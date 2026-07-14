@@ -544,21 +544,21 @@ h1,h2,h3,h4{
   color:var(--muted);
 }
 
-.s-list{
+.details-list{
   display:grid;
-  grid-template-columns:repeat(2, minmax(240px,1fr));
+  grid-template-columns:repeat(2, minmax(240px, 1fr));
   gap:1rem;
   margin-top:1.5rem;
 }
 
-.-box{
+.detail-box{
   border:1px solid var(--border);
   border-radius:18px;
   background:#fcfbf9;
   padding:1.2rem 1.3rem;
 }
 
-.-box h4{
+.detail-box h4{
   font-family:'Inter',sans-serif;
   font-size:.82rem;
   font-weight:750;
@@ -568,11 +568,24 @@ h1,h2,h3,h4{
   color:#5a2622;
 }
 
-.-box p{
+.bookseller-box{
+  grid-column:1 / -1;
+}
+  
+.detail-box p{
   margin:0;
   font-size:.97rem;
 }
 
+.detail-box a{
+  color:var(--accent);
+  font-weight:650;
+  text-decoration:none;
+}
+
+.detail-box a:hover{
+  text-decoration:underline;
+}
 .goodreads-add{
   margin-top:1.3rem;
   display:flex;
@@ -677,10 +690,14 @@ footer .container{
     justify-content:center;
   }
 
-  .option-grid,
-  .s-list{
-    grid-template-columns:1fr;
-  }
+ .option-grid,
+.details-list{
+  grid-template-columns:1fr;
+}
+
+.bookseller-box{
+  grid-column:auto;
+}
 }
 
 @media (max-width: 700px){
@@ -1224,48 +1241,60 @@ footer .container{
           If production or shipping is delayed, preorder customers will be notified by email.
         </p>
 
-        <div class="s-list">
-          <div class="-box">
-            <h4>Shipping</h4>
-            <p>Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in late September or early October.</p>
-          </div>
+        <div class="details-list">
 
-          <div class="detail-box">
-            <h4>Signed Copies</h4>
-            <p>Signed copies are hand-signed by A.J. Beckett. Personalization is not available at this time.</p>
-          </div>
+  <div class="detail-box">
+    <h4>Shipping</h4>
+    <p>
+      Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in late September or early October.
+    </p>
+  </div>
 
-          <div class="detail-box">
-  <h4>Kindle</h4>
-  <p>The Kindle edition is available for preorder through Amazon and will deliver on release day.</p>
-</div>
+  <div class="detail-box">
+    <h4>Signed Copies</h4>
+    <p>
+      Signed copies are hand-signed by A.J. Beckett. Personalization is not available at this time.
+    </p>
+  </div>
 
-          <div class="detail-box">
-            <h4>Questions</h4>
-            <p>
-  Use the
-  <a href="index.html#contact" onclick="gtag('event','click_contact_form_preorder_questions');">contact form</a>
-  on the A.J. Beckett website or message
-  <a href="https://www.instagram.com/ajbeckettwrites/"
-     target="_blank"
-     rel="noopener noreferrer"
-     onclick="gtag('event','click_instagram_preorder_questions');">@ajbeckettwrites</a>
-  on Instagram.
-</p>
-          </div>
-        </div>
+  <div class="detail-box">
+    <h4>Kindle</h4>
+    <p>
+      The Kindle edition is available for preorder through Amazon and will deliver on release day.
+    </p>
+  </div>
 
-<div class="detail-box">
-  <h4>Booksellers</h4>
-  <p>
-    We'd love to partner with independent booksellers.
-    Signed and unsigned wholesale copies are available directly from A.J. Beckett.
-    <br><br>
-    <a href="becoming-wholesale.html"
-       onclick="gtag('event','click_wholesale_from_order_page');">
-      View Wholesale Information →
-    </a>
-  </p>
+  <div class="detail-box">
+    <h4>Questions</h4>
+    <p>
+      Use the
+      <a href="index.html#contact"
+         onclick="gtag('event','click_contact_form_preorder_questions');">
+        contact form
+      </a>
+      on the A.J. Beckett website or message
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="gtag('event','click_instagram_preorder_questions');">
+        @ajbeckettwrites
+      </a>
+      on Instagram.
+    </p>
+  </div>
+
+  <div class="detail-box bookseller-box">
+    <h4>Booksellers</h4>
+    <p>
+      We'd love to partner with independent booksellers. Signed and unsigned wholesale copies are available directly from A.J. Beckett.
+      <br><br>
+      <a href="becoming-wholesale.html"
+         onclick="gtag('event','click_wholesale_from_order_page');">
+        View Wholesale Information →
+      </a>
+    </p>
+  </div>
+
 </div>
         
         <div class="details-actions">
