@@ -316,7 +316,7 @@ h1,h2,h3,h4{
   flex:1 1 auto;
 }
 
-.hero--actions{
+.hero-actions{
   display:flex;
   align-items:center;
   justify-content:flex-end;
@@ -324,22 +324,11 @@ h1,h2,h3,h4{
   flex:0 0 auto;
 }
 
-.hero--actions .btn{
-  min-width:190px;
-}
-
-.hero-actions{
-  display:flex;
-  gap:1rem;
-  flex-wrap:wrap;
-  margin-top:1.8rem;
-}
-
 .hero-actions .btn{
   min-width:190px;
 }
 
-  .read-prompt-actions,
+.read-prompt-actions,
 .details-actions{
   display:flex;
   justify-content:center;
@@ -357,18 +346,8 @@ h1,h2,h3,h4{
 .details-actions .btn{
   min-width:190px;
 }
-
-.-box a{
-  color:var(--accent);
-  font-weight:650;
-  text-decoration:none;
-}
-
-.-box a:hover{
-  text-decoration:underline;
-}
   
-.-section{
+.preorder-section{
   padding:4.5rem 0;
 }
 
@@ -668,7 +647,7 @@ footer .container{
     align-items:stretch;
   }
 
-  .hero--actions{
+  .hero-actions{
     justify-content:center;
     flex-wrap:wrap;
   }
@@ -804,12 +783,12 @@ footer .container{
     padding:1.4rem 1.35rem;
   }
 
-  .hero--actions{
+  .hero-actions{
     flex-direction:column;
     align-items:stretch;
   }
 
-  .hero--actions .btn{
+  .hero-actions .btn{
     width:100%;
     min-width:0;
   }
@@ -1055,7 +1034,7 @@ footer .container{
       </p>
     </div>
 
-    <div class="hero--actions">
+    <div class="hero-actions">
       <a href="#preorder-options"
          class="btn btn-primary"
          onclick="gtag('event','click_choose_preorder_option_top');">
