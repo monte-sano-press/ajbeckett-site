@@ -1283,7 +1283,7 @@ footer .container{
 
   <div class="nudge-copy">
     <p>
-      A small gift for visiting. Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
+      Still deciding? Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting indie authors.
     </p>
 
     <button class="promo-code-pill"
@@ -1354,19 +1354,31 @@ footer .container{
     recallTab.hidden = false;
   }
 
-  function showNudge(source){
-    if (!nudge) return;
-    if (preorderWasClicked()) return;
+ function showNudge(source){
+  if (!nudge) return;
+  if (preorderWasClicked()) return;
 
-    nudge.hidden = false;
-    if (recallTab) recallTab.hidden = true;
+  nudge.hidden = false;
 
-    if (source === 'recall') {
-      sendEvent('recall_preorder_becoming10_nudge');
-    } else {
-      sendEvent('view_preorder_becoming10_nudge');
-    }
+  if (recallTab) {
+    recallTab.hidden = true;
   }
+
+  switch (source) {
+
+    case 'reader_reactions':
+      sendEvent('view_preorder_becoming10_after_reactions');
+      break;
+
+    case 'recall':
+      sendEvent('recall_preorder_becoming10_nudge');
+      break;
+
+    default:
+      sendEvent('view_preorder_becoming10_nudge');
+      break;
+  }
+}
 
   function watch(selector, eventName, threshold){
     const el = document.querySelector(selector);
@@ -1415,21 +1427,8 @@ function trackOptionEngagement(selector, eventName){
   }, 5000);
 
   setTimeout(function(){
-    sendEvent('preorder_stayed_8_seconds', { seconds_on_page: 8 });
-
-    if (sessionStorage.getItem('preorder_becoming10_nudge_shown') === 'true') return;
-    if (preorderWasClicked()) return;
-
-    sessionStorage.setItem('preorder_becoming10_nudge_shown', 'true');
-    showNudge('timer');
-
-    setTimeout(function(){
-      if (nudge && !nudge.hidden && !preorderWasClicked()) {
-        nudge.hidden = true;
-        showRecallTab();
-      }
-    }, 20000);
-  }, 8000);
+  sendEvent('preorder_stayed_8_seconds', { seconds_on_page: 8 });
+}, 8000);
 
   setTimeout(function(){
     sendEvent('preorder_stayed_15_seconds', { seconds_on_page: 15 });
@@ -1510,7 +1509,45 @@ function trackOptionEngagement(selector, eventName){
   'engage_kindle_preorder_option'
 );
 
-watch('.details-band', 'view_preorder_details', 0.25);
+watch('.preorder-reactions', 'view_preorder_reactions', 0.25);
+
+const reactions = document.querySelector('.preorder-reactions');
+
+if (reactions && 'IntersectionObserver' in window) {
+
+  const observer = new IntersectionObserver(function(entries){
+
+    entries.forEach(function(entry){
+
+      if (!entry.isIntersecting) return;
+
+      observer.disconnect();
+
+      if (sessionStorage.getItem('preorder_becoming10_nudge_shown') === 'true') return;
+      if (preorderWasClicked()) return;
+
+      sessionStorage.setItem('preorder_becoming10_nudge_shown','true');
+
+      showNudge('reader_reactions');
+
+      setTimeout(function(){
+
+        if (nudge && !nudge.hidden && !preorderWasClicked()){
+
+          nudge.hidden = true;
+          showRecallTab();
+
+        }
+
+      },20000);
+
+    });
+
+  },{threshold:.35});
+
+  observer.observe(reactions);
+
+}
 })();
 </script>
   
