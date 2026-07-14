@@ -289,6 +289,20 @@ h1,h2,h3,h4{
   white-space:nowrap;
 }
 
+.club-badge{
+  display:inline-flex;
+  align-items:center;
+  margin:0 0 1.5rem;
+  padding:.45rem .9rem;
+  background:#f3eeea;
+  border:1px solid #d9c8bf;
+  border-radius:999px;
+  color:#5a2622;
+  font-size:.82rem;
+  font-weight:700;
+  letter-spacing:.03em;
+}
+  
 .hero-blurb{
   width:100%;
   max-width:900px;
@@ -350,12 +364,14 @@ h1,h2,h3,h4{
   display:flex;
   align-items:center;
   justify-content:flex-end;
+  flex-wrap:wrap;
   gap:1rem;
   flex:0 0 auto;
 }
 
 .hero-bookclub-actions .btn{
   min-width:190px;
+  flex:1 1 190px;
 }
 
 .hero-actions{
@@ -984,6 +1000,10 @@ Everything your book club needs for a memorable discussion, from flexible orderi
     South Carolina • 1990s Nostalgia • Slow-Burn • College Romance • Found Family • Emotional Intimacy
   </p>
 
+
+       <p class="club-badge">
+  ✓ Perfect for in-person and virtual book clubs
+</p>
   <div class="hero-blurb">
 
     <p>
@@ -1014,25 +1034,33 @@ Everything your book club needs for a memorable discussion, from flexible orderi
 
     </div>
 
-    <div class="hero-bookclub-actions">
+<div class="hero-bookclub-actions">
 
-      <a
-        href="#individual-orders"
-        class="btn btn-primary"
-        onclick="gtag('event','click_bookclub_individual_top');"
-      >
-        Order Individually
-      </a>
+  <a
+    href="#individual-orders"
+    class="btn btn-primary"
+    onclick="gtag('event','click_bookclub_individual_top');"
+  >
+    Order Individually
+  </a>
 
-      <a
-        href="#group-orders"
-        class="btn btn-soft"
-        onclick="gtag('event','click_bookclub_group_top');"
-      >
-        Order for the Group
-      </a>
+  <a
+    href="#group-orders"
+    class="btn btn-primary"
+    onclick="gtag('event','click_bookclub_group_top');"
+  >
+    Order for the Group
+  </a>
 
-    </div>
+  <a
+    href="read.html"
+    class="btn btn-soft"
+    onclick="gtag('event','click_bookclub_read_sample');"
+  >
+    Read the First Chapter
+  </a>
+
+</div>
 
   </div>
 
@@ -1154,7 +1182,7 @@ Everything your book club needs for a memorable discussion, from flexible orderi
       </h2>
 
       <p>
-        Every participating book club receives materials and ordering support designed to make reading and discussing <em>Becoming</em> easy.
+        Every participating book club receives exclusive companion materials and flexible ordering options designed to make reading <em>Becoming</em> together easy.
       </p>
 
     </div>
@@ -1201,10 +1229,10 @@ Everything your book club needs for a memorable discussion, from flexible orderi
 
 <article class="option-card">
 
-  <h3>Flexible Ordering</h3>
+  <h3>Read Together, Order Your Way</h3>
 
   <p>
-    Members can order individually using your club's personalized discount code, or one organizer can place a single group order with collective shipping.
+    Members can order individually with your club's personalized discount code, or one organizer can place a combined group order with collective shipping.
   </p>
 
 </article>
