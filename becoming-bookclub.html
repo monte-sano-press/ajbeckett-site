@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Preorder Becoming | A.J. Beckett</title>
+<title>Becoming Book Club Guide, Discounts & Group Orders | A.J. Beckett</title>
 
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2BK1WT2198"></script>
@@ -17,19 +17,49 @@
 <link rel="icon" type="image/png" href="aj-seal.png">
 <link rel="canonical" href="https://www.ajbeckettwrites.com/becoming-bookclub">
 
-<meta name="description" content="Preorder Becoming by A.J. Beckett, a 1996 college slow-burn romance set at Harlow University. Signed and standard paperbacks available for U.S. shipping.">
+<meta name="description" content="Read Becoming with your book club. Get discussion questions, an author Q&A, personalized club discounts, signed-copy extras, and flexible individual or group ordering.">
 
-<meta property="og:title" content="Preorder Becoming | A.J. Beckett">
-<meta property="og:description" content="Signed and standard paperback bookclubs are open for Becoming, a 1996 college slow-burn romance by A.J. Beckett.">
+<meta property="og:title" content="Bring Becoming to Your Book Club | A.J. Beckett">
+<meta property="og:description" content="Book club discussion questions, author Q&A, personalized discounts, signed-copy extras, and flexible individual or group ordering for Becoming.">
 <meta property="og:url" content="https://www.ajbeckettwrites.com/becoming-bookclub">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.ajbeckettwrites.com/becoming_cover_website.png">
+<meta property="og:image:alt" content="Cover of Becoming by A.J. Beckett">
+<meta property="og:site_name" content="A.J. Beckett">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Preorder Becoming | A.J. Beckett">
-<meta name="twitter:description" content="Signed and standard paperback bookclubs are open for Becoming, a 1996 college slow-burn romance by A.J. Beckett.">
+<meta name="twitter:title" content="Bring Becoming to Your Book Club | A.J. Beckett">
+<meta name="twitter:description" content="Discussion questions, author Q&A, personalized club discounts, signed-copy extras, and flexible ordering for Becoming.">
 <meta name="twitter:image" content="https://www.ajbeckettwrites.com/becoming_cover_website.png">
+<meta name="twitter:image:alt" content="Cover of Becoming by A.J. Beckett">
 
+  <script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Book",
+  "name":"Becoming",
+  "author":{
+    "@type":"Person",
+    "name":"A.J. Beckett"
+  },
+  "publisher":{
+    "@type":"Organization",
+    "name":"Monte Sano Press"
+  },
+  "bookFormat":"https://schema.org/Paperback",
+  "genre":[
+    "Romance",
+    "Contemporary Romance",
+    "New Adult",
+    "College Romance"
+  ],
+  "datePublished":"2026-09-18",
+  "image":"https://www.ajbeckettwrites.com/becoming_cover_website.png",
+  "url":"https://www.ajbeckettwrites.com/becoming-bookclub",
+  "description":"A 1990s college slow-burn romance featuring found family, emotional intimacy, sharp banter, and South Carolina nostalgia. This page provides book club ordering options, discussion questions, author Q&A, and group discounts."
+}
+</script>
+  
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -447,6 +477,48 @@ h1,h2,h3,h4{
   width:100%;
 }
 
+.order-method-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:2rem;
+  max-width:960px;
+  margin:0 auto;
+}
+
+.order-method-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:2rem;
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column;
+}
+
+.order-method-card h3{
+  font-size:clamp(1.8rem, 3vw, 2.35rem);
+  margin-bottom:1rem;
+  color:#5a2622;
+}
+
+.order-method-card p{
+  margin:0 0 1rem;
+  color:var(--muted);
+}
+
+.order-method-card .btn{
+  width:100%;
+  margin-top:auto;
+}
+
+.group-order-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
+  gap:2rem;
+  max-width:1120px;
+  margin:0 auto;
+}  
+  
 .bookclub-reactions{
   padding:4.25rem 0;
   background:#fbf7f4;
@@ -677,11 +749,20 @@ footer .container{
     justify-content:center;
   }
 
+  .order-method-grid{
+    grid-template-columns:1fr;
+  }
+
+  .group-order-grid{
+    grid-template-columns:1fr;
+  }
+  
   .option-grid,
   .details-list{
     grid-template-columns:1fr;
   }
 }
+  
 
 @media (max-width: 700px){
   .nav-inner{
@@ -852,113 +933,6 @@ footer .container{
   }
 }
 
-.conversion-nudge{
-  position:fixed;
-  left:50%;
-  bottom:1rem;
-  transform:translateX(-50%);
-  z-index:2000;
-  width:min(760px, calc(100% - 2rem));
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:0 14px 38px rgba(0,0,0,.16);
-  padding:1rem 1.15rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-
-.conversion-nudge[hidden],
-.discount-recall-tab[hidden]{
-  display:none;
-}
-
-.nudge-copy{
-  display:flex;
-  flex-direction:column;
-  gap:.55rem;
-}
-
-.conversion-nudge p{
-  margin:0;
-  color:var(--text);
-  font-size:.96rem;
-  line-height:1.45;
-}
-
-.conversion-nudge strong{
-  color:#5a2622;
-  letter-spacing:.06em;
-}
-
-.conversion-nudge a{
-  flex:0 0 auto;
-  white-space:nowrap;
-}
-
-.promo-code-pill,
-.discount-recall-tab{
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-}
-
-.promo-code-pill{
-  align-self:flex-start;
-}
-
-.discount-recall-tab{
-  position:fixed;
-  right:1rem;
-  bottom:1rem;
-  z-index:1999;
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
-}
-
-.copy-icon{
-  margin-right:.25rem;
-}
-
-.nudge-close{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-size:1.35rem;
-  line-height:1;
-  cursor:pointer;
-  padding:.25rem;
-}
-
-@media (max-width:700px){
-  .conversion-nudge{
-    align-items:flex-start;
-    flex-direction:column;
-    bottom:.75rem;
-    padding:1.2rem;
-  }
-
-  .conversion-nudge p{
-    padding-right:1.8rem;
-  }
-
-  .conversion-nudge a{
-    width:100%;
-    text-align:center;
-  }
-
-  .nudge-close{
-    position:absolute;
-    top:.65rem;
-    right:.8rem;
-  }
-}
   
 </style>
 </head>
@@ -998,316 +972,492 @@ footer .container{
 
      <div class="bookclub-copy">
 
-  <h1>Some people change you<br>the moment you meet them.</h1>
+  <p class="book-label">
+    Book Club Reading Experience
+  </p>
+
+  <h1>
+    Bring <em>Becoming</em> to Your Book Club
+  </h1>
 
   <p class="hero-tropes">
     South Carolina • 1990s Nostalgia • Slow-Burn College Romance • Found Family • Emotional Intimacy
   </p>
 
   <div class="hero-blurb">
+
     <p>
-      Shelby Marsh has spent eighteen years becoming exactly who her mother wanted her to be.
+      Looking for a romance that sparks conversation long after the last page?
     </p>
 
     <p>
-      College is her first real chance to decide who she wants to become.
+      <em>Becoming</em> follows Shelby and Tanner through first love, emotional intimacy, unforgettable friendships, and the terrifying excitement of discovering who you really are.
     </p>
 
     <p>
-      Tanner Cole has built his life around discipline, certainty, and a future he can't afford to lose.
+      Whether your club orders individually or together, participating clubs receive discussion questions, a printable author Q&amp;A, and a personalized discount code.
     </p>
 
-    <p>
-      The connection between them is immediate and terrifying in completely different ways.
-    </p>
-
-    <p>
-      Walking away should be easy. It isn't.
-    </p>
   </div>
 
   <div class="hero-bottom-row">
+
     <div class="hero-release-copy">
+
       <p class="release-line">
         Releases September 18, 2026
       </p>
 
       <p class="format-line">
-        Signed paperback, standard paperback,<br>
-        and Kindle bookclubs available now.
+        Individual and group ordering available.
       </p>
+
     </div>
 
     <div class="hero-bookclub-actions">
-      <a href="#bookclub-options"
-         class="btn btn-primary"
-         onclick="gtag('event','click_choose_bookclub_option_top');">
-        See Preorder Options
+
+      <a
+        href="#individual-orders"
+        class="btn btn-primary"
+        onclick="gtag('event','click_bookclub_individual_top');"
+      >
+        Order Individually
       </a>
 
-      <a href="read.html"
-         class="btn btn-soft"
-         onclick="gtag('event','click_read_chapter_bookclub_top');">
-        Read Chapter One
+      <a
+        href="#group-orders"
+        class="btn btn-soft"
+        onclick="gtag('event','click_bookclub_group_top');"
+      >
+        Order for the Group
       </a>
+
     </div>
+
   </div>
-      </div>
+
+</div>
     </div>
   </header>
 
-  <section id="bookclub-options" class="bookclub-section">
-    <div class="container">
+ <section
+  id="bookclub-benefits"
+  class="bookclub-section"
+>
+  <div class="container">
 
- <div class="section-heading">
-  <h2>Choose Your Preorder</h2>
-  <p>
-    Signed and standard paperback copies are available for direct U.S. shipping.<br>Kindle bookclubs are available through Amazon for U.S. and International readers.
-  </p>
-  <p class="direct-support-note">
-    Direct paperback bookclubs make the biggest difference for indie authors.<br>
-   Thank you for supporting <em>Becoming</em> !
-  </p>
-</div>
+    <div class="section-heading">
 
-      <div class="option-grid">
+      <p class="book-label">
+        Included for Participating Clubs
+      </p>
 
-        <article class="option-card featured signed-option">
-          <h3>Signed Paperback</h3>
-          <p class="price">$24.99</p>
+      <h2>
+        More than just the book.
+      </h2>
 
-          <p>
-            Includes one paperback copy of <em>Becoming</em>, hand-signed by A.J. Beckett. 
-          </p>
+      <p>
+        Every participating book club receives materials and ordering support designed to make reading and discussing <em>Becoming</em> easy.
+      </p>
 
-          <p>
-            Every signed bookclub includes an exclusive Harlow University bookmark and two Harlow University stickers while supplies last. Personalization is not available at this time.
-          </p>
-
-          <p>
-            Flat U.S. shipping: $7.95.
-          </p>
-
-          <a href="https://buy.stripe.com/fZu28q8mUdMt2wp5padjO01"
-             class="btn btn-primary"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_signed_bookclub_stripe');">
-            Preorder Signed Copy
-          </a>
-        </article>
-
-        <article class="option-card standard-option">
-          <h3 class="standard-title">Standard Paperback</h3>
-          <p class="price">$17.99</p>
-
-          <p>
-            Includes one unsigned paperback copy of <em>Becoming</em> by A.J. Beckett.
-          </p>
-
-          <p>
-            This is the best option if you want a standard paperback copy shipped directly from A.J. after release.
-          </p>
-
-          <p>
-            Flat U.S. shipping: $7.95.
-          </p>
-
-          <a href="https://buy.stripe.com/14A6oG1YwfUBgnfeZKdjO00"
-             class="btn btn-primary"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_standard_bookclub_stripe');">
-            Preorder Standard Copy
-          </a>
-        </article>
-
-        <article class="option-card kindle-option">
-          <h3>Kindle Edition</h3>
-          <p class="price">Amazon bookclub</p>
-
-          <p>
-            Preorder the Kindle edition of <em>Becoming</em> through Amazon and have it delivered automatically on release day.
-          </p>
-
-          <p>
-            This is the best option for ebook readers and International readers who prefer Amazon delivery.
-          </p>
-
-          <a href="https://www.amazon.com/dp/B0H277TD1G"
-             class="btn btn-primary"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_kindle_bookclub_amazon');">
-            Preorder on Kindle
-          </a>
-        </article>
-
-      </div>
     </div>
-  </section>
-  
- <section class="bookclub-section" id="read-chapter-one">
-    <div class="container">
-      <div class="details-card">
-        <p class="book-label" style="margin-bottom:.45rem;"></p>
-        <h2>Not sure yet? Read Chapter One Free</h2>
+
+    <div class="option-grid">
+
+      <article class="option-card">
+
+        <h3>Discussion Questions</h3>
 
         <p>
-  Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to choose your bookclub.
-</p>
+          A printable page of discussion questions designed to help your group explore the relationships, themes, and choices at the heart of the story.
+        </p>
 
-<div class="read-prompt-actions">
+      </article>
 
-  <a href="read.html"
-     class="btn btn-primary"
-     onclick="gtag('event','click_read_chapter_bookclub_midpage');">
-    Read Chapter One
-  </a>
-</div>
+      <article class="option-card">
 
-      </div>
+        <h3>Author Q&amp;A</h3>
+
+        <p>
+          A printable page of answers from A.J. Beckett about the characters, setting, writing process, and inspiration behind <em>Becoming</em>.
+        </p>
+
+      </article>
+
+      <article class="option-card">
+
+        <h3>Personalized Club Code</h3>
+
+        <p>
+          Your organizer receives a unique discount code that members can enter during eligible direct paperback checkout.
+        </p>
+
+      </article>
+
+      <article class="option-card">
+
+        <h3>Signed-Copy Extras</h3>
+
+        <p>
+          Every signed paperback order includes one Harlow University bookmark and two Harlow University stickers while supplies last.
+        </p>
+
+      </article>
+
     </div>
-  </section>
 
-<section class="bookclub-reactions">
-  <div class="container">
-    <p class="section-kicker">Early reader reactions</p>
-    <h2>Readers are ready for more.</h2>
-
-    <div class="bookclub-testimonial-grid">
-      <figure class="bookclub-testimonial-card">
-        <blockquote>
-          “I am full-blown obsessed with this story.”
-        </blockquote>
-        <cite>— Early reader</cite>
-      </figure>
-
-      <figure class="bookclub-testimonial-card">
-        <blockquote>
-          “I didn't want to stop reading.”
-        </blockquote>
-        <cite>— Early reader</cite>
-      </figure>
-
-      <figure class="bookclub-testimonial-card">
-        <blockquote>
-          “These chapters had me smiling, gasping, and kicking my feet.”
-        </blockquote>
-        <cite>— Early reader</cite>
-      </figure>
-
-      <figure class="bookclub-testimonial-card">
-        <blockquote>
-          “The slow burn is killing me in the best way.”
-        </blockquote>
-        <cite>— Early reader</cite>
-      </figure>
-    </div>
   </div>
 </section>
   
-  <section class="details-band">
-    <div class="container">
-      <div class="details-card">
-        <h2>Preorder Details</h2>
+ <section
+  id="bookclub-order-methods"
+  class="bookclub-section details-band"
+>
+  <div class="container">
 
-        <p>
-          <em>Becoming</em> releases September 18, 2026. Direct bookclub copies are expected to ship in late September or early October after print copies arrive.
-        </p>
+    <div class="section-heading">
 
-        <p>
-          Direct paperback bookclubs are available for U.S. shipping only at this time. Kindle bookclub is available through Amazon for U.S. and International readers.
-        </p>
+      <p class="book-label">
+        Flexible Ordering
+      </p>
 
-        <p>
-          If production or shipping is delayed, bookclub customers will be notified by email.
-        </p>
+      <h2>
+        Choose how your club orders.
+      </h2>
 
-        <div class="details-list">
-          <div class="detail-box">
-            <h4>Shipping</h4>
-            <p>Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in late September or early October.</p>
-          </div>
+      <p>
+        Members can order their own preferred format, or one organizer can place a combined paperback order for the group.
+      </p>
 
-          <div class="detail-box">
-            <h4>Signed Copies</h4>
-            <p>Signed copies are hand-signed by A.J. Beckett. Personalization is not available at this time.</p>
-          </div>
-
-          <div class="detail-box">
-  <h4>Kindle</h4>
-  <p>The Kindle edition is available for bookclub through Amazon and will deliver on release day.</p>
-</div>
-
-          <div class="detail-box">
-            <h4>Questions</h4>
-            <p>
-  Use the
-  <a href="index.html#contact" onclick="gtag('event','click_contact_form_bookclub_questions');">contact form</a>
-  on the A.J. Beckett website or message
-  <a href="https://www.instagram.com/ajbeckettwrites/"
-     target="_blank"
-     rel="noopener noreferrer"
-     onclick="gtag('event','click_instagram_bookclub_questions');">@ajbeckettwrites</a>
-  on Instagram.
-</p>
-          </div>
-        </div>
-
-        <div class="details-actions">
-         <a href="#bookclub-options" class="btn btn-primary"
-   onclick="gtag('event','click_bookclub_details_bottom');">
-  See Preorder Options
-</a>
-
-          <a href="read.html" class="btn btn-soft"
-   onclick="gtag('event','click_read_chapter_bookclub_details');">
-  Read Chapter One
-</a>
-        </div>
-
-      </div>
     </div>
-  </section>
 
-</main>
+    <div class="order-method-grid">
 
-<div class="conversion-nudge" id="conversion-nudge" hidden>
-  <button class="nudge-close"
-          type="button"
-          id="conversion-nudge-close"
-          aria-label="Dismiss message">
-    ×
-  </button>
+      <article class="order-method-card">
 
-  <div class="nudge-copy">
-    <p>
-      Still deciding? Use <strong>BECOMING10</strong> for 10% off your direct bookclub. Thanks for supporting an indie author.
-    </p>
+        <p class="book-label">
+          Best for Flexible Formats
+        </p>
 
-    <button class="promo-code-pill"
-            type="button"
-            id="conversion-code-copy">
-      <span class="copy-icon">📋</span>
-      <span id="conversion-code-text">BECOMING10</span>
-    </button>
+        <h3>
+          Members Order Individually
+        </h3>
+
+        <p>
+          Each member chooses a signed paperback, standard paperback, or Kindle edition.
+        </p>
+
+        <p>
+          Members ordering eligible direct paperbacks enter the personalized discount code supplied by the club organizer during Stripe checkout.
+        </p>
+
+        <p>
+          This option works well for clubs whose members live in different places or prefer different formats.
+        </p>
+
+        <a
+          href="#individual-orders"
+          class="btn btn-primary"
+          onclick="gtag('event','click_bookclub_individual_method');"
+        >
+          See Individual Options
+        </a>
+
+      </article>
+
+      <article class="order-method-card">
+
+        <p class="book-label">
+          Best for In-Person Clubs
+        </p>
+
+        <h3>
+          One Order for the Group
+        </h3>
+
+        <p>
+          One organizer places a combined paperback order and receives all copies in one shipment for distribution to the group.
+        </p>
+
+        <p>
+          Collective shipping is available for group orders of ten books. Clubs may choose signed copies, unsigned copies, or contact A.J. Beckett about a mixed order.
+        </p>
+
+        <p>
+          This option works well for clubs meeting locally and reduces the shipping cost per book.
+        </p>
+
+        <a
+          href="#group-orders"
+          class="btn btn-primary"
+          onclick="gtag('event','click_bookclub_group_method');"
+        >
+          See Group Options
+        </a>
+
+      </article>
+
+    </div>
+
   </div>
+</section>
 
-  <a href="#bookclub-options"
-     class="btn btn-primary"
-     id="conversion-nudge-link">
-    Claim Your Discount
-  </a>
-</div>
+<section
+  id="individual-orders"
+  class="bookclub-section"
+>
+  <div class="container">
 
-<button class="discount-recall-tab"
-        type="button"
-        id="discount-recall-tab"
-        hidden>
-  10% Off
-</button>
+    <div class="section-heading">
 
+      <p class="book-label">
+        Individual Ordering
+      </p>
+
+      <h2>
+        Each member chooses their preferred format.
+      </h2>
+
+      <p>
+        Members ordering a direct paperback can enter the personalized discount code supplied by the book club organizer during Stripe checkout.
+      </p>
+
+      <p class="direct-support-note">
+        Individual paperback orders ship separately to each purchaser.
+      </p>
+
+    </div>
+
+    <div class="option-grid">
+
+      <article class="option-card featured signed-option">
+
+        <h3>Signed Paperback</h3>
+
+        <p class="price">
+          $24.99
+        </p>
+
+        <p>
+          Includes one paperback copy of <em>Becoming</em>, hand-signed by A.J. Beckett.
+        </p>
+
+        <p>
+          Signed-copy purchasers also receive one Harlow University bookmark and two Harlow University stickers while supplies last.
+        </p>
+
+        <p>
+          Enter your club’s personalized discount code during checkout.
+        </p>
+
+        <p>
+          Flat U.S. shipping: $7.95.
+        </p>
+
+        <a
+          href="https://buy.stripe.com/fZu28q8mUdMt2wp5padjO01"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event','click_bookclub_signed_individual');"
+        >
+          Order Signed Copy
+        </a>
+
+      </article>
+
+      <article class="option-card standard-option">
+
+        <h3 class="standard-title">
+          Standard Paperback
+        </h3>
+
+        <p class="price">
+          $17.99
+        </p>
+
+        <p>
+          Includes one unsigned paperback copy of <em>Becoming</em>.
+        </p>
+
+        <p>
+          Enter your club’s personalized discount code during checkout.
+        </p>
+
+        <p>
+          Flat U.S. shipping: $7.95.
+        </p>
+
+        <a
+          href="https://buy.stripe.com/14A6oG1YwfUBgnfeZKdjO00"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event','click_bookclub_unsigned_individual');"
+        >
+          Order Standard Copy
+        </a>
+
+      </article>
+
+      <article class="option-card kindle-option">
+
+        <h3>Kindle Edition</h3>
+
+        <p class="price">
+          Amazon preorder
+        </p>
+
+        <p>
+          Members who prefer an ebook can preorder the Kindle edition through Amazon.
+        </p>
+
+        <p>
+          Personalized club discount codes apply only to eligible direct paperback orders and cannot be used on Amazon.
+        </p>
+
+        <a
+          href="https://www.amazon.com/dp/B0H277TD1G"
+          class="btn btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="gtag('event','click_bookclub_kindle_individual');"
+        >
+          Preorder on Kindle
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+  
+  <section
+  id="group-orders"
+  class="details-band"
+>
+  <div class="container">
+
+    <div class="section-heading">
+
+      <p class="book-label">
+        Group Ordering
+      </p>
+
+      <h2>
+        Order ten copies in one shipment.
+      </h2>
+
+      <p>
+        One organizer places the order, receives all ten paperback copies, and distributes them to the group.
+      </p>
+
+      <p class="direct-support-note">
+        One shipment reduces the shipping cost per book for clubs meeting in person.
+      </p>
+
+    </div>
+
+    <div class="group-order-grid">
+
+      <article class="option-card">
+
+        <h3>
+          10 Standard Paperbacks
+        </h3>
+
+        <p class="price">
+          Group order
+        </p>
+
+        <p>
+          Ten unsigned paperback copies of <em>Becoming</em> shipped together to one organizer.
+        </p>
+
+        <p>
+          The club receives the printable discussion questions and author Q&amp;A.
+        </p>
+
+        <p>
+          Final group pricing and collective shipping will be shown during checkout.
+        </p>
+
+        <a
+          href="index.html#contact"
+          class="btn btn-primary"
+          onclick="gtag('event','click_bookclub_unsigned_group');"
+        >
+          Request Standard Group Order
+        </a>
+
+      </article>
+
+      <article class="option-card featured">
+
+        <h3>
+          10 Signed Paperbacks
+        </h3>
+
+        <p class="price">
+          Group order
+        </p>
+
+        <p>
+          Ten paperback copies of <em>Becoming</em>, each hand-signed by A.J. Beckett and shipped together to one organizer.
+        </p>
+
+        <p>
+          Each signed copy includes one Harlow University bookmark and two Harlow University stickers while supplies last.
+        </p>
+
+        <p>
+          The club also receives the printable discussion questions and author Q&amp;A.
+        </p>
+
+        <a
+          href="index.html#contact"
+          class="btn btn-primary"
+          onclick="gtag('event','click_bookclub_signed_group');"
+        >
+          Request Signed Group Order
+        </a>
+
+      </article>
+
+      <article class="option-card">
+
+        <h3>
+          Custom Club Order
+        </h3>
+
+        <p class="price">
+          Flexible quantities
+        </p>
+
+        <p>
+          Need a different quantity, a mix of signed and unsigned copies, local North Alabama delivery, or help arranging an order?
+        </p>
+
+        <p>
+          Contact A.J. Beckett with your club size, preferred formats, and meeting location.
+        </p>
+
+        <a
+          href="index.html#contact"
+          class="btn btn-primary"
+          onclick="gtag('event','click_bookclub_custom_group');"
+        >
+          Contact A.J. Beckett
+        </a>
+
+      </article>
+
+    </div>
+
+  </div>
+</section>
+</main>
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
@@ -1319,235 +1469,130 @@ footer .container{
 <script>
 (function(){
   const fired = new Set();
-  const nudge = document.getElementById('conversion-nudge');
-  const nudgeClose = document.getElementById('conversion-nudge-close');
-  const nudgeLink = document.getElementById('conversion-nudge-link');
-  const codeCopy = document.getElementById('conversion-code-copy');
-  const codeText = document.getElementById('conversion-code-text');
-  const recallTab = document.getElementById('discount-recall-tab');
 
   function sendEvent(name, extra){
     if (fired.has(name)) return;
+
     fired.add(name);
 
     if (typeof gtag === 'function') {
       gtag('event', name, Object.assign({
-        page_title: 'Preorder Becoming',
+        page_title: 'Becoming for Book Clubs',
         page_location: window.location.href
       }, extra || {}));
     }
   }
 
-  function bookclubWasClicked(){
-    return sessionStorage.getItem('bookclub_clicked') === 'true';
-  }
-
-  function markPreorderClicked(){
-    sessionStorage.setItem('bookclub_clicked', 'true');
-    if (nudge) nudge.hidden = true;
-    if (recallTab) recallTab.hidden = true;
-  }
-
-  function showRecallTab(){
-    if (!recallTab) return;
-    if (bookclubWasClicked()) return;
-    recallTab.hidden = false;
-  }
-
- function showNudge(source){
-  if (!nudge) return;
-  if (bookclubWasClicked()) return;
-
-  nudge.hidden = false;
-
-  if (recallTab) {
-    recallTab.hidden = true;
-  }
-
-  switch (source) {
-
-    case 'reader_reactions':
-      sendEvent('view_bookclub_becoming10_after_reactions');
-      break;
-
-    case 'recall':
-      sendEvent('recall_bookclub_becoming10_nudge');
-      break;
-
-    default:
-      sendEvent('view_bookclub_becoming10_nudge');
-      break;
-  }
-}
-
   function watch(selector, eventName, threshold){
-    const el = document.querySelector(selector);
-    if (!el || !('IntersectionObserver' in window)) return;
+    const element = document.querySelector(selector);
+
+    if (!element) return;
+    if (!('IntersectionObserver' in window)) return;
 
     const observer = new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
-        if (entry.isIntersecting) {
-          sendEvent(eventName);
-          observer.disconnect();
-        }
+        if (!entry.isIntersecting) return;
+
+        sendEvent(eventName);
+        observer.disconnect();
       });
     }, {
       threshold: threshold || 0.35
     });
 
-    observer.observe(el);
-  }
-function trackOptionEngagement(selector, eventName){
-  const option = document.querySelector(selector);
-
-  if (!option) return;
-
-  let engaged = false;
-
-  function fire(method){
-    if (engaged) return;
-
-    engaged = true;
-
-    sendEvent(eventName, {
-      interaction_method: method
-    });
+    observer.observe(element);
   }
 
-  option.addEventListener('mouseenter', function(){
-    fire('mouse_hover');
-  });
+  function trackCardEngagement(selector, eventName){
+    const cards = document.querySelectorAll(selector);
 
-  option.addEventListener('focusin', function(){
-    fire('keyboard_focus');
-  });
-}
-  setTimeout(function(){
-    sendEvent('bookclub_stayed_5_seconds', { seconds_on_page: 5 });
-  }, 5000);
+    cards.forEach(function(card, index){
+      let engaged = false;
 
-  setTimeout(function(){
-  sendEvent('bookclub_stayed_8_seconds', { seconds_on_page: 8 });
-}, 8000);
+      function fire(method){
+        if (engaged) return;
 
-  setTimeout(function(){
-    sendEvent('bookclub_stayed_15_seconds', { seconds_on_page: 15 });
-  }, 15000);
+        engaged = true;
 
-  setTimeout(function(){
-    sendEvent('bookclub_stayed_30_seconds', { seconds_on_page: 30 });
-  }, 30000);
+        sendEvent(eventName + '_' + (index + 1), {
+          interaction_method: method,
+          card_position: index + 1
+        });
+      }
 
-  setTimeout(function(){
-    sendEvent('bookclub_stayed_60_seconds', { seconds_on_page: 60 });
-  }, 60000);
+      card.addEventListener('mouseenter', function(){
+        fire('mouse_hover');
+      });
 
- document.querySelectorAll(
-  'a[href*="buy.stripe.com"], a[href*="amazon.com/dp/"]'
-).forEach(function(link){
-  link.addEventListener('click', markPreorderClicked);
-});
-
-  document.querySelectorAll('a[href*="read.html"]').forEach(function(link){
-    link.addEventListener('click', function(){
-      sessionStorage.setItem('bookclub_read_clicked', 'true');
-    });
-  });
-
-  if (nudgeLink) {
-    nudgeLink.addEventListener('click', function(){
-      sendEvent('click_bookclub_becoming10_nudge');
-    });
-  }
-
-  if (codeCopy) {
-    codeCopy.addEventListener('click', function(){
-      navigator.clipboard.writeText('BECOMING10').then(function(){
-        sendEvent('copy_bookclub_becoming10_code');
-
-        codeText.textContent = 'Copied!';
-        setTimeout(function(){
-          codeText.textContent = 'BECOMING10';
-        }, 2000);
+      card.addEventListener('focusin', function(){
+        fire('keyboard_focus');
       });
     });
   }
 
-  if (nudgeClose) {
-    nudgeClose.addEventListener('click', function(){
-      if (nudge) nudge.hidden = true;
-      sendEvent('dismiss_bookclub_becoming10_nudge');
-      showRecallTab();
+  setTimeout(function(){
+    sendEvent('bookclub_stayed_5_seconds', {
+      seconds_on_page: 5
     });
-  }
+  }, 5000);
 
-  if (recallTab) {
-    recallTab.addEventListener('click', function(){
-      showNudge('recall');
+  setTimeout(function(){
+    sendEvent('bookclub_stayed_15_seconds', {
+      seconds_on_page: 15
     });
-  }
+  }, 15000);
 
-  watch('.bookclub-hero', 'view_bookclub_hero', 0.35);
-  watch('#read-chapter-one', 'view_bookclub_read_prompt', 0.35);
-  watch('#bookclub-options', 'view_bookclub_options', 0.25);
-  watch('.signed-option', 'view_signed_bookclub_option', 0.45);
-  watch('.standard-option', 'view_standard_bookclub_option', 0.45);
-  watch('.kindle-option', 'view_kindle_bookclub_option', 0.45);
-
-  trackOptionEngagement(
-  '.signed-option',
-  'engage_signed_bookclub_option'
-);
-
-  trackOptionEngagement(
-  '.standard-option',
-  'engage_standard_bookclub_option'
-);
-
-  trackOptionEngagement(
-  '.kindle-option',
-  'engage_kindle_bookclub_option'
-);
-
-watch('.bookclub-reactions', 'view_bookclub_reactions', 0.25);
-
-const reactions = document.querySelector('.bookclub-reactions');
-
-if (reactions && 'IntersectionObserver' in window) {
-
-  const observer = new IntersectionObserver(function(entries){
-
-    entries.forEach(function(entry){
-
-      if (!entry.isIntersecting) return;
-
-      observer.disconnect();
-
-      if (sessionStorage.getItem('bookclub_becoming10_nudge_shown') === 'true') return;
-      if (bookclubWasClicked()) return;
-
-      sessionStorage.setItem('bookclub_becoming10_nudge_shown','true');
-
-      showNudge('reader_reactions');
-
-      setTimeout(function(){
-
-        if (nudge && !nudge.hidden && !bookclubWasClicked()){
-
-          nudge.hidden = true;
-          showRecallTab();
-
-        }
-
-      },20000);
-
+  setTimeout(function(){
+    sendEvent('bookclub_stayed_30_seconds', {
+      seconds_on_page: 30
     });
+  }, 30000);
 
-  },{threshold:.35});
+  setTimeout(function(){
+    sendEvent('bookclub_stayed_60_seconds', {
+      seconds_on_page: 60
+    });
+  }, 60000);
 
-  observer.observe(reactions);
+  watch(
+    '.bookclub-hero',
+    'view_bookclub_hero',
+    0.35
+  );
 
-}
+  watch(
+    '#bookclub-benefits',
+    'view_bookclub_benefits',
+    0.25
+  );
+
+  watch(
+    '#bookclub-order-methods',
+    'view_bookclub_order_methods',
+    0.25
+  );
+
+  watch(
+    '#individual-orders',
+    'view_bookclub_individual_options',
+    0.25
+  );
+
+  watch(
+    '#group-orders',
+    'view_bookclub_group_options',
+    0.25
+  );
+
+  trackCardEngagement(
+    '#individual-orders .option-card',
+    'engage_bookclub_individual_option'
+  );
+
+  trackCardEngagement(
+    '#group-orders .option-card',
+    'engage_bookclub_group_option'
+  );
 })();
 </script>
   
