@@ -340,7 +340,7 @@ h1,h2,h3,h4{
 }
 
   .read-prompt-actions,
-.details-actions{
+.s-actions{
   display:flex;
   justify-content:center;
   align-items:center;
@@ -349,22 +349,22 @@ h1,h2,h3,h4{
   margin-top:1.5rem;
 }
 
-.details-actions{
+.s-actions{
   margin-top:2rem;
 }
 
 .read-prompt-actions .btn,
-.details-actions .btn{
+.s-actions .btn{
   min-width:190px;
 }
 
-.detail-box a{
+.-box a{
   color:var(--accent);
   font-weight:650;
   text-decoration:none;
 }
 
-.detail-box a:hover{
+.-box a:hover{
   text-decoration:underline;
 }
   
@@ -517,14 +517,14 @@ h1,h2,h3,h4{
   white-space:nowrap;
 }
   
-.details-band{
+.s-band{
   background:var(--soft);
   border-top:1px solid var(--border);
   border-bottom:1px solid var(--border);
   padding:4.5rem 0;
 }
 
-.details-card{
+.s-card{
   max-width:900px;
   margin:0 auto;
   background:var(--surface);
@@ -534,31 +534,31 @@ h1,h2,h3,h4{
   box-shadow:0 12px 30px rgba(0,0,0,.05);
 }
 
-.details-card h2{
+.s-card h2{
   font-size:2.35rem;
   margin-bottom:1rem;
 }
 
-.details-card p{
+.s-card p{
   margin:0 0 1rem;
   color:var(--muted);
 }
 
-.details-list{
+.s-list{
   display:grid;
   grid-template-columns:repeat(2, minmax(240px,1fr));
   gap:1rem;
   margin-top:1.5rem;
 }
 
-.detail-box{
+.-box{
   border:1px solid var(--border);
   border-radius:18px;
   background:#fcfbf9;
   padding:1.2rem 1.3rem;
 }
 
-.detail-box h4{
+.-box h4{
   font-family:'Inter',sans-serif;
   font-size:.82rem;
   font-weight:750;
@@ -568,7 +568,7 @@ h1,h2,h3,h4{
   color:#5a2622;
 }
 
-.detail-box p{
+.-box p{
   margin:0;
   font-size:.97rem;
 }
@@ -678,7 +678,7 @@ footer .container{
   }
 
   .option-grid,
-  .details-list{
+  .s-list{
     grid-template-columns:1fr;
   }
 }
@@ -730,34 +730,34 @@ footer .container{
   }
   
 .read-prompt-actions,
-.details-actions{
+.s-actions{
   flex-direction:column;
   align-items:stretch;
   gap:.85rem;
 }
 
 .read-prompt-actions .btn,
-.details-actions .btn{
+.s-actions .btn{
   width:100%;
   min-width:0;
 }
 
-#read-chapter-one .details-card h2{
+#read-chapter-one .s-card h2{
   font-size:clamp(2.25rem, 12vw, 3.1rem);
   line-height:1.05;
 }
 
-#read-chapter-one .details-card p{
+#read-chapter-one .s-card p{
   font-size:1.05rem;
   line-height:1.65;
 }
 
-#read-chapter-one .details-card{
+#read-chapter-one .s-card{
   padding:2rem 1.55rem;
 }
 
   .option-card,
-  .details-card{
+  .s-card{
     padding:1.5rem;
   }
 
@@ -823,16 +823,16 @@ footer .container{
 
   @media (max-width: 700px){
 
-  #read-chapter-one .details-card{
+  #read-chapter-one .s-card{
     padding:1.75rem 1.35rem 2rem;
   }
 
-  #read-chapter-one .details-card h2{
+  #read-chapter-one .s-card h2{
     font-size:clamp(2rem, 10vw, 2.75rem);
     line-height:1.08;
   }
 
-  #read-chapter-one .details-card p{
+  #read-chapter-one .s-card p{
     font-size:1rem;
     line-height:1.6;
   }
@@ -1042,7 +1042,7 @@ footer .container{
       <a href="#preorder-options"
          class="btn btn-primary"
          onclick="gtag('event','click_choose_preorder_option_top');">
-        See Preorder Options
+        See Order Options
       </a>
 
       <a href="read.html"
@@ -1060,7 +1060,7 @@ footer .container{
     <div class="container">
 
  <div class="section-heading">
-  <h2>Choose Your Preorder</h2>
+  <h2> Order <em>Becoming</em></h2>
   <p>
     Signed and standard paperback copies are available for direct U.S. shipping.<br>Kindle preorders are available through Amazon for U.S. and International readers.
   </p>
@@ -1149,7 +1149,7 @@ footer .container{
   
  <section class="preorder-section" id="read-chapter-one">
     <div class="container">
-      <div class="details-card">
+      <div class="s-card">
         <p class="book-label" style="margin-bottom:.45rem;"></p>
         <h2>Not sure yet? Read Chapter One Free</h2>
 
@@ -1207,10 +1207,10 @@ footer .container{
   </div>
 </section>
   
-  <section class="details-band">
+  <section class="s-band">
     <div class="container">
-      <div class="details-card">
-        <h2>Preorder Details</h2>
+      <div class="s-card">
+        <h2>Preorder s</h2>
 
         <p>
           <em>Becoming</em> releases September 18, 2026. Direct preorder copies are expected to ship in late September or early October after print copies arrive.
@@ -1224,8 +1224,8 @@ footer .container{
           If production or shipping is delayed, preorder customers will be notified by email.
         </p>
 
-        <div class="details-list">
-          <div class="detail-box">
+        <div class="s-list">
+          <div class="-box">
             <h4>Shipping</h4>
             <p>Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in late September or early October.</p>
           </div>
@@ -1255,6 +1255,19 @@ footer .container{
           </div>
         </div>
 
+<div class="detail-box">
+  <h4>Booksellers</h4>
+  <p>
+    We'd love to partner with independent booksellers.
+    Learn about wholesale ordering, signed copies, and how to stock <em>Becoming</em> in your store.
+    <br><br>
+    <a href="becoming-wholesale.html"
+       onclick="gtag('event','click_wholesale_from_order_page');">
+      View Wholesale Information →
+    </a>
+  </p>
+</div>
+        
         <div class="details-actions">
          <a href="#preorder-options" class="btn btn-primary"
    onclick="gtag('event','click_preorder_details_bottom');">
