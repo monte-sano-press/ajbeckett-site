@@ -224,15 +224,6 @@ h1,h2,h3,h4{
   max-width:900px;
 }
 
-.book-label{
-  margin:0 0 .7rem;
-  font-size:.76rem;
-  text-transform:uppercase;
-  letter-spacing:.18em;
-  font-weight:750;
-  color:#8b7568;
-}
-
 .preorder-copy h1{
   max-width:820px;
   margin:0 0 1rem;
@@ -240,12 +231,6 @@ h1,h2,h3,h4{
   line-height:1.06;
   color:#5a2622;
   letter-spacing:-.015em;
-}
-
-.subtitle{
-  font-size:1.2rem;
-  color:var(--muted);
-  margin:0 0 1.2rem;
 }
 
 .hero-tropes{
@@ -280,14 +265,7 @@ h1,h2,h3,h4{
 .hero-blurb p:last-child{
   margin-bottom:0;
 }
-  
-.trope-line{
-  font-size:1rem;
-  color:#5a2622;
-  font-weight:600;
-  margin:0 0 1.2rem;
-}
-  
+    
 .release-line{
   margin:0 0 .35rem;
   color:#5a2622;
@@ -402,11 +380,6 @@ h1,h2,h3,h4{
 .option-card h3{
   font-size:clamp(1.65rem, 2.2vw, 1.95rem);
   margin-bottom:.5rem;
-}
-
-.option-card h3.standard-title{
-  font-size:2rem;
-  white-space:nowrap;
 }
   
 .price{
@@ -565,36 +538,6 @@ h1,h2,h3,h4{
 .detail-box a:hover{
   text-decoration:underline;
 }
-.goodreads-add{
-  margin-top:1.3rem;
-  display:flex;
-  justify-content:flex-start;
-}
-
-.goodreads-btn{
-  width:176px;
-  height:56px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:0;
-  background:transparent;
-  border:0;
-  text-decoration:none;
-  transition:.2s ease;
-}
-
-.goodreads-btn:hover{
-  transform:translateY(-1px);
-  opacity:.9;
-}
-
-.goodreads-btn img{
-  width:176px;
-  height:56px;
-  object-fit:contain;
-  display:block;
-}
 
 footer{
   background:var(--dark);
@@ -662,11 +605,6 @@ footer .container{
   .cover-wrap{
     max-width:340px;
     margin:0 auto;
-  }
-
-  .hero-actions,
-  .goodreads-add{
-    justify-content:center;
   }
 
  .option-grid,
@@ -738,20 +676,6 @@ footer .container{
   min-width:0;
 }
 
-#read-chapter-one .s-card h2{
-  font-size:clamp(2.25rem, 12vw, 3.1rem);
-  line-height:1.05;
-}
-
-#read-chapter-one .s-card p{
-  font-size:1.05rem;
-  line-height:1.65;
-}
-
-#read-chapter-one .s-card{
-  padding:2rem 1.55rem;
-}
-
   .option-card,
   .s-card{
     padding:1.5rem;
@@ -815,11 +739,8 @@ footer .container{
     font-weight:500;
     line-height:1.25;
   }
-}
 
-  @media (max-width: 700px){
-
-  #read-chapter-one .s-card{
+ #read-chapter-one .s-card{
     padding:1.75rem 1.35rem 2rem;
   }
 
@@ -847,6 +768,12 @@ footer .container{
     display:block;
   }
 }
+  
+}
+
+  @media (max-width: 700px){
+
+ 
 
 .conversion-nudge{
   position:fixed;
@@ -970,14 +897,14 @@ footer .container{
 
     <div class="nav-links">
       <a href="index.html#books">Books</a>
-      <a href="read.html" onclick="gtag('event','click_read_nav_');">Read</a>
-      <a href="index.html#contact" onclick="gtag('event','click_updates_nav_');">Updates</a>
+      <a href="read.html" onclick="gtag('event','click_read_nav');">Read</a>
+      <a href="index.html#contact" onclick="gtag('event','click_updates_nav');">Updates</a>
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
          class="nav-icon-link"
          aria-label="A.J. Beckett on Instagram"
-         onclick="gtag('event','click_instagram_nav_');">
+         onclick="gtag('event','click_instagram_nav');">
         <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
       </a>
     </div>
@@ -1058,7 +985,7 @@ footer .container{
  <div class="section-heading">
   <h2> Order <em>Becoming</em></h2>
   <p>
-    Signed and standard paperback copies are available to preorder for direct U.S. shipping.<br>Kindle preorders are available through Amazon for U.S. and International readers.
+    Signed and standard paperback copies are available to preorder for direct U.S. shipping.<br>Kindle preorders are available through Amazon for U.S. and international readers.
   </p>
   <p class="direct-support-note">
     Direct paperback orders make the biggest difference for indie authors!<br>
@@ -1127,7 +1054,7 @@ footer .container{
           </p>
 
           <p>
-            This is the best option for ebook readers and International readers who prefer Amazon delivery.
+            This is the best option for ebook readers and international readers who prefer Amazon delivery.
           </p>
 
           <a href="https://www.amazon.com/dp/B0H277TD1G"
@@ -1146,7 +1073,6 @@ footer .container{
  <section class="preorder-section" id="read-chapter-one">
     <div class="container">
       <div class="s-card">
-        <p class="book-label" style="margin-bottom:.45rem;"></p>
         <h2>Not sure yet? Read Chapter One Free</h2>
 
         <p>
@@ -1213,7 +1139,7 @@ footer .container{
         </p>
 
         <p>
-          Direct paperback preorders are available for U.S. shipping only at this time. Kindle preorder is available through Amazon for U.S. and International readers.
+          Direct paperback preorders are available for U.S. shipping only at this time. Kindle preorder is available through Amazon for U.S. and international readers.
         </p>
 
         <p>
@@ -1225,7 +1151,7 @@ footer .container{
   <div class="detail-box">
     <h4>Shipping</h4>
     <p>
-      Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in late September or early October.
+      Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in September.
     </p>
   </div>
 
@@ -1443,9 +1369,6 @@ function trackOptionEngagement(selector, eventName){
     fire('keyboard_focus');
   });
 }
-  setTimeout(function(){
-    sendEvent('preorder_stayed_5_seconds', { seconds_on_page: 5 });
-  }, 5000);
 
   setTimeout(function(){
   sendEvent('preorder_stayed_8_seconds', { seconds_on_page: 8 });
@@ -1481,18 +1404,45 @@ function trackOptionEngagement(selector, eventName){
     });
   }
 
-  if (codeCopy) {
-    codeCopy.addEventListener('click', function(){
-      navigator.clipboard.writeText('BECOMING10').then(function(){
-        sendEvent('copy_preorder_becoming10_code');
+ if (codeCopy) {
+  codeCopy.addEventListener('click', function(){
+    const code = 'BECOMING10';
 
-        codeText.textContent = 'Copied!';
-        setTimeout(function(){
-          codeText.textContent = 'BECOMING10';
-        }, 2000);
-      });
-    });
-  }
+    function showCopiedState(){
+      sendEvent('copy_preorder_becoming10_code');
+
+      codeText.textContent = 'Copied!';
+      setTimeout(function(){
+        codeText.textContent = code;
+      }, 2000);
+    }
+
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(code)
+        .then(showCopiedState)
+        .catch(function(){
+          codeText.textContent = code;
+        });
+    } else {
+      const textArea = document.createElement('textarea');
+      textArea.value = code;
+      textArea.style.position = 'fixed';
+      textArea.style.opacity = '0';
+
+      document.body.appendChild(textArea);
+      textArea.select();
+
+      try {
+        document.execCommand('copy');
+        showCopiedState();
+      } catch (error) {
+        codeText.textContent = code;
+      }
+
+      document.body.removeChild(textArea);
+    }
+  });
+}
 
   if (nudgeClose) {
     nudgeClose.addEventListener('click', function(){
