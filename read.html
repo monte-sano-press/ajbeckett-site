@@ -286,7 +286,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 <nav><div class="container nav-inner"><a class="brand" href="index.html"><img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal"><span class="brand-text">A.J. Beckett</span></a><div class="nav-links">
   <a href="index.html#books">Books</a>
 
-  <a href="becoming-preorder.html#preorder-options"
+  <a href="becoming-order.html#preorder-options"
      onclick="gtag('event','click_preorder_nav_read');">
     Preorder
   </a>
@@ -307,7 +307,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   <p class="read-time">Chapter One · About 14 minutes</p><p class="sample-reassurance">
   No email required.
 </p>
-  <div class="hero-actions"><a href="#chapter-one" class="btn btn-primary" onclick="gtag('event','click_start_reading_top');">Start Reading</a><a href="becoming-preorder.html#preorder-options"
+  <div class="hero-actions"><a href="#chapter-one" class="btn btn-primary" onclick="gtag('event','click_start_reading_top');">Start Reading</a><a href="becoming-order.html#preorder-options"
    class="btn btn-soft"
    onclick="gtag('event','click_preorder_read_top');">
   Preorder <em>Becoming</em>
@@ -424,7 +424,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   </p>
 
   <div class="after-actions">
-   <a href="becoming-preorder.html#preorder-options"
+   <a href="becoming-order.html#preorder-options"
    class="btn btn-primary"
    onclick="gtag('event','click_preorder_after_chapter');">
   Preorder <em>Becoming</em>
@@ -462,7 +462,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     </button>
   </div>
 
-  <a href="becoming-preorder.html#preorder-options"
+  <a href="becoming-order.html#preorder-options"
      class="btn btn-primary"
      id="conversion-nudge-link">
     Preorder <em>Becoming</em>
@@ -606,7 +606,7 @@ function hideRecallTab(){
     }
   }
 
-  document.querySelectorAll('a[href*="becoming-preorder"]').forEach(function(link){
+  document.querySelectorAll('a[href*="becoming-order"]').forEach(function(link){
     link.addEventListener('click', function(){
       sessionStorage.setItem('read_preorder_clicked', 'true');
         hideRecallTab();
