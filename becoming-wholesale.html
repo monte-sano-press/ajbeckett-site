@@ -565,6 +565,23 @@ h4{
   margin-top:.35rem;
 }  
 
+.featured-bundle-edition{
+  margin:-.25rem -.25rem .25rem;
+  padding:1.2rem;
+  border:1px solid #cfaeaa;
+  border-radius:18px;
+  background:#fbf7f4;
+}
+
+.shipping-note{
+  margin:1rem 0 0 !important;
+  padding-top:1rem;
+  border-top:1px solid var(--border);
+  text-align:center;
+  font-size:.88rem !important;
+  font-style:italic;
+}
+  
 .proof-callout{
   margin:1.6rem 0 2.5rem;
   padding:1.35rem 1.45rem;
@@ -620,7 +637,7 @@ h4{
 
 .bundle-grid{
   display:grid;
-  grid-template-columns:repeat(4, minmax(220px, 1fr));
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
   gap:1.35rem;
   max-width:1120px;
   margin:0 auto;
@@ -752,9 +769,9 @@ footer .container{
 
 @media (max-width:1050px){
   .bundle-grid{
-    grid-template-columns:repeat(2, minmax(240px, 1fr));
-    max-width:720px;
-  }
+  grid-template-columns:repeat(2, minmax(260px, 1fr));
+  max-width:760px;
+}
 
   .wholesale-economics-grid{
     grid-template-columns:repeat(2, minmax(220px, 1fr));
@@ -1125,9 +1142,9 @@ footer .container{
     <p class="edition-price">$13 per copy</p>
 
     <p>
-      A special signed edition designed to give independent bookstores an
-      affordable way to offer readers something unavailable through standard
-      distribution.
+        A streamlined signed edition that gives independent bookstores an
+        affordable way to offer readers a personally signed copy of
+        <em>Becoming</em>.
     </p>
 
     <ul>
@@ -1142,37 +1159,37 @@ footer .container{
 <div class="wholesale-economics-grid">
 
   <div class="economics-card">
-    <span class="economics-label">Bookstore Edition</span>
-    <strong>$13.00</strong>
-    <p>Signed copy plus bookmark</p>
-  </div>
-
-  <div class="economics-card">
-    <span class="economics-label">Retail Benchmark</span>
-    <strong>$19.99</strong>
-    <p>Standard paperback retail price</p>
-  </div>
-
-  <div class="economics-card">
-    <span class="economics-label">Harlow Edition</span>
+    <span class="economics-label">Signed Harlow Edition</span>
     <strong>$15.00</strong>
-    <p>Signed copy plus Harlow keepsakes</p>
+    <p>Signed copy, bookmark, and sticker</p>
   </div>
 
   <div class="economics-card">
-    <span class="economics-label">Direct Retail Price</span>
-    <strong>$24.99</strong>
-    <p>Signed Harlow Edition price</p>
+    <span class="economics-label">Signed Bookstore Edition</span>
+    <strong>$13.00</strong>
+    <p>Signed copy and bookmark</p>
   </div>
+
+  <div class="economics-card">
+    <span class="economics-label">Standard Retail Price</span>
+    <strong>$19.99</strong>
+    <p>Unsigned paperback</p>
+  </div>
+
+  <div class="economics-card">
+    <span class="economics-label">Direct Reader Price</span>
+    <strong>$24.99</strong>
+    <p>Signed Harlow Edition</p>
+  </div>
+
+</div>
 
 <div class="proof-callout">
   <strong>Reader preference:</strong>
   More than 80% of direct paperback customers have chosen the Signed Harlow
   Edition over the standard unsigned paperback.
 </div>
-  
-</div>
-
+      
   </div>
 </section>
 
@@ -1185,240 +1202,241 @@ footer .container{
 
       <div class="section-heading">
 
-        <h2>
-  Wholesale Pricing
-</h2>
+  <h2>
+    Choose Your Signed Edition
+  </h2>
 
-<p>
-  Choose the <strong>$13 Signed Bookstore Edition</strong> or the
-  <strong>$15 Signed Harlow Edition</strong>. Hand-signing is included
-  with both editions at no additional cost.
-</p>
+  <p>
+    Both editions are personally hand-signed by A.J. Beckett and ship
+    directly from the author.
+  </p>
 
-<p>
-  Shipping is calculated during secure Stripe checkout.
-</p>
+  <p>
+    Standard checkout is available for 5, 10, and 15 copy orders.
+    Shipping is calculated during secure Stripe checkout.
+  </p>
 
-      </div>
+</div>
 
 <div class="proof-callout">
 
   <strong>Working directly with the author.</strong>
 
   <p style="margin-top:.8rem;">
-    Many of the booksellers receiving this page have connected with A.J. Beckett through Instagram, local events, or direct outreach.
-  </p>
-
-  <p>
-    Every order is fulfilled directly by the author, with responsive communication before and after release and hand-signed copies included at no additional wholesale cost.
+    Every order is fulfilled by A.J. Beckett, with responsive communication
+    before and after release and hand-signed copies prepared specifically
+    for your bookstore.
   </p>
 
 </div>
       
-      <div class="bundle-grid">
+    <div class="bundle-grid">
 
-        <article class="bundle-card">
+  <article class="bundle-card">
 
-          <h3>5 Copies</h3>
+    <h3>5 Copies</h3>
 
-<p class="bundle-price">
-  $65
-</p>
+    <div class="bundle-edition featured-bundle-edition">
 
-<p>
-  Wholesale investment
-</p>
+      <h4>Signed Harlow Edition</h4>
 
-<hr class="bundle-divider">
+      <p class="bundle-price">
+        $75
+      </p>
 
-<p>
-  Suggested retail value:<br>
-  <strong>$99.95</strong>
-</p>
+      <p>
+        Includes five hand-signed copies, five Harlow University bookmarks,
+        and five Harlow University stickers.
+      </p>
 
-<p>
-  Potential gross return:<br>
-  <strong>$34.95</strong>
-</p>
+      <a
+        href="HARLOW_5_COPY_STRIPE_LINK"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_harlow_5_copy_bundle');"
+      >
+        Order Harlow Edition
+      </a>
 
-<hr class="bundle-divider">
-          
-<p class="bundle-note">
-  Hand-signed copies included at no additional cost.
-</p>
-          <p>
-            Shipping is calculated during checkout.
-          </p>
+    </div>
 
-          <a
-            href="https://buy.stripe.com/4gMcN4cDa5fX4Ex3h2djO03"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_wholesale_5_copy_bundle');"
-          >
-            Order 5 Copies
-          </a>
+    <div class="bundle-edition">
 
-        </article>
+      <h4>Signed Bookstore Edition</h4>
 
-        <article class="bundle-card">
+      <p class="bundle-price">
+        $65
+      </p>
 
-          <h3>10 Copies</h3>
+      <p>
+        Includes five hand-signed copies and five Harlow University bookmarks.
+      </p>
 
-<p class="bundle-price">
-  $130
-</p>
+      <a
+        href="https://buy.stripe.com/4gMcN4cDa5fX4Ex3h2djO03"
+        class="btn btn-soft"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_bookstore_5_copy_bundle');"
+      >
+        Order Bookstore Edition
+      </a>
 
-<p>
-  Wholesale investment
-</p>
+    </div>
 
-<hr class="bundle-divider">
+    <p class="shipping-note">
+      Shipping is calculated during checkout.
+    </p>
 
-<p>
-  Suggested retail value:<br>
-  <strong>$199.90</strong>
-</p>
+  </article>
 
-<p>
-  Potential gross return:<br>
-  <strong>$69.90</strong>
-</p>
 
-<hr class="bundle-divider">
-          
-<p class="bundle-note">
-  Hand-signed copies included at no additional cost.
-</p>
+  <article class="bundle-card">
 
-          <p>
-            Shipping is calculated during checkout.
-          </p>
+    <h3>10 Copies</h3>
 
-          <a
-            href="https://buy.stripe.com/cNi28qcDa5fXb2V6tedjO04"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_wholesale_10_copy_bundle');"
-          >
-            Order 10 Copies
-          </a>
+    <div class="bundle-edition featured-bundle-edition">
 
-        </article>
+      <h4>Signed Harlow Edition</h4>
 
-        <article class="bundle-card">
+      <p class="bundle-price">
+        $150
+      </p>
 
-          <h3>15 Copies</h3>
+      <p>
+        Includes ten hand-signed copies, ten Harlow University bookmarks,
+        and ten Harlow University stickers.
+      </p>
 
-<p class="bundle-price">
-  $195
-</p>
+      <a
+        href="HARLOW_10_COPY_STRIPE_LINK"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_harlow_10_copy_bundle');"
+      >
+        Order Harlow Edition
+      </a>
 
-<p>
-  Wholesale investment
-</p>
+    </div>
 
-<hr class="bundle-divider">
+    <div class="bundle-edition">
 
-<p>
-  Suggested retail value:<br>
-  <strong>$299.85</strong>
-</p>
+      <h4>Signed Bookstore Edition</h4>
 
-<p>
-  Potential gross return:<br>
-  <strong>$104.85</strong>
-</p>
+      <p class="bundle-price">
+        $130
+      </p>
 
-<hr class="bundle-divider">
-          
-<p class="bundle-note">
-  Hand-signed copies included at no additional cost.
-</p>
+      <p>
+        Includes ten hand-signed copies and ten Harlow University bookmarks.
+      </p>
 
-          <p>
-            Shipping is calculated during checkout.
-          </p>
+      <a
+        href="https://buy.stripe.com/cNi28qcDa5fXb2V6tedjO04"
+        class="btn btn-soft"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_bookstore_10_copy_bundle');"
+      >
+        Order Bookstore Edition
+      </a>
 
-          <a
-            href="https://buy.stripe.com/eVq5kC7iQdMt6MFdVGdjO05"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_wholesale_15_copy_bundle');"
-          >
-            Order 15 Copies
-          </a>
+    </div>
 
-        </article>
+    <p class="shipping-note">
+      Shipping is calculated during checkout.
+    </p>
 
-        <article class="bundle-card">
+  </article>
 
-          <h3>20 Copies</h3>
 
-<p class="bundle-price">
-  $260
-</p>
+  <article class="bundle-card">
 
-<p>
-  Wholesale investment
-</p>
+    <h3>15 Copies</h3>
 
-<hr class="bundle-divider">
+    <div class="bundle-edition featured-bundle-edition">
 
-<p>
-  Suggested retail value:<br>
-  <strong>$399.80</strong>
-</p>
+      <h4>Signed Harlow Edition</h4>
 
-<p>
-  Potential gross return:<br>
-  <strong>$139.80</strong>
-</p>
+      <p class="bundle-price">
+        $225
+      </p>
 
-<hr class="bundle-divider">
-          
-<p class="bundle-note">
-  Hand-signed copies included at no additional cost.
-</p>
+      <p>
+        Includes fifteen hand-signed copies, fifteen Harlow University
+        bookmarks, and fifteen Harlow University stickers.
+      </p>
 
-          <p>
-            Shipping is calculated during checkout.
-          </p>
+      <a
+        href="HARLOW_15_COPY_STRIPE_LINK"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_harlow_15_copy_bundle');"
+      >
+        Order Harlow Edition
+      </a>
 
-          <a
-            href="https://buy.stripe.com/9B6aEWdHefUB1sl8BmdjO06"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_wholesale_20_copy_bundle');"
-          >
-            Order 20 Copies
-          </a>
+    </div>
 
-        </article>
+    <div class="bundle-edition">
 
-            </div>
+      <h4>Signed Bookstore Edition</h4>
+
+      <p class="bundle-price">
+        $195
+      </p>
+
+      <p>
+        Includes fifteen hand-signed copies and fifteen Harlow University
+        bookmarks.
+      </p>
+
+      <a
+        href="https://buy.stripe.com/eVq5kC7iQdMt6MFdVGdjO05"
+        class="btn btn-soft"
+        target="_blank"
+        rel="noopener noreferrer"
+        onclick="gtag('event','click_bookstore_15_copy_bundle');"
+      >
+        Order Bookstore Edition
+      </a>
+
+    </div>
+
+    <p class="shipping-note">
+      Shipping is calculated during checkout.
+    </p>
+
+  </article>
+
+</div>
 
       <div class="note-box">
-        <p>
-          <strong>Need a different quantity?</strong>
-          The standard order sizes above are available for immediate checkout.
-          For 6, 8, 12, or another quantity, contact A.J. Beckett for a custom
-          wholesale order and secure payment link.
-        </p>
 
-        <p>
-          <a
-            href="#wholesale-contact"
-            onclick="gtag('event','click_custom_quantity_wholesale');"
-          >
-            Request a custom quantity →
-          </a>
-        </p>
-      </div>
+  <p>
+    <strong>Need a different quantity?</strong>
+    Standard checkout is available for 5, 10, and 15-copy orders in both
+    signed editions.
+  </p>
+
+  <p>
+    If your bookstore needs another quantity, A.J. Beckett will be happy
+    to create a custom secure checkout link.
+  </p>
+
+  <p>
+    <a
+      href="#wholesale-contact"
+      onclick="gtag('event','click_custom_quantity_wholesale');"
+    >
+      Request a custom quantity →
+    </a>
+  </p>
+
+</div>
 
     </div>
   </section>
@@ -1447,9 +1465,9 @@ footer .container{
 
 <p>
   This private page is intended exclusively for wholesale bookseller orders.
-  If you need a quantity other than the standard options above, an event order,
-  local North Alabama delivery, or help before purchasing, I'd be happy to
-  create a custom order for you.
+  If you need a quantity other than 5, 10, or 15 copies, an event order,
+  local North Alabama delivery, or help choosing an edition, I'd be happy
+  to create a custom order for you.
 </p>
         <div class="contact-actions">
 
