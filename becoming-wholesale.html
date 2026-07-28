@@ -26,7 +26,7 @@
 
 <meta
   name="description"
-  content="Private bookseller ordering page for hand-signed wholesale copies of Becoming by A.J. Beckett."
+  content="Private bookseller ordering page for the Signed Bookstore Edition and Signed Harlow Edition of Becoming by A.J. Beckett."
 >
 
 <meta property="og:title" content="Becoming Wholesale Orders | A.J. Beckett">
@@ -490,6 +490,81 @@ h4{
   line-height:1.45;
 } 
 
+.edition-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(280px, 1fr));
+  gap:1.35rem;
+  margin:2rem 0;
+}
+
+.edition-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:1.6rem;
+  box-shadow:0 10px 24px rgba(0,0,0,.05);
+}
+
+.edition-card.featured{
+  border-color:#cfaeaa;
+  background:#fbf7f4;
+  box-shadow:0 14px 32px rgba(107,47,42,.10);
+}
+
+.edition-card h3{
+  font-size:1.65rem;
+  margin-bottom:.45rem;
+  color:#5a2622;
+}
+
+.edition-price{
+  margin:0 0 .8rem !important;
+  color:#5a2622 !important;
+  font-size:1.4rem;
+  font-weight:750;
+}
+
+.edition-card ul{
+  margin:.9rem 0 0;
+  padding-left:1.25rem;
+  color:var(--muted);
+}
+
+.edition-card li + li{
+  margin-top:.35rem;
+}
+
+.bundle-edition{
+  padding:.95rem 0;
+}
+
+.bundle-edition + .bundle-edition{
+  border-top:1px solid var(--border);
+}
+
+.bundle-edition h4{
+  font-family:'Inter',sans-serif;
+  color:#5a2622;
+  font-size:.84rem;
+  font-weight:750;
+  letter-spacing:.06em;
+  line-height:1.4;
+  text-transform:uppercase;
+  margin:0 0 .35rem;
+}
+
+.bundle-edition .bundle-price{
+  margin:0 0 .35rem !important;
+}
+
+.bundle-edition p{
+  margin:0 0 .75rem;
+}
+
+.bundle-edition .btn{
+  margin-top:.35rem;
+}  
+
 .proof-callout{
   margin:1.6rem 0 2.5rem;
   padding:1.35rem 1.45rem;
@@ -712,6 +787,10 @@ footer .container{
   .wholesale-economics-grid{
   grid-template-columns:1fr;
   }
+
+  .edition-grid{
+  grid-template-columns:1fr;
+}
   
   .nav-inner{
     min-height:auto;
@@ -881,7 +960,7 @@ footer .container{
 
   <h1>
     <em>Becoming</em>
-    <span class="wholesale-title-line">Hand-Signed Copies for Independent Bookstores</span>
+    <span class="wholesale-title-line">Hand-Signed Editions for Independent Bookstores</span>
   </h1>
 
   <p class="hero-tropes">
@@ -1017,30 +1096,55 @@ footer .container{
 
 <p>
   Standard unsigned copies of <em>Becoming</em> will be available through Ingram
-  using your normal bookstore ordering workflow. This private page is for
-  booksellers interested in offering something more distinctive: hand-signed
-  copies available directly from A.J. Beckett.
+  using your normal bookstore ordering workflow. This private page gives
+  independent booksellers two hand-signed options available directly from
+  A.J. Beckett.
 </p>
 
-<p>
-  Direct wholesale copies are $13 each. Using the $19.99 standard paperback
-  retail price as a benchmark, that leaves a potential gross return of $6.99
-  per copy before shipping and other store expenses.
-</p>
+<div class="edition-grid">
 
-<p>
-  Every direct wholesale copy is personally hand-signed by A.J. Beckett at no
-  additional wholesale charge. Each copy also includes a custom Harlow
-  University bookmark and sticker while supplies last.
-</p>
+  <article class="edition-card">
+    <h3>Signed Bookstore Edition</h3>
+    <p class="edition-price">$13 per copy</p>
 
-   
+    <p>
+      A special signed edition designed to give independent bookstores an
+      affordable way to offer readers something unavailable through standard
+      distribution.
+    </p>
+
+    <ul>
+      <li>Personally hand-signed by A.J. Beckett</li>
+      <li>Custom Harlow University bookmark</li>
+      <li>Non-returnable wholesale purchase</li>
+    </ul>
+  </article>
+
+  <article class="edition-card featured">
+    <h3>Signed Harlow Edition</h3>
+    <p class="edition-price">$15 per copy</p>
+
+    <p>
+      The premium signed edition sold directly to readers by A.J. Beckett for
+      $24.99, now available to select independent bookstores.
+    </p>
+
+    <ul>
+      <li>Personally hand-signed by A.J. Beckett</li>
+      <li>Custom Harlow University bookmark</li>
+      <li>Harlow University sticker</li>
+      <li>Non-returnable wholesale purchase</li>
+    </ul>
+  </article>
+
+</div>
+
 <div class="wholesale-economics-grid">
 
   <div class="economics-card">
-    <span class="economics-label">Wholesale Cost</span>
+    <span class="economics-label">Bookstore Edition</span>
     <strong>$13.00</strong>
-    <p>Per paperback copy</p>
+    <p>Signed copy plus bookmark</p>
   </div>
 
   <div class="economics-card">
@@ -1050,26 +1154,24 @@ footer .container{
   </div>
 
   <div class="economics-card">
-    <span class="economics-label">Potential Gross Return</span>
-    <strong>$6.99</strong>
-    <p>Per copy before store expenses</p>
+    <span class="economics-label">Harlow Edition</span>
+    <strong>$15.00</strong>
+    <p>Signed copy plus Harlow keepsakes</p>
   </div>
 
   <div class="economics-card">
-    <span class="economics-label">Added Value</span>
-    <strong>Hand-Signed</strong>
-    <p>Included at no additional cost</p>
+    <span class="economics-label">Direct Retail Price</span>
+    <strong>$24.99</strong>
+    <p>Signed Harlow Edition price</p>
   </div>
 
+<div class="proof-callout">
+  <strong>Reader preference:</strong>
+  More than 80% of direct paperback customers have chosen the Signed Harlow
+  Edition over the standard unsigned paperback.
 </div>
-
-      <div class="proof-callout">
-        <strong>Reader preference:</strong>
-        More than 80% of direct paperback customers have selected the signed edition
-        over the standard unsigned copy.
-      </div>
-
-    </div>
+  
+</div>
 
   </div>
 </section>
@@ -1088,12 +1190,13 @@ footer .container{
 </h2>
 
 <p>
-  Every bundle is priced at <strong>$13 per paperback copy</strong>.
-  Hand-signing is included at no additional cost.
+  Choose the <strong>$13 Signed Bookstore Edition</strong> or the
+  <strong>$15 Signed Harlow Edition</strong>. Hand-signing is included
+  with both editions at no additional cost.
 </p>
 
 <p>
-  Shipping and any applicable taxes are calculated during secure Stripe checkout.
+  Shipping is calculated during secure Stripe checkout.
 </p>
 
       </div>
