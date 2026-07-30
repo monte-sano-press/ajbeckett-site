@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout Test | A.J. Beckett</title>
+
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 2rem;
+      font-family: Arial, sans-serif;
+      background: #fbfaf8;
+      color: #1d1b1a;
+    }
+
+    .checkout-shell {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      background: #fff;
+      border: 1px solid #e8e1db;
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, .08);
+    }
+
+    h1 {
+      margin-top: 0;
+      color: #5a2622;
+    }
+
+    #checkout-status {
+      margin-bottom: 1rem;
+      color: #6c6662;
+    }
+
+    #payment-element {
+      margin-top: 1rem;
+    }
+
+    #submit-button {
+      width: 100%;
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border: 0;
+      border-radius: 999px;
+      background: #6b2f2a;
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #submit-button:disabled {
+      opacity: .55;
+      cursor: wait;
+    }
+
+    #checkout-error {
+      margin-top: 1rem;
+      color: #a12622;
+    }
+  </style>
+</head>
+
+<body>
+  <main class="checkout-shell">
+    <h1>Checkout Test</h1>
+
+    <p id="checkout-status">Loading secure checkout…</p>
+
+    <form id="payment-form" hidden>
+      <div id="payment-element"></div>
+
+      <button id="submit-button" type="submit">
+        Pay $1.00
+      </button>
+
+      <div id="checkout-error" role="alert"></div>
+    </form>
+  </main>
+
+  <script>
+    const STRIPE_PUBLISHABLE_KEY =
+      "pk_test_51TmiqZCmwgDyXVHigRcsKZzWrO30z50teq1hlSBxbDPp16zjgzahJL6gESYF6rE9DU93Yd03qG2kRAVWcTidF9qg001jsstdKl";
+
+    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+
+    const statusElement =
+      document.getElementById("checkout-status");
+
+    const form =
+      document.getElementById("payment-form");
+
+    const submitButton =
+      document.getElementById("submit-button");
+
+    const errorElement =
+      document.getElementById("checkout-error");
+
+    let checkout;
+
+    async function initializeCheckout() {
+      try {
+        const response = await fetch(
+          "/api/create-test-checkout",
+          { method: "POST" }
+        );
+
+        const result = await response.json();
+
+        if (!response.ok || !result.clientSecret) {
+          throw new Error(
+            result.error || "Could not start checkout."
+          );
+        }
+
+        checkout = stripe.initCheckout({
+          clientSecret: result.clientSecret
+        });
+
+        const paymentElement =
+          checkout.createPaymentElement();
+
+        paymentElement.mount("#payment-element");
+
+        statusElement.hidden = true;
+        form.hidden = false;
+      } catch (error) {
+        statusElement.textContent =
+          error.message || "Unable to load checkout.";
+      }
+    }
+
+    form.addEventListener("submit", async function(event) {
+      event.preventDefault();
+
+      submitButton.disabled = true;
+      errorElement.textContent = "";
+
+      try {
+        const result = await checkout.confirm();
+
+        if (result.type === "error") {
+          errorElement.textContent =
+            result.error?.message ||
+            "Payment could not be completed.";
+
+          submitButton.disabled = false;
+        }
+      } catch (error) {
+        errorElement.textContent =
+          error.message || "Payment could not be completed.";
+
+        submitButton.disabled = false;
+      }
+    });
+
+    initializeCheckout();
+  </script>
+</body>
+</html>
