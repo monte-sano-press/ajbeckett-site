@@ -44,16 +44,21 @@ export async function onRequestPost(context) {
     const session = await response.json();
 
     if (!response.ok) {
-      return Response.json(
-        {
-          ok: false,
-          error:
-            session?.error?.message ||
-            "Stripe could not create the Checkout Session.",
-        },
-        { status: 502 }
-      );
-    }
+  console.error("Stripe Checkout error:", JSON.stringify(session));
+
+  return Response.json(
+    {
+      ok: false,
+      stripeStatus: response.status,
+      error:
+        session?.error?.message ||
+        "Stripe could not create the Checkout Session.",
+      parameter: session?.error?.param || null,
+      errorType: session?.error?.type || null
+    },
+    { status: 400 }
+  );
+}
 
     return Response.json({
       ok: true,
