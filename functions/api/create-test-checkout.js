@@ -20,6 +20,7 @@ export async function onRequestPost(context) {
         headers: {
           Authorization: `Bearer ${stripeKey}`,
           "Content-Type": "application/x-www-form-urlencoded",
+          "Stripe-Version": "2025-12-15.clover",
         },
         body: stripeBody({
           mode: "payment",
