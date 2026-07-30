@@ -86,79 +86,110 @@
     const STRIPE_PUBLISHABLE_KEY =
       "pk_test_51TmiqZCmwgDyXVHigRcsKZzWrO30z50teq1hlSBxbDPp16zjgzahJL6gESYF6rE9DU93Yd03qG2kRAVWcTidF9qg001jsstdKl";
 
-    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+  const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
 
-    const statusElement =
-      document.getElementById("checkout-status");
+  const statusElement =
+    document.getElementById("checkout-status");
 
-    const form =
-      document.getElementById("payment-form");
+  const form =
+    document.getElementById("payment-form");
 
-    const submitButton =
-      document.getElementById("submit-button");
+  const submitButton =
+    document.getElementById("submit-button");
 
-    const errorElement =
-      document.getElementById("checkout-error");
+  const errorElement =
+    document.getElementById("checkout-error");
 
-    let checkout;
+  let checkout;
+  let actions;
 
-    async function initializeCheckout() {
-      try {
-        const response = await fetch(
-          "/api/create-test-checkout",
-          { method: "POST" }
-        );
+  async function initializeCheckout() {
+    try {
+      const clientSecretPromise = fetch(
+        "/api/create-test-checkout",
+        { method: "POST" }
+      )
+        .then(async response => {
+          const result = await response.json();
 
-        const result = await response.json();
+          if (!response.ok || !result.clientSecret) {
+            throw new Error(
+              result.error || "Could not start checkout."
+            );
+          }
 
-        if (!response.ok || !result.clientSecret) {
-          throw new Error(
-            result.error || "Could not start checkout."
-          );
-        }
-
-        checkout = stripe.initCheckout({
-          clientSecret: result.clientSecret
+          return result.clientSecret;
         });
 
-        const paymentElement =
-          checkout.createPaymentElement();
+      checkout = stripe.initCheckoutElementsSdk({
+        clientSecret: clientSecretPromise
+      });
 
-        paymentElement.mount("#payment-element");
+      const loadActionsResult =
+        await checkout.loadActions();
 
-        statusElement.hidden = true;
-        form.hidden = false;
-      } catch (error) {
-        statusElement.textContent =
-          error.message || "Unable to load checkout.";
+      if (loadActionsResult.type === "error") {
+        throw new Error(
+          loadActionsResult.error?.message ||
+          "Could not initialize checkout."
+        );
       }
-    }
 
-    form.addEventListener("submit", async function(event) {
-      event.preventDefault();
+      actions = loadActionsResult.actions;
 
-      submitButton.disabled = true;
-      errorElement.textContent = "";
+      const paymentElement =
+        checkout.createPaymentElement();
 
-      try {
-        const result = await checkout.confirm();
+      paymentElement.mount("#payment-element");
 
-        if (result.type === "error") {
-          errorElement.textContent =
-            result.error?.message ||
-            "Payment could not be completed.";
+      checkout.on("change", function(session) {
+        submitButton.disabled = !session.canConfirm;
 
-          submitButton.disabled = false;
+        if (
+          session.total &&
+          session.total.total &&
+          typeof session.total.total.amount === "number"
+        ) {
+          const amount =
+            (session.total.total.amount / 100).toFixed(2);
+
+          submitButton.textContent = `Pay $${amount}`;
         }
-      } catch (error) {
+      });
+
+      statusElement.hidden = true;
+      form.hidden = false;
+    } catch (error) {
+      console.error(error);
+
+      statusElement.textContent =
+        error.message || "Unable to load checkout.";
+    }
+  }
+
+  form.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    submitButton.disabled = true;
+    errorElement.textContent = "";
+
+    try {
+      const result = await actions.confirm();
+
+      if (result.type === "error") {
         errorElement.textContent =
-          error.message || "Payment could not be completed.";
+          result.error?.message ||
+          "Payment could not be completed.";
 
         submitButton.disabled = false;
       }
-    });
+    } catch (error) {
+      errorElement.textContent =
+        error.message || "Payment could not be completed.";
 
-    initializeCheckout();
-  </script>
-</body>
-</html>
+      submitButton.disabled = false;
+    }
+  });
+
+  initializeCheckout();
+</script>
