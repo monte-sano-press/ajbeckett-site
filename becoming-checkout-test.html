@@ -72,7 +72,9 @@
     <p id="checkout-status">Loading secure checkout…</p>
 
     <form id="payment-form" hidden>
-      <div id="payment-element"></div>
+      <div id="contact-details-element"></div>
+<div id="shipping-address-element"></div>
+<div id="payment-element"></div>
 
       <button id="submit-button" type="submit">
         Pay $1.00
@@ -137,10 +139,20 @@
 
       actions = loadActionsResult.actions;
 
-      const paymentElement =
-        checkout.createPaymentElement();
+      const contactDetailsElement =
+  checkout.createContactDetailsElement();
 
-      paymentElement.mount("#payment-element");
+contactDetailsElement.mount("#contact-details-element");
+
+const shippingAddressElement =
+  checkout.createShippingAddressElement();
+
+shippingAddressElement.mount("#shipping-address-element");
+
+const paymentElement =
+  checkout.createPaymentElement();
+
+paymentElement.mount("#payment-element");
 
       checkout.on("change", function(session) {
         submitButton.disabled = !session.canConfirm;
