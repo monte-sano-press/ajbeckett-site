@@ -23,7 +23,7 @@ export async function onRequestPost(context) {
         },
         body: stripeBody({
           mode: "payment",
-          ui_mode: "custom",
+          ui_mode: "elements",
 
           // Temporary $1 test item. We will replace this with the real
           // signed/standard Stripe prices after proving the checkout works.
