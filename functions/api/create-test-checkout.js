@@ -7,7 +7,10 @@ export async function onRequestPost(context) {
 
   if (!stripeKey?.startsWith("sk_test_")) {
     return Response.json(
-      { ok: false, error: "Stripe test key is not configured." },
+      {
+        ok: false,
+        error: "Stripe test key is not configured.",
+      },
       { status: 500 }
     );
   }
@@ -22,17 +25,21 @@ export async function onRequestPost(context) {
           "Content-Type": "application/x-www-form-urlencoded",
           "Stripe-Version": "2025-12-15.clover",
         },
+
         body: stripeBody({
           mode: "payment",
           ui_mode: "elements",
 
-          // Temporary $1 test item. We will replace this with the real
-          // signed/standard Stripe prices after proving the checkout works.
+          // Temporary $1 test item.
           "line_items[0][price_data][currency]": "usd",
           "line_items[0][price_data][unit_amount]": "100",
           "line_items[0][price_data][product_data][name]":
             "Becoming Checkout Test",
           "line_items[0][quantity]": "1",
+
+          // Restricts the forthcoming tax-update endpoint
+          // to sessions created specifically for this test.
+          "metadata[purpose]": "tax_proof_of_concept",
 
           "shipping_address_collection[allowed_countries][0]": "US",
 
@@ -45,21 +52,24 @@ export async function onRequestPost(context) {
     const session = await response.json();
 
     if (!response.ok) {
-  console.error("Stripe Checkout error:", JSON.stringify(session));
+      console.error(
+        "Stripe Checkout error:",
+        JSON.stringify(session)
+      );
 
-  return Response.json(
-    {
-      ok: false,
-      stripeStatus: response.status,
-      error:
-        session?.error?.message ||
-        "Stripe could not create the Checkout Session.",
-      parameter: session?.error?.param || null,
-      errorType: session?.error?.type || null
-    },
-    { status: 400 }
-  );
-}
+      return Response.json(
+        {
+          ok: false,
+          stripeStatus: response.status,
+          error:
+            session?.error?.message ||
+            "Stripe could not create the Checkout Session.",
+          parameter: session?.error?.param || null,
+          errorType: session?.error?.type || null,
+        },
+        { status: 400 }
+      );
+    }
 
     return Response.json({
       ok: true,
@@ -67,6 +77,8 @@ export async function onRequestPost(context) {
       checkoutSessionId: session.id,
     });
   } catch (error) {
+    console.error("Checkout Session creation failed:", error);
+
     return Response.json(
       {
         ok: false,
