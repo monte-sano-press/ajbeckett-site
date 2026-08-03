@@ -282,6 +282,12 @@ nav{
   background:#fbf7f4;
 }
 
+
+.nav-links a[aria-current="page"]{
+  color:var(--accent-dark);
+  font-weight:800;
+}
+
 .nav-links .nav-icon-link{
   justify-content:flex-start;
   gap:.65rem;
@@ -1194,7 +1200,7 @@ footer .container{
 
 <nav class="site-nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="/">
       <img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal">
       <span class="brand-text">A.J. Beckett</span>
     </a>
@@ -1228,12 +1234,23 @@ footer .container{
     </button>
 
     <div class="nav-links" id="primary-navigation">
+      <a href="/"
+         aria-current="page"
+         onclick="gtag('event','click_home_menu_nav_home');">
+        Home
+      </a>
+
       <a href="#books"
          onclick="gtag('event','click_books_menu_nav_home');">
         Books
       </a>
 
-      <a href="read.html"
+      <a href="/becoming-order"
+         onclick="gtag('event','click_order_menu_nav_home');">
+        Order Becoming
+      </a>
+
+      <a href="/read"
          onclick="gtag('event','click_read_chapter_menu_nav_home');">
         Read Chapter One
       </a>
