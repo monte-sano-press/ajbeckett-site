@@ -1211,43 +1211,6 @@ footer .container{
   
 
 @media (max-width: 700px){
-  .nav-inner{
-    min-height:auto;
-    padding:.55rem 0 .65rem;
-    flex-direction:column;
-    justify-content:center;
-    gap:.4rem;
-  }
-
-  .brand{
-    flex-direction:column;
-    gap:.2rem;
-  }
-
-  .brand-seal{
-    width:44px;
-    height:44px;
-  }
-
-  .brand-text{
-    font-size:1.65rem;
-  }
-
-  .nav-links{
-    justify-content:center;
-    gap:.9rem;
-  }
-
-  .nav-links a{
-    font-size:.78rem;
-    letter-spacing:.15em;
-  }
-
-  .nav-instagram-icon{
-    width:22px;
-    height:22px;
-  }
-
   .bookclub-hero{
     padding:2.8rem 0 3.4rem;
   }
@@ -1586,7 +1549,7 @@ footer .container{
           </p>
 
           <p>
-            Whether your members choose the Standard Edition or the signed Harlow Edition, we’ll make joining your discussion simple, affordable, and memorable.
+            Whether your members choose the signed Book Club Edition or the signed Harlow Edition, we’ll make joining your discussion simple, affordable, and memorable.
           </p>
         </div>
 
@@ -1712,7 +1675,7 @@ footer .container{
         <article class="benefit-card">
           <h3>Flexible Edition Choices</h3>
           <p>
-            Each member can choose the unsigned Standard Edition or the signed Harlow Edition using the same personalized club code.
+            Each member can choose the signed Book Club Edition or the signed Harlow Edition using the same personalized club code.
           </p>
         </article>
 
@@ -1764,7 +1727,7 @@ footer .container{
           <span class="process-number">3</span>
           <h3>Members choose their edition.</h3>
           <p>
-            Each reader orders the Standard Edition or signed Harlow Edition directly and enters the club’s code at checkout.
+            Each reader orders the signed Book Club Edition or signed Harlow Edition directly and enters the club’s code at checkout.
           </p>
         </article>
 
@@ -1790,29 +1753,7 @@ footer .container{
       </div>
 
       <div class="edition-grid">
-        <article class="option-card edition-card">
-          <h3>Standard Edition</h3>
-          <p class="retail-price">Retail price: $18.99</p>
-          <p class="club-price">$17.09 with club code</p>
-
-          <ul class="feature-list">
-            <li>Unsigned paperback</li>
-            <li>Eligible for the personalized 10% discount</li>
-            <li>Individual checkout and shipping</li>
-          </ul>
-
-          <a
-            href="https://buy.stripe.com/4gM14mgTqdMt5IBdVGdjO07"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_bookclub_standard_edition');"
-          >
-            Order Standard Edition
-          </a>
-        </article>
-
-        <article class="option-card edition-card featured">
+          <article class="option-card edition-card featured">
           <h3>Harlow Edition</h3>
           <p class="retail-price">Retail price: $24.99</p>
           <p class="club-price">$22.49 with club code</p>
@@ -1832,6 +1773,27 @@ footer .container{
             onclick="gtag('event','click_bookclub_harlow_edition');"
           >
             Order Harlow Edition
+          </a>
+        </article>
+        
+        <article class="option-card edition-card">
+          <h3>Book Club Edition</h3>
+          <p class="retail-price">Retail price: $19.99</p>
+          <p class="club-price">$17.99 with club code</p>
+
+          <ul class="feature-list">
+            <li>Hand-signed paperback</li>
+            <li>Eligible for the personalized 10% discount</li>
+          </ul>
+
+          <a
+            href="https://buy.stripe.com/3cIaEWbz6gYF3At18UdjO0h"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event','click_bookclub_bookclub_edition');"
+          >
+            Order Book Club Edition
           </a>
         </article>
       </div>
