@@ -1621,8 +1621,7 @@ footer .container{
 
 <button class="discount-recall-tab"
         type="button"
-        id="discount-recall-tab"
-        hidden>
+        id="discount-recall-tab">
   10% Off
 </button>
   
@@ -1692,7 +1691,7 @@ footer .container{
   const codeCopy = document.getElementById('conversion-code-copy');
   const codeText = document.getElementById('conversion-code-text');
   const recallTab = document.getElementById('discount-recall-tab');
-  
+
   function sendEvent(name, extra){
     if (fired.has(name)) return;
     fired.add(name);
@@ -1705,65 +1704,13 @@ footer .container{
     }
   }
 
-  function markActionTaken(){
-  sessionStorage.setItem('home_primary_action_taken', 'true');
-  hideRecallTab();
-}
-
-  function actionWasTaken(){
-    return sessionStorage.getItem('home_primary_action_taken') === 'true';
-  }
-
-function showRecallTab(){
-  if (!recallTab) return;
-  if (actionWasTaken()) return;
-  recallTab.hidden = false;
-}
-
-function hideRecallTab(){
-  if (recallTab) recallTab.hidden = true;
-}
-  
-  document.querySelectorAll(
-    'a[href*="becoming-order"], a[href*="read.html"], a[href="#contact"]'
-  ).forEach(function(link){
-    link.addEventListener('click', markActionTaken);
-  });
-
   setTimeout(function(){
     sendEvent('home_stayed_5_seconds', { seconds_on_page: 5 });
   }, 5000);
 
   setTimeout(function(){
-  sendEvent('home_stayed_15_seconds', { seconds_on_page: 15 });
-
-  if (!nudge) return;
-  if (actionWasTaken()) return;
-  if (sessionStorage.getItem('home_becoming10_nudge_dismissed') === 'true') return;
-  if (sessionStorage.getItem('home_becoming10_nudge_shown') === 'true') return;
-
-  nudge.dataset.nudgeType = 'timed';
-
-  const nudgeParagraph = nudge.querySelector('.nudge-copy p');
-
-  if (nudgeParagraph) {
-    nudgeParagraph.innerHTML =
-      'Ready to preorder? Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting an indie author.';
-  }
-
-  nudge.hidden = false;
-  hideRecallTab();
-
-  sessionStorage.setItem('home_becoming10_nudge_shown', 'true');
-  sendEvent('view_home_becoming10_nudge_15s');
-
-  setTimeout(function(){
-    if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'timed') {
-      nudge.hidden = true;
-      showRecallTab();
-    }
-  }, 20000);
-}, 15000);
+    sendEvent('home_stayed_15_seconds', { seconds_on_page: 15 });
+  }, 15000);
 
   setTimeout(function(){
     sendEvent('home_stayed_30_seconds', { seconds_on_page: 30 });
@@ -1773,115 +1720,40 @@ function hideRecallTab(){
     sendEvent('home_stayed_60_seconds', { seconds_on_page: 60 });
   }, 60000);
 
-  if (nudgeLink) {
-  nudgeLink.addEventListener('click', function(){
-    markActionTaken();
-    sendEvent('click_home_becoming10_nudge');
-  });
-}
-
- if (codeCopy) {
-  codeCopy.addEventListener('click', function(){
-    navigator.clipboard.writeText('BECOMING10').then(function(){
-      sendEvent('copy_home_becoming10_code');
-
-      codeText.textContent = 'Copied!';
-
-      setTimeout(function(){
-        codeText.textContent = 'BECOMING10';
-      }, 2000);
+  if (recallTab && nudge) {
+    recallTab.addEventListener('click', function(){
+      nudge.hidden = false;
+      recallTab.hidden = true;
+      sendEvent('open_home_becoming10_code');
     });
-  });
-}
+  }
 
-    if (nudgeClose) {
-  nudgeClose.addEventListener('click', function(){
-    if (nudge) nudge.hidden = true;
+  if (nudgeClose && nudge && recallTab) {
+    nudgeClose.addEventListener('click', function(){
+      nudge.hidden = true;
+      recallTab.hidden = false;
+      sendEvent('close_home_becoming10_code');
+    });
+  }
 
-    sessionStorage.setItem('home_becoming10_nudge_dismissed', 'true');
-    sendEvent('dismiss_home_becoming10_nudge');
-    showRecallTab();
-  });
-}
-  
-    const readerReactions = document.querySelector('.reader-reactions');
+  if (nudgeLink) {
+    nudgeLink.addEventListener('click', function(){
+      sendEvent('click_home_becoming10_nudge');
+    });
+  }
 
-    if (readerReactions && 'IntersectionObserver' in window) {
-      const readerObserver = new IntersectionObserver(function(entries){
-        entries.forEach(function(entry){
-          if (!entry.isIntersecting) return;
+  if (codeCopy && codeText) {
+    codeCopy.addEventListener('click', function(){
+      navigator.clipboard.writeText('BECOMING10').then(function(){
+        sendEvent('copy_home_becoming10_code');
+        codeText.textContent = 'Copied!';
 
-          sendEvent('home_reached_reader_reactions');
-
-          if (actionWasTaken()) {
-            readerObserver.disconnect();
-            return;
-          }
-
-          if (sessionStorage.getItem('home_reader_reactions_nudge_dismissed') === 'true') {
-            readerObserver.disconnect();
-            return;
-          }
-
-          if (sessionStorage.getItem('home_reader_reactions_nudge_shown') === 'true') {
-            readerObserver.disconnect();
-            return;
-          }
-
-          if (!nudge) {
-            readerObserver.disconnect();
-            return;
-          }
-
-          nudge.dataset.nudgeType = 'reader-reactions';
-
-          const nudgeParagraph = nudge.querySelector('.nudge-copy p');
-          if (nudgeParagraph) {
-            nudgeParagraph.innerHTML =
-              'Readers are already falling for <em>Becoming</em>. Use <strong>BECOMING10</strong> for 10% off your direct preorder.';
-          }
-
-          nudge.hidden = false;
-          hideRecallTab();
-          sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
-          sendEvent('view_home_reader_reactions_becoming10_nudge');
-
-          setTimeout(function(){
-            if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
-              nudge.hidden = true;
-              showRecallTab();
-            }
-          }, 20000);
-
-          readerObserver.disconnect();
-        });
-      }, {
-        threshold: 0.35
+        setTimeout(function(){
+          codeText.textContent = 'BECOMING10';
+        }, 2000);
       });
-
-      readerObserver.observe(readerReactions);
-    }
-
-if (recallTab) {
-  recallTab.addEventListener('click', function(){
-
-    const nudgeParagraph = nudge.querySelector('.nudge-copy p');
-
-    nudge.dataset.nudgeType = 'welcome';
-
-    if (nudgeParagraph) {
-      nudgeParagraph.innerHTML =
-        'Ready to preorder? Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting an indie author.';
-    }
-
-    codeText.textContent = 'BECOMING10';
-
-    nudge.hidden = false;
-    hideRecallTab();
-
-    sendEvent('recall_home_becoming10_nudge');
-  });
-}
+    });
+  }
 })();
 </script>
 
