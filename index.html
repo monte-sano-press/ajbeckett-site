@@ -143,6 +143,7 @@ nav{
 }
 
 .nav-inner{
+  position:relative;
   min-height:92px;
   display:flex;
   align-items:center;
@@ -170,7 +171,27 @@ nav{
   letter-spacing:.02em;
   color:#5a2622;
 }
-  
+
+.nav-quick-links{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+}
+
+.nav-quick-links a{
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.92rem;
+  font-weight:650;
+  color:#5a2622;
+}
+
+.nav-quick-links a:hover{
+  color:var(--accent);
+}
+
 .nav-icon-link{
   display:inline-flex;
   align-items:center;
@@ -182,25 +203,95 @@ nav{
   height:24px;
   display:block;
 }
-  
-.nav-links{
+
+.nav-toggle{
   display:flex;
-  gap:2.1rem;
-  flex-wrap:wrap;
+  width:48px;
+  height:48px;
+  padding:11px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  cursor:pointer;
   align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+
+.nav-toggle:hover{
+  background:var(--soft);
+}
+
+.nav-toggle-line{
+  display:block;
+  width:24px;
+  height:2px;
+  border-radius:999px;
+  background:#5a2622;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(2){
+  opacity:0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+.nav-links{
+  position:absolute;
+  top:calc(100% + 1px);
+  right:0;
+  width:min(340px, calc(100vw - 2rem));
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  padding:.65rem 1rem 1rem;
+  background:rgba(251,250,248,.99);
+  border:1px solid var(--border);
+  border-top:0;
+  border-radius:0 0 18px 18px;
+  box-shadow:0 18px 36px rgba(0,0,0,.10);
+}
+
+.nav-links.is-open{
+  display:flex;
 }
 
 .nav-links a{
+  width:100%;
+  padding:1rem .35rem;
+  border-bottom:1px solid var(--border);
   text-decoration:none;
   text-transform:uppercase;
-  letter-spacing:.2em;
-  font-size:1.05rem;
+  letter-spacing:.16em;
+  font-size:.82rem;
   font-weight:650;
   color:#5a2622;
 }
 
 .nav-links a:hover{
   color:var(--accent);
+  background:#fbf7f4;
+}
+
+.nav-links .nav-icon-link{
+  justify-content:flex-start;
+  gap:.65rem;
+}
+
+.nav-links .nav-business-link{
+  margin-top:.35rem;
+  padding-top:1.2rem;
+  border-top:2px solid #d9c8bf;
+  border-bottom:0;
 }
 
 .hero{
@@ -814,11 +905,26 @@ footer .container{
   
 @media (max-width: 700px){
   .nav-inner{
-    min-height:auto;
-    padding:.55rem 0 .65rem;
-    flex-direction:column;
-    justify-content:center;
-    gap:.4rem;
+    min-height:74px;
+    padding:.55rem 0;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+
+  .nav-quick-links{
+    gap:.9rem;
+  }
+
+  .nav-quick-links a{
+    font-size:.74rem;
+    letter-spacing:.12em;
+  }
+
+  .nav-links{
+    left:0;
+    right:0;
+    width:auto;
   }
   
   .series-grid{
@@ -851,34 +957,24 @@ footer .container{
   width:100%;
 }
 
-  .nav-links{
-   justify-content:center;
-   gap:.9rem;
-}
 
- .nav-links a{
-   font-size:.78rem;
-   letter-spacing:.15em;
- }
-  
+  .brand{
+    gap:.65rem;
+  }
+
+  .brand-seal{
+    width:44px;
+    height:44px;
+  }
+
+  .brand-text{
+    font-size:1.45rem;
+  }
+
   .nav-instagram-icon{
-  width:22px;
-  height:22px;
-}
-
-   .brand{
-   flex-direction:column;
-   gap:.2rem;
-}
-
- .brand-seal{
-   width:44px;
-   height:44px;
- }
-
- .brand-text{
-   font-size:1.65rem;
- }
+    width:22px;
+    height:22px;
+  }
 
   .hero{
     background-position:center center;
@@ -1096,24 +1192,76 @@ footer .container{
 </head>
 <body>
 
-<nav>
+<nav class="site-nav">
   <div class="container nav-inner">
     <a class="brand" href="index.html">
       <img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal">
       <span class="brand-text">A.J. Beckett</span>
     </a>
 
-    <div class="nav-links">
-      <a href="#books">Books</a>
-      <a href="read.html" onclick="gtag('event','click_read_chapter_nav_home');">Read</a>
-      <a href="#contact" onclick="gtag('event','click_updates_nav_home');">Updates</a>
+    <div class="nav-quick-links" aria-label="Quick links">
+      <a href="#books"
+         onclick="gtag('event','click_books_quick_nav_home');">
+        Books
+      </a>
+
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
          class="nav-icon-link"
          aria-label="A.J. Beckett on Instagram"
-         onclick="gtag('event','click_instagram_nav');">
+         onclick="gtag('event','click_instagram_quick_nav_home');">
         <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+      </a>
+    </div>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Open navigation menu"
+    >
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <div class="nav-links" id="primary-navigation">
+      <a href="#books"
+         onclick="gtag('event','click_books_menu_nav_home');">
+        Books
+      </a>
+
+      <a href="read.html"
+         onclick="gtag('event','click_read_chapter_menu_nav_home');">
+        Read Chapter One
+      </a>
+
+      <a href="/becoming-bookclub"
+         onclick="gtag('event','click_bookclub_menu_nav_home');">
+        Book Clubs
+      </a>
+
+      <a href="#contact"
+         onclick="gtag('event','click_updates_menu_nav_home');">
+        Get Updates
+      </a>
+
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="nav-icon-link nav-menu-instagram"
+         aria-label="A.J. Beckett on Instagram"
+         onclick="gtag('event','click_instagram_menu_nav_home');">
+        <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+        <span>Instagram</span>
+      </a>
+
+      <a href="/becoming-wholesale"
+         class="nav-business-link"
+         onclick="gtag('event','click_wholesale_menu_nav_home');">
+        Wholesale
       </a>
     </div>
   </div>
@@ -1489,6 +1637,54 @@ footer .container{
 
 <script>
 (function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('primary-navigation');
+
+  if (!navToggle || !navLinks) return;
+
+  function closeMenu(){
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    navLinks.classList.remove('is-open');
+  }
+
+  navToggle.addEventListener('click', function(event){
+    event.stopPropagation();
+
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    navToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Open navigation menu' : 'Close navigation menu'
+    );
+
+    navLinks.classList.toggle('is-open', !isOpen);
+  });
+
+  navLinks.addEventListener('click', function(event){
+    event.stopPropagation();
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', function(){
+    closeMenu();
+  });
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') {
+      closeMenu();
+      navToggle.focus();
+    }
+  });
+})();
+</script>
+
+<script>
+(function(){
   const fired = new Set();
   const nudge = document.getElementById('conversion-nudge');
   const nudgeClose = document.getElementById('conversion-nudge-close');
@@ -1610,62 +1806,62 @@ function hideRecallTab(){
   
     const readerReactions = document.querySelector('.reader-reactions');
 
-if (readerReactions && 'IntersectionObserver' in window) {
-  const readerObserver = new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if (!entry.isIntersecting) return;
+    if (readerReactions && 'IntersectionObserver' in window) {
+      const readerObserver = new IntersectionObserver(function(entries){
+        entries.forEach(function(entry){
+          if (!entry.isIntersecting) return;
 
-      sendEvent('home_reached_reader_reactions');
-      readerObserver.disconnect();
-    });
-  }, {
-    threshold: 0.35
-  });
+          sendEvent('home_reached_reader_reactions');
 
-  readerObserver.observe(readerReactions);
-}
+          if (actionWasTaken()) {
+            readerObserver.disconnect();
+            return;
+          }
 
-        if (actionWasTaken()) {
+          if (sessionStorage.getItem('home_reader_reactions_nudge_dismissed') === 'true') {
+            readerObserver.disconnect();
+            return;
+          }
+
+          if (sessionStorage.getItem('home_reader_reactions_nudge_shown') === 'true') {
+            readerObserver.disconnect();
+            return;
+          }
+
+          if (!nudge) {
+            readerObserver.disconnect();
+            return;
+          }
+
+          nudge.dataset.nudgeType = 'reader-reactions';
+
+          const nudgeParagraph = nudge.querySelector('.nudge-copy p');
+          if (nudgeParagraph) {
+            nudgeParagraph.innerHTML =
+              'Readers are already falling for <em>Becoming</em>. Use <strong>BECOMING10</strong> for 10% off your direct preorder.';
+          }
+
+          nudge.hidden = false;
+          hideRecallTab();
+          sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
+          sendEvent('view_home_reader_reactions_becoming10_nudge');
+
+          setTimeout(function(){
+            if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
+              nudge.hidden = true;
+              showRecallTab();
+            }
+          }, 20000);
+
           readerObserver.disconnect();
-          return;
-        }
-
-        if (sessionStorage.getItem('home_reader_reactions_nudge_dismissed') === 'true') {
-          readerObserver.disconnect();
-          return;
-        }
-
-        if (sessionStorage.getItem('home_reader_reactions_nudge_shown') === 'true') {
-          readerObserver.disconnect();
-          return;
-        }
-
-        nudge.dataset.nudgeType = 'reader-reactions';
-
-        const nudgeParagraph = nudge.querySelector('.nudge-copy p');
-        if (nudgeParagraph) {
-          nudgeParagraph.innerHTML = 'Readers are already falling for <em>Becoming</em>. Use <strong>BECOMING10</strong> for 10% off your direct preorder.';
-        }
-
-        nudge.hidden = false;
-hideRecallTab();
-        sessionStorage.setItem('home_reader_reactions_nudge_shown', 'true');
-        sendEvent('view_home_reader_reactions_becoming10_nudge');
-                setTimeout(function(){
-          if (nudge && !nudge.hidden && nudge.dataset.nudgeType === 'reader-reactions') {
-    nudge.hidden = true;
-    showRecallTab();
-}
-        }, 20000);
-
-        readerObserver.disconnect();
+        });
+      }, {
+        threshold: 0.35
       });
-    }, {
-      threshold: 0.35
-    });
 
-    readerObserver.observe(readerReactions);
-  }
+      readerObserver.observe(readerReactions);
+    }
+
 if (recallTab) {
   recallTab.addEventListener('click', function(){
 
