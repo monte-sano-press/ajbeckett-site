@@ -112,6 +112,7 @@ nav{
 }
 
 .nav-inner{
+  position:relative;
   min-height:92px;
   display:flex;
   align-items:center;
@@ -140,23 +141,23 @@ nav{
   color:#5a2622;
 }
 
-.nav-links{
+.nav-quick-links{
+  margin-left:auto;
   display:flex;
-  gap:2.4rem;
-  flex-wrap:wrap;
   align-items:center;
+  gap:1.5rem;
 }
 
-.nav-links a{
+.nav-quick-links a{
   text-decoration:none;
   text-transform:uppercase;
-  letter-spacing:.2em;
-  font-size:1.05rem;
+  letter-spacing:.18em;
+  font-size:.92rem;
   font-weight:650;
   color:#5a2622;
 }
 
-.nav-links a:hover{
+.nav-quick-links a:hover{
   color:var(--accent);
 }
 
@@ -170,6 +171,96 @@ nav{
   width:24px;
   height:24px;
   display:block;
+}
+
+.nav-toggle{
+  display:flex;
+  width:48px;
+  height:48px;
+  padding:11px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+
+.nav-toggle:hover{
+  background:var(--soft);
+}
+
+.nav-toggle-line{
+  display:block;
+  width:24px;
+  height:2px;
+  border-radius:999px;
+  background:#5a2622;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(2){
+  opacity:0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+.nav-links{
+  position:absolute;
+  top:calc(100% + 1px);
+  right:0;
+  width:min(340px, calc(100vw - 2rem));
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  padding:.65rem 1rem 1rem;
+  background:rgba(251,250,248,.99);
+  border:1px solid var(--border);
+  border-top:0;
+  border-radius:0 0 18px 18px;
+  box-shadow:0 18px 36px rgba(0,0,0,.10);
+}
+
+.nav-links.is-open{
+  display:flex;
+}
+
+.nav-links a{
+  width:100%;
+  padding:1rem .35rem;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.82rem;
+  font-weight:650;
+  color:#5a2622;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+  background:#fbf7f4;
+}
+
+.nav-links .nav-icon-link{
+  justify-content:flex-start;
+  gap:.65rem;
+}
+
+.nav-links .nav-business-link{
+  margin-top:.35rem;
+  padding-top:1.2rem;
+  border-top:2px solid #d9c8bf;
+  border-bottom:0;
 }
 
 h1,h2,h3,h4{
@@ -1324,29 +1415,149 @@ footer .container{
   }
 }
 
+
+/* Shared collapsed navigation */
+@media (max-width:700px){
+  .nav-inner{
+    position:relative;
+    min-height:74px;
+    padding:.55rem 0;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+
+  .brand{
+    flex-direction:row;
+    gap:.65rem;
+    min-width:0;
+  }
+
+  .brand-seal{
+    width:44px;
+    height:44px;
+  }
+
+  .brand-text{
+    font-size:1.45rem;
+    white-space:nowrap;
+  }
+
+  .nav-quick-links{
+    gap:.8rem;
+  }
+
+  .nav-quick-links a{
+    font-size:.72rem;
+    letter-spacing:.11em;
+  }
+
+  .nav-instagram-icon{
+    width:21px;
+    height:21px;
+  }
+
+  .nav-toggle{
+    width:44px;
+    height:44px;
+    padding:10px;
+    flex:0 0 auto;
+  }
+
+  .nav-links{
+    left:0;
+    right:0;
+    width:auto;
+  }
+
+  .nav-links a{
+    font-size:.8rem;
+    letter-spacing:.14em;
+  }
+}
+
+@media (max-width:430px){
+  .brand-text{
+    display:none;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<nav>
+<nav class="site-nav">
   <div class="container nav-inner">
-    <a class="brand" href="index.html">
+    <a class="brand" href="/">
       <img src="aj-seal.png" alt="A.J. Beckett seal" class="brand-seal">
       <span class="brand-text">A.J. Beckett</span>
     </a>
 
-    <div class="nav-links">
-      <a href="index.html#books">Books</a>
-      <a href="read.html" onclick="gtag('event','click_read_nav_bookclub');">Read</a>
-      <a href="index.html#contact" onclick="gtag('event','click_updates_nav_bookclub');">Updates</a>
+    <div class="nav-quick-links" aria-label="Quick links">
+      <a href="/#books"
+         onclick="gtag('event','click_books_quick_nav_bookclub');">
+        Books
+      </a>
+
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
          class="nav-icon-link"
          aria-label="A.J. Beckett on Instagram"
-         onclick="gtag('event','click_instagram_nav_bookclub');">
+         onclick="gtag('event','click_instagram_quick_nav_bookclub');">
         <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+      </a>
+    </div>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Open navigation menu"
+    >
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <div class="nav-links" id="primary-navigation">
+      <a href="/#books"
+         onclick="gtag('event','click_books_menu_nav_bookclub');">
+        Books
+      </a>
+
+      <a href="/read"
+         onclick="gtag('event','click_read_chapter_menu_nav_bookclub');">
+        Read Chapter One
+      </a>
+
+      <a href="/becoming-bookclub"
+         aria-current="page"
+         onclick="gtag('event','click_bookclub_menu_nav_bookclub');">
+        Book Clubs
+      </a>
+
+      <a href="/#contact"
+         onclick="gtag('event','click_updates_menu_nav_bookclub');">
+        Get Updates
+      </a>
+
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="nav-icon-link nav-menu-instagram"
+         aria-label="A.J. Beckett on Instagram"
+         onclick="gtag('event','click_instagram_menu_nav_bookclub');">
+        <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+        <span>Instagram</span>
+      </a>
+
+      <a href="/becoming-wholesale"
+         class="nav-business-link"
+         onclick="gtag('event','click_wholesale_menu_nav_bookclub');">
+        Wholesale
       </a>
     </div>
   </div>
@@ -1375,7 +1586,7 @@ footer .container{
           </p>
 
           <p>
-            Whether your members choose the signed Book Club Edition or the signed Harlow Edition, we’ll make joining your discussion simple, affordable, and memorable.
+            Whether your members choose the Standard Edition or the signed Harlow Edition, we’ll make joining your discussion simple, affordable, and memorable.
           </p>
         </div>
 
@@ -1501,7 +1712,7 @@ footer .container{
         <article class="benefit-card">
           <h3>Flexible Edition Choices</h3>
           <p>
-            Each member can choose the signed Book Club Edition or the signed Harlow Edition using the same personalized club code.
+            Each member can choose the unsigned Standard Edition or the signed Harlow Edition using the same personalized club code.
           </p>
         </article>
 
@@ -1553,7 +1764,7 @@ footer .container{
           <span class="process-number">3</span>
           <h3>Members choose their edition.</h3>
           <p>
-            Each reader orders the signed Book Club Edition or signed Harlow Edition directly and enters the club’s code at checkout.
+            Each reader orders the Standard Edition or signed Harlow Edition directly and enters the club’s code at checkout.
           </p>
         </article>
 
@@ -1579,7 +1790,29 @@ footer .container{
       </div>
 
       <div class="edition-grid">
-          <article class="option-card edition-card featured">
+        <article class="option-card edition-card">
+          <h3>Standard Edition</h3>
+          <p class="retail-price">Retail price: $18.99</p>
+          <p class="club-price">$17.09 with club code</p>
+
+          <ul class="feature-list">
+            <li>Unsigned paperback</li>
+            <li>Eligible for the personalized 10% discount</li>
+            <li>Individual checkout and shipping</li>
+          </ul>
+
+          <a
+            href="https://buy.stripe.com/4gM14mgTqdMt5IBdVGdjO07"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event','click_bookclub_standard_edition');"
+          >
+            Order Standard Edition
+          </a>
+        </article>
+
+        <article class="option-card edition-card featured">
           <h3>Harlow Edition</h3>
           <p class="retail-price">Retail price: $24.99</p>
           <p class="club-price">$22.49 with club code</p>
@@ -1599,27 +1832,6 @@ footer .container{
             onclick="gtag('event','click_bookclub_harlow_edition');"
           >
             Order Harlow Edition
-          </a>
-        </article>
-        
-        <article class="option-card edition-card">
-          <h3>Book Club Edition</h3>
-          <p class="retail-price">Retail price: $19.99</p>
-          <p class="club-price">$17.99 with club code</p>
-
-          <ul class="feature-list">
-            <li>Hand-signed paperback</li>
-            <li>Eligible for the personalized 10% discount</li>
-          </ul>
-
-          <a
-            href="https://buy.stripe.com/3cIaEWbz6gYF3At18UdjO0h"
-            class="btn btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            onclick="gtag('event','click_bookclub_bookclub_edition');"
-          >
-            Order Book Club Edition
           </a>
         </article>
       </div>
@@ -1705,6 +1917,52 @@ footer .container{
     </a>
   </div>
 </footer>
+<script>
+(function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('primary-navigation');
+
+  if (!navToggle || !navLinks) return;
+
+  function closeMenu(){
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    navLinks.classList.remove('is-open');
+  }
+
+  navToggle.addEventListener('click', function(event){
+    event.stopPropagation();
+
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    navToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Open navigation menu' : 'Close navigation menu'
+    );
+
+    navLinks.classList.toggle('is-open', !isOpen);
+  });
+
+  navLinks.addEventListener('click', function(event){
+    event.stopPropagation();
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') {
+      closeMenu();
+      navToggle.focus();
+    }
+  });
+})();
+</script>
+
 <script>
 (function(){
   const fired = new Set();
