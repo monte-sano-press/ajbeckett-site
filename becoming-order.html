@@ -1079,9 +1079,20 @@ footer .container{
     </button>
 
     <div class="nav-links" id="primary-navigation">
+      <a href="/"
+         onclick="gtag('event','click_home_menu_nav_order');">
+        Home
+      </a>
+
       <a href="/#books"
          onclick="gtag('event','click_books_menu_nav_order');">
         Books
+      </a>
+
+      <a href="/becoming-order"
+         aria-current="page"
+         onclick="gtag('event','click_order_menu_nav_order');">
+        Order Becoming
       </a>
 
       <a href="/read"
