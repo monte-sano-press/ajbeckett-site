@@ -280,7 +280,7 @@ a{color:inherit}
 
 .includes{
   margin:.8rem auto 1.2rem;
-  max-width:760px;
+  max-width:900px;
   text-align:center;
 }
 
@@ -293,8 +293,8 @@ a{color:inherit}
 
 .includes-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:.7rem;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:1rem;
 }
 
 .include-card{
@@ -302,12 +302,14 @@ a{color:inherit}
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:.9rem;
+  padding:1rem 1.25rem;
   border:2px solid rgba(19,45,69,.22);
   border-radius:18px;
   background:rgba(255,244,230,.58);
-  font-weight:800;
-  line-height:1.25;
+  font-size:1rem;
+  font-weight:750;
+  line-height:1.35;
+  text-wrap:balance;
 }
 
 .countdown-wrap{
@@ -528,7 +530,7 @@ a{color:inherit}
   <section class="includes" aria-labelledby="includes-heading">
     <h3 id="includes-heading">The Harlow Edition Includes</h3>
     <div class="includes-grid">
-      <div class="include-card">A hand-signed paperback copy of <em>Becoming</em></div>
+      <div class="include-card">A signed paperback of <em>Becoming</em></div>
       <div class="include-card">An exclusive Harlow University library bookmark</div>
       <div class="include-card">A custom Harlow University sticker</div>
     </div>
@@ -559,7 +561,7 @@ a{color:inherit}
   </section>
 
   <section class="paper-banner bottom-banner">
-    <h2>Available Only at ajbeckettwrites.com</h2>
+    <h2>Available Only at A.J. Beckett Writes</h2>
   </section>
 
   <p class="legal">
