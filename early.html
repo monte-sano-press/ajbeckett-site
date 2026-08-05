@@ -119,7 +119,8 @@ a{color:inherit}
   grid-template-columns:minmax(0,1.05fr) minmax(300px,.95fr);
   gap:1.2rem;
   align-items:center;
-  padding:.6rem .5rem 1.2rem;
+  min-height:75vh;
+  padding:1.5rem .5rem 2rem;
 }
 
 .offer-copy{
@@ -135,7 +136,7 @@ a{color:inherit}
 }
 
 .offer-copy h2{
-  margin:.1rem 0 .35rem;
+  margin:.1rem 0 .75rem;
   font-family:"Graduate",serif;
   text-transform:uppercase;
   font-size:clamp(2.6rem,8vw,5.8rem);
@@ -143,7 +144,7 @@ a{color:inherit}
 }
 
 .script{
-  margin:.2rem 0 .7rem;
+  margin:.2rem 0 1.25rem;
   font-family:"Permanent Marker",cursive;
   font-size:clamp(1.6rem,5vw,3.1rem);
   color:var(--coral);
@@ -153,10 +154,11 @@ a{color:inherit}
 }
 
 .subline{
-    font-size:1.45rem;
-    line-height:1.5;
-    max-width:34rem;
-    margin-top:1.4rem;
+  max-width:34rem;
+  margin:0 auto 1rem;
+  font-size:1.45rem;
+  font-weight:750;
+  line-height:1.5;
 }
 
 .product-collage{
@@ -165,6 +167,7 @@ a{color:inherit}
   display:flex;
   justify-content:center;
   align-items:center;
+  transform:translateX(-2rem);
 }
 
 .cover{
@@ -413,11 +416,14 @@ a{color:inherit}
   .hero{
     grid-template-columns:1fr;
     gap:.2rem;
+    min-height:0;
+    padding:.6rem .5rem 1.2rem;
   }
 
   .product-collage{
     min-height:520px;
     margin-top:-.3rem;
+    transform:none;
   }
 
   .cover{
