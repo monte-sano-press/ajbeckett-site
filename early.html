@@ -4,20 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Early Harlow Edition Offer | A.J. Beckett</title>
+<title>Early Becoming Preorder Offer | A.J. Beckett</title>
 <link rel="canonical" href="https://www.ajbeckettwrites.com/early">
 
-<meta name="description" content="Preorder the signed Harlow Edition of Becoming by A.J. Beckett. Save 10% with code EARLY10 through August 14 at 7:00 p.m. Central.">
+<meta name="description" content="Save 10% on the signed Harlow Edition or unsigned Standard Edition of Becoming by A.J. Beckett with code EARLY10 through August 14 at 7:00 p.m. Central.">
 
-<meta property="og:title" content="The Harlow Edition | Limited-Time Preorder Offer">
-<meta property="og:description" content="A signed copy of Becoming, exclusive Harlow bookmark, and Harlow University sticker. Save 10% with code EARLY10 through August 14.">
+<meta property="og:title" content="Becoming | Limited-Time Preorder Offer">
+<meta property="og:description" content="Save 10% on either paperback edition of Becoming with code EARLY10 through August 14. The signed Harlow Edition includes an exclusive bookmark and sticker.">
 <meta property="og:url" content="https://www.ajbeckettwrites.com/early">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Harlow Edition | Limited-Time Preorder Offer">
-<meta name="twitter:description" content="Save 10% on the signed Harlow Edition with code EARLY10 through August 14.">
+<meta name="twitter:title" content="Becoming | Limited-Time Preorder Offer">
+<meta name="twitter:description" content="Save 10% on the signed Harlow Edition or unsigned Standard Edition with code EARLY10 through August 14.">
 <meta name="twitter:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
 
 <!-- Google Analytics: matches the existing order page -->
@@ -357,14 +357,26 @@ a{color:inherit}
 }
 
 .cta-wrap{
+  max-width:760px;
+  margin:0 auto;
   text-align:center;
-  padding:.2rem 0 1rem;
+  padding:.4rem 0 1.2rem;
+}
+
+.cta-heading{
+  margin:0 0 1rem;
+  font-family:"Graduate",serif;
+  text-transform:uppercase;
+  font-size:clamp(1.3rem,3vw,1.75rem);
+  letter-spacing:.04em;
 }
 
 .cta{
-  display:inline-block;
+  position:relative;
+  display:block;
   width:min(620px,100%);
-  padding:1.15rem 1.3rem;
+  margin:0 auto;
+  padding:1.1rem 1.3rem 1rem;
   border:3px solid var(--cream);
   outline:3px solid var(--navy);
   border-radius:14px;
@@ -373,27 +385,72 @@ a{color:inherit}
   text-decoration:none;
   font-family:"Graduate",serif;
   text-transform:uppercase;
-  font-size:clamp(1.25rem,4.3vw,2rem);
+  font-size:clamp(1.2rem,4vw,1.9rem);
   letter-spacing:.03em;
   box-shadow:0 12px 24px rgba(19,45,69,.22);
-  transition:transform .18s ease, filter .18s ease;
+  cursor:pointer;
+  transition:transform .18s ease, filter .18s ease, box-shadow .18s ease;
+}
+
+.cta::after{
+  content:"→";
+  display:inline-block;
+  margin-left:.45rem;
+  transition:transform .18s ease;
 }
 
 .cta:hover,
 .cta:focus-visible{
-  transform:translateY(-2px);
+  transform:translateY(-3px);
   filter:brightness(1.08);
+  box-shadow:0 16px 30px rgba(19,45,69,.28);
 }
 
-.price-note{
-  margin:.85rem 0 0;
+.cta:hover::after,
+.cta:focus-visible::after{
+  transform:translateX(4px);
+}
+
+.cta-detail{
+  display:block;
+  margin-top:.35rem;
+  font-family:"Roboto Slab",serif;
+  font-size:.78rem;
+  font-weight:650;
+  line-height:1.35;
+  letter-spacing:.02em;
+  text-transform:none;
+}
+
+.cta-secondary{
+  margin-top:1.35rem;
+  background:var(--cream-soft);
+  color:var(--navy);
+  border-color:var(--navy);
+  outline-color:var(--cream);
+  box-shadow:0 9px 18px rgba(19,45,69,.15);
+}
+
+.cta-secondary:hover,
+.cta-secondary:focus-visible{
+  background:#fff8ed;
+}
+
+.edition-price{
+  margin:.65rem 0 0;
   font-weight:750;
 }
 
-.small-note{
-  margin:.3rem 0 0;
-  font-size:.86rem;
-  opacity:.8;
+.discount-note{
+  margin:1.45rem 0 0;
+  font-size:1.08rem;
+  font-weight:750;
+}
+
+.shipping-note{
+  margin:.35rem 0 0;
+  font-size:.9rem;
+  opacity:.82;
 }
 
 .bottom-banner{
@@ -555,18 +612,37 @@ a{color:inherit}
     </div>
   </section>
 
-  <section class="cta-wrap">
+  <section class="cta-wrap" aria-labelledby="choose-edition-heading">
+    <p class="cta-heading" id="choose-edition-heading">Choose Your Edition</p>
+
     <a
       class="cta"
-      id="order-button"
+      id="harlow-order-button"
       href="https://buy.stripe.com/fZu28q8mUdMt2wp5padjO01"
       target="_blank"
       rel="noopener noreferrer"
     >
       Order the Harlow Edition
+      <span class="cta-detail">Signed copy + bookmark + sticker</span>
     </a>
-    <p class="price-note">$24.99 before discount • $7.95 U.S. shipping</p>
-    <p class="small-note">Remember to enter <strong>EARLY10</strong> at checkout.</p>
+    <p class="edition-price">$24.99 before discount</p>
+
+    <a
+      class="cta cta-secondary"
+      id="standard-order-button"
+      href="https://buy.stripe.com/4gM14mgTqdMt5IBdVGdjO07"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Order the Standard Edition
+      <span class="cta-detail">Unsigned paperback</span>
+    </a>
+    <p class="edition-price">$19.99 before discount</p>
+
+    <p class="discount-note">
+      Save 10% on either edition with code <strong>EARLY10</strong>
+    </p>
+    <p class="shipping-note">Flat U.S. shipping: $7.95</p>
   </section>
 
   <section class="paper-banner bottom-banner">
@@ -581,10 +657,12 @@ a{color:inherit}
 
 <script>
 (function(){
-  const checkoutUrl = 'https://buy.stripe.com/fZu28q8mUdMt2wp5padjO01';
+  const harlowCheckoutUrl = 'https://buy.stripe.com/fZu28q8mUdMt2wp5padjO01';
+  const standardCheckoutUrl = 'https://buy.stripe.com/4gM14mgTqdMt5IBdVGdjO07';
   const deadline = new Date('2026-08-14T19:00:00-05:00').getTime();
 
-  const orderButton = document.getElementById('order-button');
+  const harlowOrderButton = document.getElementById('harlow-order-button');
+  const standardOrderButton = document.getElementById('standard-order-button');
   const copyButton = document.getElementById('copy-code');
   const countdown = document.getElementById('countdown');
 
@@ -601,7 +679,7 @@ a{color:inherit}
 
     if (typeof gtag === 'function') {
       gtag('event', name, Object.assign({
-        page_title: 'Early Harlow Edition Offer',
+        page_title: 'Early Becoming Preorder Offer',
         page_location: window.location.href
       }, params || {}));
     }
@@ -621,8 +699,12 @@ a{color:inherit}
       secondsEl.textContent = '00';
 
       countdown.setAttribute('aria-label', 'The early preorder offer has ended.');
-      orderButton.textContent = 'View the Harlow Edition';
-      orderButton.href = checkoutUrl;
+
+      harlowOrderButton.childNodes[0].nodeValue = 'View the Harlow Edition ';
+      harlowOrderButton.href = harlowCheckoutUrl;
+
+      standardOrderButton.childNodes[0].nodeValue = 'View the Standard Edition ';
+      standardOrderButton.href = standardCheckoutUrl;
       return;
     }
 
@@ -640,12 +722,24 @@ a{color:inherit}
   updateCountdown();
   setInterval(updateCountdown, 1000);
 
-  orderButton.addEventListener('click', function(){
+  harlowOrderButton.addEventListener('click', function(){
     if (typeof gtag === 'function') {
       gtag('event', 'click_early_harlow_stripe', {
-        page_title: 'Early Harlow Edition Offer',
+        page_title: 'Early Becoming Preorder Offer',
         page_location: window.location.href,
-        offer_code: 'EARLY10'
+        offer_code: 'EARLY10',
+        edition: 'Harlow Edition'
+      });
+    }
+  });
+
+  standardOrderButton.addEventListener('click', function(){
+    if (typeof gtag === 'function') {
+      gtag('event', 'click_early_standard_stripe', {
+        page_title: 'Early Becoming Preorder Offer',
+        page_location: window.location.href,
+        offer_code: 'EARLY10',
+        edition: 'Standard Edition'
       });
     }
   });
