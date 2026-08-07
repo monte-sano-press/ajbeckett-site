@@ -449,47 +449,6 @@ h4{
   font-size:.97rem;
 }
 
- .wholesale-economics-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(180px,1fr));
-  gap:1.15rem;
-  margin:2rem 0;
-}
-
-.economics-card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:1.5rem 1.4rem;
-  text-align:center;
-  box-shadow:0 10px 24px rgba(0,0,0,.05);
-}
-
-.economics-label{
-  display:block;
-  margin-bottom:.6rem;
-  color:#8b7568;
-  font-size:.74rem;
-  font-weight:700;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-}
-
-.economics-card strong{
-  display:block;
-  color:#5a2622;
-  font-size:2rem;
-  font-family:'Playfair Display',serif;
-  margin-bottom:.45rem;
-}
-
-.economics-card p{
-  margin:0;
-  color:var(--muted);
-  font-size:.92rem;
-  line-height:1.45;
-} 
-
 .edition-grid{
   display:grid;
   grid-template-columns:repeat(2, minmax(280px, 1fr));
@@ -772,10 +731,6 @@ footer .container{
   grid-template-columns:repeat(2, minmax(260px, 1fr));
   max-width:760px;
 }
-
-  .wholesale-economics-grid{
-    grid-template-columns:repeat(2, minmax(220px, 1fr));
-  }
 }
   
 @media (max-width:900px){
@@ -801,9 +756,6 @@ footer .container{
 }
 
 @media (max-width:700px){
-  .wholesale-economics-grid{
-  grid-template-columns:1fr;
-  }
 
   .edition-grid{
   grid-template-columns:1fr;
@@ -977,7 +929,7 @@ footer .container{
   align-items:stretch;
   gap:0;
   padding:.65rem 1rem 1rem;
-  background:rgba(251,250,248,.99);
+  background:rgba(251,250,248,.94);
   border:1px solid var(--border);
   border-top:0;
   border-radius:0 0 18px 18px;
@@ -1283,7 +1235,7 @@ footer .container{
   <p class="story-copy">
     Set at Harlow University in South Carolina during the fall of 1996,
     <em>Becoming</em> follows two students discovering first love while
-    learning who they are apart from everyone else's expectations.
+    learning who they are meant to become when they can break free from everyone else's expectations.
   </p>
 
   <div class="details-list">
@@ -1300,7 +1252,7 @@ footer .container{
 
     <div class="detail-box">
       <h4>Readers Will Love</h4>
-      <p>Found family, emotional intimacy, sharp banter, first love</p>
+      <p>Found family • Emotional intimacy • Self-discovery • Sharp banter • First love • Open-door romance</p>
     </div>
 
     <div class="detail-box">
@@ -1342,64 +1294,38 @@ footer .container{
 
 <div class="edition-grid">
 
-<article class="edition-card featured">
+  <article class="edition-card featured">
     <h3>Signed Harlow Edition</h3>
-    <p class="edition-price">$15 per copy</p>
+    <p class="edition-price">$14 per copy</p>
 
     <p>
-      The premium signed edition sold directly to readers by A.J. Beckett for
-      $24.99, now available to select independent bookstores.
+      A premium signed edition with Harlow University extras created to give
+      readers something special they can't get through standard distribution.
     </p>
 
     <ul>
       <li>Personally hand-signed by A.J. Beckett</li>
       <li>Custom Harlow University bookmark</li>
       <li>Harlow University sticker</li>
-      
+      <li><strong>$22.99 MSRP • 39.1% retailer margin</strong></li>
     </ul>
   </article>
-  
+
   <article class="edition-card">
     <h3>Signed Bookstore Edition</h3>
-    <p class="edition-price">$13 per copy</p>
+    <p class="edition-price">$12 per copy</p>
 
     <p>
-        A streamlined edition that gives independent bookstores an affordable
-        way to offer readers a personally signed copy of <em>Becoming</em>.
+      A streamlined signed edition that gives independent bookstores a
+      standard-margin way to offer readers a signed copy of
+      <em>Becoming</em>.
     </p>
 
     <ul>
-      <li>Personally hand-signed by A.J. Beckett</li>    
+      <li>Personally hand-signed by A.J. Beckett</li>
+      <li><strong>$19.99 MSRP • 40% retailer margin</strong></li>
     </ul>
   </article>
-
-</div>
-
-<div class="wholesale-economics-grid">
-
-  <div class="economics-card">
-    <span class="economics-label">Signed Harlow Edition</span>
-    <strong>$15.00</strong>
-    <p>Personally signed copy, bookmark, and sticker</p>
-  </div>
-
-  <div class="economics-card">
-    <span class="economics-label">Signed Bookstore Edition</span>
-    <strong>$13.00</strong>
-    <p>Personally signed copy</p>
-  </div>
-
-  <div class="economics-card">
-    <span class="economics-label">Standard Retail Price</span>
-    <strong>$19.99</strong>
-    <p>Unsigned paperback</p>
-  </div>
-
-  <div class="economics-card">
-    <span class="economics-label">Direct Reader Price</span>
-    <strong>$24.99</strong>
-    <p>Signed Harlow Edition</p>
-  </div>
 
 </div>
 
@@ -1461,7 +1387,7 @@ footer .container{
       <h4>Signed Harlow Edition</h4>
 
       <p class="bundle-price">
-        $75
+        $70
       </p>
 
       <p>
@@ -1486,7 +1412,7 @@ footer .container{
       <h4>Signed Bookstore Edition</h4>
 
       <p class="bundle-price">
-        $65
+        $60
       </p>
 
       <p>
@@ -1521,7 +1447,7 @@ footer .container{
       <h4>Signed Harlow Edition</h4>
 
       <p class="bundle-price">
-        $150
+        $140
       </p>
 
       <p>
@@ -1546,7 +1472,7 @@ footer .container{
       <h4>Signed Bookstore Edition</h4>
 
       <p class="bundle-price">
-        $130
+        $120
       </p>
 
       <p>
@@ -1581,7 +1507,7 @@ footer .container{
       <h4>Signed Harlow Edition</h4>
 
       <p class="bundle-price">
-        $225
+        $210
       </p>
 
       <p>
@@ -1606,7 +1532,7 @@ footer .container{
       <h4>Signed Bookstore Edition</h4>
 
       <p class="bundle-price">
-        $195
+        $180
       </p>
 
       <p>
