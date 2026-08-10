@@ -593,14 +593,34 @@ h1,h2,h3,h4{
   font-size:1.65rem;
 }
 
-.harlow-bundle-visual{
-  width:min(245px, 78%);
-  margin:.35rem auto 1rem;
+.harlow-product-visual{
+  display:grid;
+  grid-template-columns:minmax(0, 1.05fr) minmax(0, .95fr);
+  align-items:center;
+  gap:1rem;
+  width:100%;
+  max-width:470px;
+  margin:.5rem auto 1rem;
+  min-height:250px;
 }
 
-.harlow-bundle-visual img{
+.harlow-product-book,
+.harlow-product-extras{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-width:0;
+}
+
+.harlow-product-book img{
   width:100%;
-  height:auto;
+  max-height:285px;
+  object-fit:contain;
+}
+
+.harlow-product-extras img{
+  width:100%;
+  max-height:245px;
   object-fit:contain;
 }
 
@@ -721,6 +741,22 @@ h1,h2,h3,h4{
 
 .kindle-card .btn{
   min-width:190px;
+}
+
+@media (max-width:540px){
+  .harlow-product-visual{
+    grid-template-columns:1.08fr .92fr;
+    gap:.45rem;
+    min-height:210px;
+  }
+
+  .harlow-product-book img{
+    max-height:235px;
+  }
+
+  .harlow-product-extras img{
+    max-height:205px;
+  }
 }
 
 @media (max-width:800px){
@@ -1372,8 +1408,13 @@ footer .container{
               One hand-signed paperback copy of <em>Becoming</em> by A.J. Beckett.
             </p>
 
-            <div class="harlow-bundle-visual">
-              <img src="harlow_bundle.png" alt="Harlow Edition bookmark and two possible Harlow sticker designs">
+            <div class="harlow-product-visual" aria-label="Harlow Paperback Edition with reader extras">
+              <div class="harlow-product-book">
+                <img src="becoming_3D_paperback_transparent.png" alt="Becoming paperback edition">
+              </div>
+              <div class="harlow-product-extras">
+                <img src="harlow_bundle.png" alt="Harlow University bookmark and two possible Harlow sticker designs">
+              </div>
             </div>
 
             <p class="bundle-caption">
@@ -1435,8 +1476,13 @@ footer .container{
               One hand-signed hardcover copy of <em>Becoming</em> by A.J. Beckett.
             </p>
 
-            <div class="harlow-bundle-visual">
-              <img src="harlow_bundle.png" alt="Harlow Edition bookmark and two possible Harlow sticker designs">
+            <div class="harlow-product-visual" aria-label="Harlow Hardcover Edition with reader extras">
+              <div class="harlow-product-book">
+                <img src="becoming_3D_hardcover_transparent.png" alt="Becoming hardcover edition">
+              </div>
+              <div class="harlow-product-extras">
+                <img src="harlow_bundle.png" alt="Harlow University bookmark and two possible Harlow sticker designs">
+              </div>
             </div>
 
             <p class="bundle-caption">
