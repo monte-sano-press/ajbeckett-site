@@ -17,17 +17,17 @@
 <link rel="icon" type="image/jpg" href="becoming_cover_web_2.jpg">
 <link rel="canonical" href="https://www.ajbeckettwrites.com/becoming-order">
 
-<meta name="description" content="Order Becoming by A.J. Beckett, a 1996 college slow-burn romance set at Harlow University. Signed and standard paperbacks available for U.S. shipping.">
+<meta name="description" content="Order Becoming by A.J. Beckett in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available when ordering directly from A.J.">
 
 <meta property="og:title" content="Order Becoming | A.J. Beckett">
-<meta property="og:description" content="Signed and standard paperback orders are open for Becoming, a 1996 college slow-burn romance by A.J. Beckett.">
+<meta property="og:description" content="Order Becoming in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available when ordering directly from A.J.">
 <meta property="og:url" content="https://www.ajbeckettwrites.com/becoming-order">
 <meta property="og:type" content="website">
 <meta property="og:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Order Becoming | A.J. Beckett">
-<meta name="twitter:description" content="Signed and standard paperback orders are open for Becoming, a 1996 college slow-burn romance by A.J. Beckett.">
+<meta name="twitter:description" content="Order Becoming in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available when ordering directly from A.J.">
 <meta name="twitter:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -496,6 +496,258 @@ h1,h2,h3,h4{
   width:100%;
 }
 
+
+/* Physical edition layout */
+.physical-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:2.25rem;
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.format-group{
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+}
+
+.format-heading{
+  text-align:center;
+  margin-bottom:.15rem;
+}
+
+.format-heading h3{
+  color:#5a2622;
+  font-size:clamp(1.65rem, 2.5vw, 2.15rem);
+  margin-bottom:.3rem;
+}
+
+.format-heading p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.harlow-card{
+  position:relative;
+  overflow:hidden;
+  padding-top:4.65rem;
+  background:linear-gradient(145deg,#fff8f5,#f4ddd7);
+  border:2px solid #c98f84;
+  box-shadow:0 18px 45px rgba(107,47,42,.14);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.harlow-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 24px 52px rgba(107,47,42,.17);
+}
+
+.harlow-banner{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1rem;
+  background:#6b2f2a;
+  color:#fff;
+  font-size:.72rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  text-align:center;
+}
+
+.edition-badge{
+  display:inline-flex;
+  align-self:flex-start;
+  margin:0 0 .85rem;
+  padding:.42rem .75rem;
+  border-radius:999px;
+  color:#fff;
+  font-size:.7rem;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:850;
+}
+
+.best-value .edition-badge{
+  background:#6b2f2a;
+}
+
+.premium-edition .edition-badge{
+  background:#8a5c3f;
+}
+
+.harlow-card h3{
+  color:#51211d;
+}
+
+.harlow-card .price{
+  font-size:1.65rem;
+}
+
+.harlow-bundle-visual{
+  width:min(245px, 78%);
+  margin:.35rem auto 1rem;
+}
+
+.harlow-bundle-visual img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+}
+
+.bundle-caption{
+  margin:-.2rem auto 1.15rem !important;
+  max-width:380px;
+  text-align:center;
+  color:#725b54 !important;
+  font-size:.84rem;
+  line-height:1.45;
+  font-weight:600;
+}
+
+.standard-card{
+  background:#fff;
+}
+
+.standard-card::before{
+  content:"STANDARD EDITION";
+  display:block;
+  margin-bottom:.8rem;
+  color:#8a7d77;
+  font-size:.69rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.direct-first-note{
+  max-width:860px;
+  margin:2.5rem auto 0;
+  padding:1.4rem 1.6rem;
+  background:#fff7f3;
+  border-left:4px solid #b66d61;
+  border-radius:0 18px 18px 0;
+}
+
+.direct-first-note h3{
+  margin:0 0 .4rem;
+  font-family:'Inter',sans-serif;
+  color:#5a2622;
+  font-size:.9rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+
+.direct-first-note p{
+  margin:0;
+  color:#5d5753;
+  font-size:.96rem;
+  line-height:1.55;
+}
+
+.amazon-fallback{
+  max-width:860px;
+  margin:1rem auto 0;
+  padding:1.1rem 1.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.4rem;
+  background:#f8f6f3;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.amazon-fallback-copy h3{
+  margin:0 0 .2rem;
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;
+  font-weight:800;
+  color:#6f625c;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.amazon-fallback-copy p{
+  margin:0;
+  color:#7b736f;
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+.amazon-fallback .btn{
+  flex:0 0 auto;
+  min-width:175px;
+  padding:.85rem 1.15rem;
+  font-size:.69rem;
+}
+
+.kindle-wrap{
+  max-width:860px;
+  margin:1.5rem auto 0;
+}
+
+.kindle-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:2rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:1.6rem 1.8rem;
+  box-shadow:0 10px 26px rgba(0,0,0,.04);
+}
+
+.kindle-card h3{
+  margin:0 0 .4rem;
+  font-size:1.55rem;
+}
+
+.kindle-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.kindle-card .btn{
+  min-width:190px;
+}
+
+@media (max-width:800px){
+  .physical-grid{
+    grid-template-columns:1fr;
+    max-width:560px;
+  }
+
+  .amazon-fallback{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .amazon-fallback .btn{
+    width:100%;
+  }
+
+  .kindle-card{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .kindle-card .btn{
+    width:100%;
+  }
+}
+
 .preorder-reactions{
   padding:4.25rem 0;
   background:#fbf7f4;
@@ -862,116 +1114,6 @@ footer .container{
   }
 }
 
-.conversion-nudge{
-  position:fixed;
-  left:50%;
-  bottom:1rem;
-  transform:translateX(-50%);
-  z-index:2000;
-  width:min(760px, calc(100% - 2rem));
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:0 14px 38px rgba(0,0,0,.16);
-  padding:1rem 1.15rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-
-.conversion-nudge[hidden],
-.discount-recall-tab[hidden]{
-  display:none;
-}
-
-.nudge-copy{
-  display:flex;
-  flex-direction:column;
-  gap:.55rem;
-}
-
-.conversion-nudge p{
-  margin:0;
-  color:var(--text);
-  font-size:.96rem;
-  line-height:1.45;
-}
-
-.conversion-nudge strong{
-  color:#5a2622;
-  letter-spacing:.06em;
-}
-
-.conversion-nudge a{
-  flex:0 0 auto;
-  white-space:nowrap;
-}
-
-.promo-code-pill,
-.discount-recall-tab{
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-}
-
-.promo-code-pill{
-  align-self:flex-start;
-}
-
-.discount-recall-tab{
-  position:fixed;
-  right:1rem;
-  bottom:1rem;
-  z-index:1999;
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
-}
-
-.copy-icon{
-  margin-right:.25rem;
-}
-
-.nudge-close{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-size:1.35rem;
-  line-height:1;
-  cursor:pointer;
-  padding:.25rem;
-}
-
-@media (max-width:700px){
-  .conversion-nudge{
-    align-items:flex-start;
-    flex-direction:column;
-    bottom:.75rem;
-    padding:1.2rem;
-  }
-
-  .conversion-nudge p{
-    padding-right:1.8rem;
-  }
-
-  .conversion-nudge a{
-    width:100%;
-    text-align:center;
-  }
-
-  .nudge-close{
-    position:absolute;
-    top:.65rem;
-    right:.8rem;
-  }
-}
-  
-
-
 /* Shared responsive hamburger navigation */
 @media (max-width:700px){
   .nav-inner{
@@ -1170,25 +1312,25 @@ footer .container{
   <div class="hero-bottom-row">
     <div class="hero-release-copy">
       <p class="release-line">
-        Releases September 18, 2026
+        Order <em>Becoming</em> Now
       </p>
 
       <p class="format-line">
-        Signed Harlow Edition, Standard Edition,<br>
-        and Kindle preorders available now.
+        Paperback, hardcover, and Kindle editions available now.<br>
+        Direct orders are expected to ship the first week of September.
       </p>
     </div>
 
     <div class="hero-actions">
-      <a href="#preorder-options"
+      <a href="#order-options"
          class="btn btn-primary"
-         onclick="gtag('event','click_choose_preorder_option_top');">
+         onclick="gtag('event','click_choose_order_option_top');">
         See Order Options
       </a>
 
       <a href="read.html"
          class="btn btn-soft"
-         onclick="gtag('event','click_read_chapter_preorder_top');">
+         onclick="gtag('event','click_read_chapter_order_top');">
         Read Chapter One
       </a>
     </div>
@@ -1197,111 +1339,209 @@ footer .container{
     </div>
   </header>
 
-  <section id="preorder-options" class="preorder-section">
+  <section id="order-options" class="preorder-section">
     <div class="container">
 
- <div class="section-heading">
-  <h2> Order <em>Becoming</em></h2>
-  <p>
-    Signed Harlow Edition and Standard Edition paperback copies are available to preorder for direct U.S. shipping.<br>Kindle preorders are available through Amazon for U.S. and international readers.
-  </p>
-  <p class="direct-support-note">
-    Direct orders make the biggest difference for indie authors!<br>
-   Thank you for supporting <em>Becoming</em> !
-  </p>
-</div>
+      <div class="section-heading">
+        <h2>Order <em>Becoming</em></h2>
+        <p>
+          Choose paperback or hardcover, with Standard and Harlow Editions available for direct U.S. shipping.
+          Harlow Editions are signed and include exclusive reader extras available when ordering directly from A.J.
+        </p>
+        <p class="direct-support-note">
+          Direct orders make the biggest difference for indie authors!<br>
+          Thank you for supporting <em>Becoming</em>!
+        </p>
+      </div>
 
-      <div class="option-grid">
+      <div class="physical-grid">
 
-        <article class="option-card featured signed-option">
-          <h3>Signed Harlow Edition</h3>
-          <p class="price">$22.99</p>
+        <div class="format-group">
+          <div class="format-heading">
+            <h3>Paperback</h3>
+            <p>Choose the Harlow Edition or a standard unsigned copy.</p>
+          </div>
 
+          <article class="option-card harlow-card best-value harlow-paperback-option">
+            <div class="harlow-banner">Harlow Edition · Includes Extras</div>
+            <span class="edition-badge">Best Value</span>
+            <h3>Harlow Paperback Edition</h3>
+            <p class="price">$22.99</p>
+
+            <p>
+              One hand-signed paperback copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <div class="harlow-bundle-visual">
+              <img src="harlow_bundle.png" alt="Harlow Edition bookmark and two possible Harlow sticker designs">
+            </div>
+
+            <p class="bundle-caption">
+              Includes the official Harlow University bookmark + one of two Harlow stickers. Sticker design selected at random.
+            </p>
+
+            <p>
+              These reader extras are available when ordering directly from A.J.
+            </p>
+
+            <p>Flat U.S. shipping: $7.95.</p>
+
+            <a href="https://buy.stripe.com/fZubJ01YwgYF0oh8BmdjO0j"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_harlow_paperback_order');">
+              Get the Harlow Paperback
+            </a>
+          </article>
+
+          <article class="option-card standard-card standard-paperback-option">
+            <h3>Standard Paperback</h3>
+            <p class="price">$17.99</p>
+
+            <p>
+              One unsigned paperback copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <p>
+              A simple book-only option for readers who want a standard paperback copy ordered directly from A.J.
+            </p>
+
+            <p>Flat U.S. shipping: $7.95.</p>
+
+            <a href="https://buy.stripe.com/8x200i7iQ37P7QJ3h2djO0i"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_standard_paperback_order');">
+              Get the Standard Paperback
+            </a>
+          </article>
+        </div>
+
+        <div class="format-group">
+          <div class="format-heading">
+            <h3>Hardcover</h3>
+            <p>Choose the premium Harlow Edition or a standard unsigned hardcover.</p>
+          </div>
+
+          <article class="option-card harlow-card premium-edition harlow-hardcover-option">
+            <div class="harlow-banner">Harlow Edition · Includes Extras</div>
+            <span class="edition-badge">Premium Edition</span>
+            <h3>Harlow Hardcover Edition</h3>
+            <p class="price">$29.99</p>
+
+            <p>
+              One hand-signed hardcover copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <div class="harlow-bundle-visual">
+              <img src="harlow_bundle.png" alt="Harlow Edition bookmark and two possible Harlow sticker designs">
+            </div>
+
+            <p class="bundle-caption">
+              Includes the official Harlow University bookmark + one of two Harlow stickers. Sticker design selected at random.
+            </p>
+
+            <p>
+              These reader extras are available when ordering directly from A.J.
+            </p>
+
+            <p>Flat U.S. shipping: $7.95.</p>
+
+            <a href="https://buy.stripe.com/6oUaEWcDa23L7QJ18UdjO0s"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_harlow_hardcover_order');">
+              Get the Harlow Hardcover
+            </a>
+          </article>
+
+          <article class="option-card standard-card standard-hardcover-option">
+            <h3>Standard Hardcover</h3>
+            <p class="price">$25.99</p>
+
+            <p>
+              One unsigned hardcover copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <p>
+              A book-only hardcover option for readers who prefer hardcover without the Harlow Edition extras.
+            </p>
+
+            <p>Flat U.S. shipping: $7.95.</p>
+
+            <a href="https://buy.stripe.com/dRmfZg0UsgYF3At2cYdjO0r"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_standard_hardcover_order');">
+              Get the Standard Hardcover
+            </a>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="direct-first-note">
+        <h3>Ordering directly supports indie authors.</h3>
+        <p>
+          Ordering directly from A.J. provides substantially more support for <em>Becoming</em> and Monte Sano Press, and it is the only way to get the signed Harlow Editions and their reader extras.
+        </p>
+      </div>
+
+      <div class="amazon-fallback">
+        <div class="amazon-fallback-copy">
+          <h3>Prefer Amazon?</h3>
           <p>
-            Includes one hand-signed paperback copy of <em>Becoming</em> by A.J. Beckett. 
+            If Amazon is more convenient, unsigned paperback and hardcover editions are available there too.
           </p>
+        </div>
 
-          <p>
-            The Signed Harlow Edition includes exclusive Harlow University keepsakes - a custom bookmark and sticker - created especially for readers who order directly from A.J.
-          </p>
+        <a href="https://www.amazon.com/dp/B0HBFGZZ42"
+           class="btn btn-soft"
+           target="_blank"
+           rel="noopener noreferrer"
+           onclick="gtag('event','click_amazon_physical_order');">
+          Order on Amazon
+        </a>
+      </div>
 
-          <p>
-            Flat U.S. shipping: $7.95.
-          </p>
-
-          <a href="https://buy.stripe.com/fZubJ01YwgYF0oh8BmdjO0j"
-             class="btn btn-primary"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_signed_preorder_stripe');">
-            Get the Harlow Edition
-          </a>
-        </article>
-
-        <article class="option-card standard-option">
-          <h3>Unsigned Standard Edition</h3>
-          <p class="price">$17.99</p>
-
-          <p>
-            Includes one unsigned paperback copy of <em>Becoming</em> by A.J. Beckett.
-          </p>
-
-          <p>
-            This is the best option if you want a standard paperback copy shipped directly from A.J. after release.
-          </p>
-
-          <p>
-            Flat U.S. shipping: $7.95.
-          </p>
-
-          <a href="https://buy.stripe.com/8x200i7iQ37P7QJ3h2djO0i"
-             class="btn btn-primary"
-             target="_blank"
-             rel="noopener noreferrer"
-             onclick="gtag('event','click_standard_preorder_stripe');">
-            Get the Standard Edition
-          </a>
-        </article>
-
-        <article class="option-card kindle-option">
-          <h3>Kindle Edition</h3>
-          <p class="price">Amazon preorder</p>
-
-          <p>
-            Preorder the Kindle edition of <em>Becoming</em> through Amazon and have it delivered automatically on release day.
-          </p>
-
-          <p>
-            This is the best option for ebook readers and international readers who prefer Amazon delivery.
-          </p>
+      <div class="kindle-wrap">
+        <article class="kindle-card kindle-option">
+          <div>
+            <h3>Kindle Edition</h3>
+            <p>Prefer ebooks? Read <em>Becoming</em> on Kindle through Amazon.</p>
+          </div>
 
           <a href="https://www.amazon.com/dp/B0H277TD1G"
              class="btn btn-primary"
              target="_blank"
              rel="noopener noreferrer"
-             onclick="gtag('event','click_kindle_preorder_amazon');">
-            Order on Kindle
+             onclick="gtag('event','click_kindle_order_amazon');">
+            Buy on Kindle
           </a>
         </article>
-
       </div>
+
     </div>
   </section>
-  
+
  <section class="preorder-section" id="read-chapter-one">
     <div class="container">
       <div class="s-card">
         <h2>Not sure yet? Read Chapter One Free</h2>
 
         <p>
-  Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to reserve your copy.
+  Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to order your copy.
 </p>
 
 <div class="read-prompt-actions">
 
   <a href="read.html"
      class="btn btn-primary"
-     onclick="gtag('event','click_read_chapter_preorder_midpage');">
+     onclick="gtag('event','click_read_chapter_order_midpage');">
     Read Chapter One
   </a>
 </div>
@@ -1353,15 +1593,15 @@ footer .container{
         <h2>Ordering Information</h2>
 
         <p>
-          <em>Becoming</em> releases September 18, 2026. Direct preorder copies are expected to ship in September after print copies are made.
+          Direct orders are expected to ship the first week of September.
         </p>
 
         <p>
-          Direct preorders are available for U.S. shipping only at this time. Kindle preorder is available through Amazon for U.S. and international readers.
+          Direct orders are available for U.S. shipping only at this time. Paperback, hardcover, and Kindle editions are also available through Amazon.
         </p>
 
         <p>
-          If production or shipping is delayed, preorder customers will be notified by email.
+          If production or shipping is delayed, direct-order customers will be notified by email.
         </p>
 
         <div class="details-list">
@@ -1369,21 +1609,21 @@ footer .container{
   <div class="detail-box">
     <h4>Shipping</h4>
     <p>
-      Flat U.S. shipping is $7.95. Orders are expected to ship after print copies arrive in September.
+      Flat U.S. shipping is $7.95. Direct orders are expected to ship the first week of September.
     </p>
   </div>
 
   <div class="detail-box">
-    <h4>Signed Harlow Edition</h4>
+    <h4>Harlow Editions</h4>
     <p>
-      Signed Harlow Edition copies are hand-signed by A.J. Beckett. Personalization is not available at this time.
+      Harlow Editions are hand-signed by A.J. Beckett and include the official Harlow University bookmark plus one of two Harlow stickers selected at random. Personalization is not available at this time.
     </p>
   </div>
 
   <div class="detail-box">
-    <h4>Kindle</h4>
+    <h4>Amazon & Kindle</h4>
     <p>
-      The Kindle edition is available for preorder through Amazon and will deliver on release day.
+      Unsigned paperback and hardcover editions are available through Amazon, along with the Kindle edition.
     </p>
   </div>
 
@@ -1392,14 +1632,14 @@ footer .container{
     <p>
       Use the
       <a href="index.html#contact"
-         onclick="gtag('event','click_contact_form_preorder_questions');">
+         onclick="gtag('event','click_contact_form_order_questions');">
         contact form
       </a>
       on the A.J. Beckett website or message
       <a href="https://www.instagram.com/ajbeckettwrites/"
          target="_blank"
          rel="noopener noreferrer"
-         onclick="gtag('event','click_instagram_preorder_questions');">
+         onclick="gtag('event','click_instagram_order_questions');">
         @ajbeckettwrites
       </a>
       on Instagram.
@@ -1409,7 +1649,7 @@ footer .container{
   <div class="detail-box bookseller-box">
     <h4>Booksellers</h4>
     <p>
-      We'd love to partner with independent booksellers. Signed and unsigned wholesale copies are available directly from A.J. Beckett.
+      We'd love to partner with independent booksellers. Signed and unsigned paperback wholesale copies are available directly from A.J. Beckett.
       <br><br>
       <a href="becoming-wholesale.html"
          onclick="gtag('event','click_wholesale_from_order_page');">
@@ -1421,13 +1661,13 @@ footer .container{
 </div>
         
         <div class="details-actions">
-         <a href="#preorder-options" class="btn btn-primary"
-   onclick="gtag('event','click_preorder_details_bottom');">
+         <a href="#order-options" class="btn btn-primary"
+   onclick="gtag('event','click_order_details_bottom');">
   See Order Options
 </a>
 
           <a href="read.html" class="btn btn-soft"
-   onclick="gtag('event','click_read_chapter_preorder_details');">
+   onclick="gtag('event','click_read_chapter_order_details');">
   Read Chapter One
 </a>
         </div>
@@ -1437,41 +1677,6 @@ footer .container{
   </section>
 
 </main>
-
-<div class="conversion-nudge" id="conversion-nudge" hidden>
-  <button class="nudge-close"
-          type="button"
-          id="conversion-nudge-close"
-          aria-label="Dismiss message">
-    ×
-  </button>
-
-  <div class="nudge-copy">
-    <p>
-      Still deciding? Use <strong>BECOMING10</strong> for 10% off your direct order. Thanks for supporting an indie author!
-    </p>
-
-    <button class="promo-code-pill"
-            type="button"
-            id="conversion-code-copy">
-      <span class="copy-icon">📋</span>
-      <span id="conversion-code-text">BECOMING10</span>
-    </button>
-  </div>
-
-  <a href="#preorder-options"
-     class="btn btn-primary"
-     id="conversion-nudge-link">
-    Claim Your Discount
-  </a>
-</div>
-
-<button class="discount-recall-tab"
-        type="button"
-        id="discount-recall-tab"
-        hidden>
-  10% Off
-</button>
 
 <footer>
   <div class="container footer-inner">
@@ -1527,15 +1732,10 @@ footer .container{
 })();
 </script>
 
+  
 <script>
 (function(){
   const fired = new Set();
-  const nudge = document.getElementById('conversion-nudge');
-  const nudgeClose = document.getElementById('conversion-nudge-close');
-  const nudgeLink = document.getElementById('conversion-nudge-link');
-  const codeCopy = document.getElementById('conversion-code-copy');
-  const codeText = document.getElementById('conversion-code-text');
-  const recallTab = document.getElementById('discount-recall-tab');
 
   function sendEvent(name, extra){
     if (fired.has(name)) return;
@@ -1543,53 +1743,11 @@ footer .container{
 
     if (typeof gtag === 'function') {
       gtag('event', name, Object.assign({
-        page_title: 'Preorder Becoming',
+        page_title: 'Order Becoming',
         page_location: window.location.href
       }, extra || {}));
     }
   }
-
-  function preorderWasClicked(){
-    return sessionStorage.getItem('preorder_clicked') === 'true';
-  }
-
-  function markPreorderClicked(){
-    sessionStorage.setItem('preorder_clicked', 'true');
-    if (nudge) nudge.hidden = true;
-    if (recallTab) recallTab.hidden = true;
-  }
-
-  function showRecallTab(){
-    if (!recallTab) return;
-    if (preorderWasClicked()) return;
-    recallTab.hidden = false;
-  }
-
- function showNudge(source){
-  if (!nudge) return;
-  if (preorderWasClicked()) return;
-
-  nudge.hidden = false;
-
-  if (recallTab) {
-    recallTab.hidden = true;
-  }
-
-  switch (source) {
-
-    case 'reader_reactions':
-      sendEvent('view_preorder_becoming10_after_reactions');
-      break;
-
-    case 'recall':
-      sendEvent('recall_preorder_becoming10_nudge');
-      break;
-
-    default:
-      sendEvent('view_preorder_becoming10_nudge');
-      break;
-  }
-}
 
   function watch(selector, eventName, threshold){
     const el = document.querySelector(selector);
@@ -1602,189 +1760,51 @@ footer .container{
           observer.disconnect();
         }
       });
-    }, {
-      threshold: threshold || 0.35
-    });
+    }, { threshold: threshold || 0.35 });
 
     observer.observe(el);
   }
-function trackOptionEngagement(selector, eventName){
-  const option = document.querySelector(selector);
 
-  if (!option) return;
+  function trackOptionEngagement(selector, eventName){
+    const option = document.querySelector(selector);
+    if (!option) return;
 
-  let engaged = false;
+    let engaged = false;
 
-  function fire(method){
-    if (engaged) return;
-
-    engaged = true;
-
-    sendEvent(eventName, {
-      interaction_method: method
-    });
-  }
-
-  option.addEventListener('mouseenter', function(){
-    fire('mouse_hover');
-  });
-
-  option.addEventListener('focusin', function(){
-    fire('keyboard_focus');
-  });
-}
-
-  setTimeout(function(){
-  sendEvent('preorder_stayed_8_seconds', { seconds_on_page: 8 });
-}, 8000);
-
-  setTimeout(function(){
-    sendEvent('preorder_stayed_15_seconds', { seconds_on_page: 15 });
-  }, 15000);
-
-  setTimeout(function(){
-    sendEvent('preorder_stayed_30_seconds', { seconds_on_page: 30 });
-  }, 30000);
-
-  setTimeout(function(){
-    sendEvent('preorder_stayed_60_seconds', { seconds_on_page: 60 });
-  }, 60000);
-
- document.querySelectorAll(
-  'a[href*="buy.stripe.com"], a[href*="amazon.com/dp/"]'
-).forEach(function(link){
-  link.addEventListener('click', markPreorderClicked);
-});
-
-  document.querySelectorAll('a[href*="read.html"]').forEach(function(link){
-    link.addEventListener('click', function(){
-      sessionStorage.setItem('preorder_read_clicked', 'true');
-    });
-  });
-
-  if (nudgeLink) {
-    nudgeLink.addEventListener('click', function(){
-      sendEvent('click_preorder_becoming10_nudge');
-    });
-  }
-
- if (codeCopy) {
-  codeCopy.addEventListener('click', function(){
-    const code = 'BECOMING10';
-
-    function showCopiedState(){
-      sendEvent('copy_preorder_becoming10_code');
-
-      codeText.textContent = 'Copied!';
-      setTimeout(function(){
-        codeText.textContent = code;
-      }, 2000);
+    function fire(method){
+      if (engaged) return;
+      engaged = true;
+      sendEvent(eventName, { interaction_method: method });
     }
 
-    if (navigator.clipboard && window.isSecureContext) {
-      navigator.clipboard.writeText(code)
-        .then(showCopiedState)
-        .catch(function(){
-          codeText.textContent = code;
-        });
-    } else {
-      const textArea = document.createElement('textarea');
-      textArea.value = code;
-      textArea.style.position = 'fixed';
-      textArea.style.opacity = '0';
-
-      document.body.appendChild(textArea);
-      textArea.select();
-
-      try {
-        document.execCommand('copy');
-        showCopiedState();
-      } catch (error) {
-        codeText.textContent = code;
-      }
-
-      document.body.removeChild(textArea);
-    }
-  });
-}
-
-  if (nudgeClose) {
-    nudgeClose.addEventListener('click', function(){
-      if (nudge) nudge.hidden = true;
-      sendEvent('dismiss_preorder_becoming10_nudge');
-      showRecallTab();
-    });
+    option.addEventListener('mouseenter', function(){ fire('mouse_hover'); });
+    option.addEventListener('focusin', function(){ fire('keyboard_focus'); });
   }
 
-  if (recallTab) {
-    recallTab.addEventListener('click', function(){
-      showNudge('recall');
-    });
-  }
+  setTimeout(function(){ sendEvent('order_stayed_8_seconds', {seconds_on_page:8}); },8000);
+  setTimeout(function(){ sendEvent('order_stayed_15_seconds', {seconds_on_page:15}); },15000);
+  setTimeout(function(){ sendEvent('order_stayed_30_seconds', {seconds_on_page:30}); },30000);
+  setTimeout(function(){ sendEvent('order_stayed_60_seconds', {seconds_on_page:60}); },60000);
 
-  watch('.preorder-hero', 'view_preorder_hero', 0.35);
-  watch('#read-chapter-one', 'view_preorder_read_prompt', 0.35);
-  watch('#preorder-options', 'view_preorder_options', 0.25);
-  watch('.signed-option', 'view_signed_preorder_option', 0.45);
-  watch('.standard-option', 'view_standard_preorder_option', 0.45);
-  watch('.kindle-option', 'view_kindle_preorder_option', 0.45);
+  watch('.preorder-hero','view_order_hero',0.35);
+  watch('#order-options','view_order_options',0.25);
+  watch('.harlow-paperback-option','view_harlow_paperback_option',0.45);
+  watch('.standard-paperback-option','view_standard_paperback_option',0.45);
+  watch('.harlow-hardcover-option','view_harlow_hardcover_option',0.45);
+  watch('.standard-hardcover-option','view_standard_hardcover_option',0.45);
+  watch('.direct-first-note','view_direct_support_note',0.45);
+  watch('.amazon-fallback','view_amazon_physical_option',0.45);
+  watch('.kindle-option','view_kindle_option',0.45);
+  watch('#read-chapter-one','view_order_read_prompt',0.35);
+  watch('.preorder-reactions','view_order_reactions',0.25);
 
-  trackOptionEngagement(
-  '.signed-option',
-  'engage_signed_preorder_option'
-);
-
-  trackOptionEngagement(
-  '.standard-option',
-  'engage_standard_preorder_option'
-);
-
-  trackOptionEngagement(
-  '.kindle-option',
-  'engage_kindle_preorder_option'
-);
-
-watch('.preorder-reactions', 'view_preorder_reactions', 0.25);
-
-const reactions = document.querySelector('.preorder-reactions');
-
-if (reactions && 'IntersectionObserver' in window) {
-
-  const observer = new IntersectionObserver(function(entries){
-
-    entries.forEach(function(entry){
-
-      if (!entry.isIntersecting) return;
-
-      observer.disconnect();
-
-      if (sessionStorage.getItem('preorder_becoming10_nudge_shown') === 'true') return;
-      if (preorderWasClicked()) return;
-
-      sessionStorage.setItem('preorder_becoming10_nudge_shown','true');
-
-      showNudge('reader_reactions');
-
-      setTimeout(function(){
-
-        if (nudge && !nudge.hidden && !preorderWasClicked()){
-
-          nudge.hidden = true;
-          showRecallTab();
-
-        }
-
-      },20000);
-
-    });
-
-  },{threshold:.35});
-
-  observer.observe(reactions);
-
-}
+  trackOptionEngagement('.harlow-paperback-option','engage_harlow_paperback_option');
+  trackOptionEngagement('.standard-paperback-option','engage_standard_paperback_option');
+  trackOptionEngagement('.harlow-hardcover-option','engage_harlow_hardcover_option');
+  trackOptionEngagement('.standard-hardcover-option','engage_standard_hardcover_option');
+  trackOptionEngagement('.kindle-option','engage_kindle_option');
 })();
 </script>
-  
+
 </body>
 </html>
