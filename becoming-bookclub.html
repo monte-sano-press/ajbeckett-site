@@ -47,7 +47,6 @@
     "@type":"Organization",
     "name":"Monte Sano Press"
   },
-  "bookFormat":"https://schema.org/Paperback",
   "genre":[
     "Romance",
     "Contemporary Romance",
@@ -954,11 +953,15 @@ h1,h2,h3,h4{
   position:relative;
 }
 
+.edition-card.featured{
+  padding-top:4.2rem;
+}
+
 .edition-card.featured::before{
   content:"SIGNED + EXTRAS";
   position:absolute;
-  top:1.1rem;
-  right:1.1rem;
+  top:1.15rem;
+  right:1.15rem;
   padding:.35rem .55rem;
   border-radius:999px;
   background:#f3e2df;
@@ -1007,25 +1010,6 @@ h1,h2,h3,h4{
 .shipping-note p{
   margin:0;
   color:var(--muted);
-}
-
-.discussion-list{
-  display:grid;
-  gap:1rem;
-  max-width:900px;
-  margin:0 auto;
-}
-
-.discussion-question{
-  margin:0;
-  padding:1.25rem 1.4rem;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:18px;
-  color:#463f3b;
-  font-family:'Playfair Display',serif;
-  font-size:1.2rem;
-  line-height:1.45;
 }
 
 .cta-card{
@@ -1560,7 +1544,7 @@ footer .container{
           </p>
 
           <p>
-            Whether your members choose the signed Book Club Edition or the signed Harlow Edition, we’ll make joining your discussion simple, affordable, and memorable.
+            Whether your members prefer paperback or hardcover, each reader can choose a signed Book Club Edition or signed Harlow Edition. We’ll make joining your discussion simple, affordable, and memorable.
           </p>
         </div>
 
@@ -1658,7 +1642,7 @@ footer .container{
         <article class="benefit-card">
           <h3>Your Own Club Discount</h3>
           <p>
-            Clubs receive a personalized discount code based on expected participation. 15% off for groups of 5–25 readers and 20% off for groups of 26 or more.
+            Clubs receive a personalized discount code based on expected participation. 15% off for groups of 5–25 readers and 20% off for groups with more than 25 readers.
           </p>
         </article>
 
@@ -1686,14 +1670,14 @@ footer .container{
         <article class="benefit-card">
           <h3>Flexible Edition Choices</h3>
           <p>
-            Each member can choose the signed Book Club Edition or the signed Harlow Edition using the same personalized club code.
+            Each member can choose paperback or hardcover, with signed Book Club and Harlow Editions available using the same personalized club code.
           </p>
         </article>
 
         <article class="benefit-card">
           <h3>Signed Harlow Extras</h3>
           <p>
-            Each Harlow Edition includes a Harlow University bookmark and sticker.
+            Each Harlow Edition includes the official Harlow University bookmark plus one of two Harlow stickers selected at random.
           </p>
         </article>
       </div>
@@ -1730,7 +1714,7 @@ footer .container{
           <span class="process-number">2</span>
           <h3>Receive your custom code.</h3>
           <p>
-            Your club receives a personalized 15% or 20% discount code to share with members.
+            Your club receives a personalized discount code to share with members: 15% off for clubs with 5–25 readers and 20% off for clubs with more than 25 readers.
           </p>
         </article>
 
@@ -1738,7 +1722,7 @@ footer .container{
           <span class="process-number">3</span>
           <h3>Members choose their edition.</h3>
           <p>
-            Each reader orders the signed Book Club Edition or signed Harlow Edition directly and enters the club’s code at checkout.
+            Each reader chooses paperback or hardcover, then selects either the signed Book Club Edition or signed Harlow Edition and enters the club’s code at checkout.
           </p>
         </article>
 
@@ -1757,22 +1741,23 @@ footer .container{
     <div class="container">
       <div class="section-heading">
         <p class="book-label">Choose Your Edition</p>
-        <h2>One story. Two ways to read.</h2>
+        <h2>One story. Four ways to read.</h2>
         <p>
-          Personalized club codes provide 15% or 20% off eligible direct paperback purchases, based on club size.
+          Personalized club codes provide 15% off for clubs with 5–25 readers and 20% off for clubs with more than 25 readers. Discounts apply to eligible direct paperback and hardcover purchases.
         </p>
       </div>
 
       <div class="edition-grid">
-          <article class="option-card edition-card featured">
-          <h3>Harlow Edition</h3>
+
+        <article class="option-card edition-card featured">
+          <h3>Harlow Paperback Edition</h3>
           <p class="retail-price">Retail price: $22.99</p>
           <p class="club-price">$19.54 with a 15% club code<br>$18.39 with a 20% club code</p>
 
           <ul class="feature-list">
             <li>Paperback signed by A.J. Beckett</li>
-            <li>Harlow University bookmark</li>
-            <li>Harlow University sticker</li>
+            <li>Official Harlow University bookmark</li>
+            <li>One of two Harlow stickers selected at random</li>
             <li>Eligible for the personalized club discount</li>
           </ul>
 
@@ -1781,19 +1766,20 @@ footer .container{
             class="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
-            onclick="gtag('event','click_bookclub_harlow_edition');"
+            onclick="gtag('event','click_bookclub_harlow_paperback');"
           >
-            Order Harlow Edition
+            Order Harlow Paperback
           </a>
         </article>
-        
+
         <article class="option-card edition-card">
-          <h3>Book Club Edition</h3>
+          <h3>Book Club Paperback</h3>
           <p class="retail-price">Retail price: $17.99</p>
           <p class="club-price">$15.29 with a 15% club code<br>$14.39 with a 20% club code</p>
 
           <ul class="feature-list">
-            <li>Hand-signed paperback</li>
+            <li>Paperback signed by A.J. Beckett</li>
+            <li>Book-only edition without Harlow extras</li>
             <li>Eligible for the personalized club discount</li>
           </ul>
 
@@ -1802,11 +1788,57 @@ footer .container{
             class="btn btn-primary"
             target="_blank"
             rel="noopener noreferrer"
-            onclick="gtag('event','click_bookclub_bookclub_edition');"
+            onclick="gtag('event','click_bookclub_paperback');"
           >
-            Order Book Club Edition
+            Order Book Club Paperback
           </a>
         </article>
+
+        <article class="option-card edition-card featured">
+          <h3>Harlow Hardcover Edition</h3>
+          <p class="retail-price">Retail price: $29.99</p>
+          <p class="club-price">$25.49 with a 15% club code<br>$23.99 with a 20% club code</p>
+
+          <ul class="feature-list">
+            <li>Hardcover signed by A.J. Beckett</li>
+            <li>Official Harlow University bookmark</li>
+            <li>One of two Harlow stickers selected at random</li>
+            <li>Eligible for the personalized club discount</li>
+          </ul>
+
+          <a
+            href="https://buy.stripe.com/3cIaEWdHe8s9ef704QdjO0u"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event','click_bookclub_harlow_hardcover');"
+          >
+            Order Harlow Hardcover
+          </a>
+        </article>
+
+        <article class="option-card edition-card">
+          <h3>Book Club Hardcover</h3>
+          <p class="retail-price">Retail price: $25.99</p>
+          <p class="club-price">$22.09 with a 15% club code<br>$20.79 with a 20% club code</p>
+
+          <ul class="feature-list">
+            <li>Hardcover signed by A.J. Beckett</li>
+            <li>Book-only edition without Harlow extras</li>
+            <li>Eligible for the personalized club discount</li>
+          </ul>
+
+          <a
+            href="https://buy.stripe.com/14A14m5aIdMt9YRdVGdjO0t"
+            class="btn btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            onclick="gtag('event','click_bookclub_hardcover');"
+          >
+            Order Book Club Hardcover
+          </a>
+        </article>
+
       </div>
 
       <aside class="shipping-rate-note">
@@ -1819,33 +1851,6 @@ footer .container{
             Standard flat-rate shipping is $7.95 per order. Clubs can share that same rate for up to ten books placed in one combined order and shipped to one organizer. Because the current checkout links do not support shared shipping, contact A.J. before ordering so the combined order can be arranged.
           </p>
       </aside>
-    </div>
-  </section>
-
-  <section id="built-for-discussion" class="bookclub-section">
-    <div class="container">
-      <div class="section-heading">
-        <p class="book-label">Built for Discussion</p>
-        <h2>A few questions your club may explore.</h2>
-      </div>
-
-      <div class="discussion-list">
-        <p class="discussion-question">
-          How much of Shelby’s identity has been shaped by the need to earn approval?
-        </p>
-
-        <p class="discussion-question">
-          Is Tanner protecting the future he has worked for, or using that future to avoid vulnerability?
-        </p>
-
-        <p class="discussion-question">
-          When does discipline become fear?
-        </p>
-
-        <p class="discussion-question">
-          Which friendships allow Shelby and Tanner to become more fully themselves?
-        </p>
-      </div>
     </div>
   </section>
 
@@ -2051,12 +2056,6 @@ footer .container{
   watch(
     '#edition-options',
     'view_bookclub_editions',
-    0.25
-  );
-
-  watch(
-    '#built-for-discussion',
-    'view_bookclub_discussion',
     0.25
   );
 
