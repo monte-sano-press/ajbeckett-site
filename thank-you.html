@@ -259,6 +259,8 @@ h1,h2,h3,h4{
   margin-bottom:.8rem;
 }
 
+
+
 .discount-code{
   margin-top:1rem;
   padding:1rem 1.1rem;
@@ -741,16 +743,16 @@ footer .container{
       </div>
 
       <div class="thank-you-card">
-  <p class="book-label">Preorder received</p>
+  <p class="book-label">Order received</p>
 
-  <h1>Thank you for ordering <em>Becoming</em> !</h1>
+  <h1>Thank you for ordering <em>Becoming</em>!</h1>
 
   <p>
     Seriously, thank you. Direct orders make a real difference for indie authors, and I’m grateful you chose to support this book.
   </p>
 
   <p>
-    <em>Becoming</em> releases September 18, 2026. Your copy is expected to ship as soon as books are printed.
+    Your copy is expected to ship as soon as books are printed and ready for fulfillment.
   </p>
 
   <div class="support-box">
@@ -771,7 +773,7 @@ footer .container{
     Share Becoming
   </button>
 
-  <a href="index.html"
+  <a href="/"
      class="btn btn-soft"
      onclick="gtag('event','click_home_thank_you_button');">
     Back to Homepage
@@ -854,7 +856,7 @@ footer .container{
 <script>
   if (typeof gtag === 'function') {
     gtag('event', 'purchase_redirect_thank_you', {
-      page_title: 'Thank You - Becoming Preorder',
+      page_title: 'Thank You - Becoming Order',
       page_location: window.location.href
     });
   }
@@ -866,8 +868,8 @@ footer .container{
 
   if (!shareButton) return;
 
-  const shareText = "I just ordered Becoming by A.J. Beckett — a 1996 college slow-burn romance. Use THANKS10 for 10% off an order for yourself!";
-  const shareUrl = "https://www.ajbeckettwrites.com/becoming-preorder";
+  const shareText = "I just ordered Becoming by A.J. Beckett, a 1996 college slow-burn romance. Use THANKS10 for 10% off your own order!";
+  const shareUrl = "https://www.ajbeckettwrites.com/becoming-order";
 
   shareButton.addEventListener('click', async function(){
     if (typeof gtag === 'function') {
