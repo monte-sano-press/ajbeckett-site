@@ -165,116 +165,16 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 @media (max-width:900px){.read-layout{grid-template-columns:1fr;max-width:520px;margin:0 auto;text-align:center}.cover-wrap{max-width:340px;margin:0 auto}.hero-actions{justify-content:center}}
 @media (max-width:700px){.nav-inner{min-height:auto;padding:.55rem 0 .65rem;flex-direction:column;justify-content:center;gap:.4rem}.brand{flex-direction:column;gap:.2rem}.brand-seal{width:44px;height:44px}.brand-text{font-size:1.65rem}.nav-links{justify-content:center;gap:.9rem}.nav-links a{font-size:.78rem;letter-spacing:.15em}.nav-instagram-icon{width:22px;height:22px}.read-hero{padding:2.8rem 0 3.4rem}.hero-actions .btn,.after-actions .btn{width:100%}.chapter-text{font-size:1.08rem;line-height:1.85}.footer-inner{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.35rem;padding:.65rem 0}.footer-logo{order:1;width:155px;max-width:70vw}.footer-copy{order:2;white-space:normal;font-size:.8rem;font-weight:500;line-height:1.25}}
 
-.conversion-nudge{
-  position:fixed;
-  left:50%;
-  bottom:1rem;
-  transform:translateX(-50%);
-  z-index:2000;
-  width:min(760px, calc(100% - 2rem));
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:0 14px 38px rgba(0,0,0,.16);
-  padding:1rem 1.15rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
 
-.conversion-nudge[hidden],
-.discount-recall-tab[hidden]{
-  display:none;
-}
 
-.conversion-nudge p{
-  margin:0;
-  color:var(--text);
-  font-size:.96rem;
-  line-height:1.45;
-}
 
-.conversion-nudge strong{
-  color:#5a2622;
-  letter-spacing:.06em;
-}
 
-.conversion-nudge a{
-  flex:0 0 auto;
-  white-space:nowrap;
-}
 
-.nudge-close{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-size:1.35rem;
-  line-height:1;
-  cursor:pointer;
-  padding:.25rem;
-}
 
-@media (max-width:700px){
-  .conversion-nudge{
-    align-items:flex-start;
-    flex-direction:column;
-    bottom:.75rem;
-    padding:1.2rem;
-  }
 
-  .conversion-nudge p{
-    padding-right:1.8rem;
-  }
 
-  .conversion-nudge a{
-    width:100%;
-  }
 
-  .nudge-close{
-    position:absolute;
-    top:.65rem;
-    right:.8rem;
-  }
-}
 
-.nudge-copy{
-  display:flex;
-  flex-direction:column;
-  gap:.55rem;
-}
-
-.promo-code-pill{
-  align-self:flex-start;
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-}
-
-.copy-icon{
-  margin-right:.25rem;
-}
-
-.discount-recall-tab{
-  position:fixed;
-  right:1rem;
-  bottom:1rem;
-  z-index:1999;
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
-}
   
 
 
@@ -527,8 +427,8 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 <p class="read-time">Chapter One · About 14 minutes</p><p class="sample-reassurance">
   No email required.
 </p>
-<div class="hero-actions"><a class="btn btn-primary" href="#chapter-one" onclick="gtag('event','click_start_reading_top');">Start Reading</a><a class="btn btn-soft" href="becoming-order.html#preorder-options" onclick="gtag('event','click_preorder_read_top');">
-  Preorder <em>Becoming</em>
+<div class="hero-actions"><a class="btn btn-primary" href="#chapter-one" onclick="gtag('event','click_start_reading_top');">Start Reading</a><a class="btn btn-soft" href="becoming-order.html#order-options" onclick="gtag('event','click_order_read_top');">
+  Order <em>Becoming</em>
 </a>
 </div>
 </div>
@@ -540,7 +440,7 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     Order <em>Becoming</em> now to keep reading.
   </p>
 <div class="after-actions">
-<a class="btn btn-primary" href="becoming-order.html#preorder-options" onclick="gtag('event','click_preorder_after_chapter');">
+<a class="btn btn-primary" href="becoming-order.html#order-options" onclick="gtag('event','click_order_after_chapter');">
   Order <em>Becoming</em>
 </a>
 <a class="btn btn-soft" href="index.html#contact" onclick="gtag('event','click_join_list_after_chapter');">
@@ -552,24 +452,6 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
   </p>
 </div></div></article></div></section>
 </main>
-<div class="conversion-nudge" hidden="" id="conversion-nudge">
-<button aria-label="Dismiss message" class="nudge-close" id="conversion-nudge-close" type="button">
-    ×
-  </button>
-<div class="nudge-copy">
-<p id="conversion-nudge-message"></p>
-<button class="promo-code-pill" id="conversion-code-copy" type="button">
-<span class="copy-icon">📋</span>
-<span id="conversion-code-text">BECOMING10</span>
-</button>
-</div>
-<a class="btn btn-primary" href="becoming-order.html#preorder-options" id="conversion-nudge-link">
-    Order <em>Becoming</em>
-</a>
-</div>
-<button class="discount-recall-tab" hidden="" id="discount-recall-tab" type="button">
-  10% Off
-</button>
 <footer>
 <div class="container footer-inner"><span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span><a href="https://www.montesano-press.com/" rel="noopener noreferrer" target="_blank"><img alt="Monte Sano Press" class="footer-logo" src="monte-sano-press-web-dark-tm.png"/></a></div></footer>
 <script>
@@ -620,16 +502,6 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
 <script>
 (function(){
   const fired = new Set();
-  const nudge = document.getElementById('conversion-nudge');
-  const nudgeClose = document.getElementById('conversion-nudge-close');
-  const nudgeMessage = document.getElementById('conversion-nudge-message');
-  const nudgeLink = document.getElementById('conversion-nudge-link');
-  const codeCopy = document.getElementById('conversion-code-copy');
-  const codeText = document.getElementById('conversion-code-text');
-  const recallTab = document.getElementById('discount-recall-tab');
-
-  let currentNudgeType = null;
-  let currentCode = null;
 
   function sendEvent(name, extra){
     if (fired.has(name)) return;
@@ -647,66 +519,8 @@ footer{background:var(--dark);color:#c7b7ae;border-top:1px solid rgba(255,255,25
     sendEvent(name, { seconds_on_page: seconds });
   }
 
-  function preorderWasClicked(){
-  return sessionStorage.getItem('read_preorder_clicked') === 'true';
-}
-
-function showRecallTab(){
-  if (!recallTab) return;
-  if (preorderWasClicked()) return;
-  recallTab.hidden = false;
-}
-
-function hideRecallTab(){
-  if (recallTab) recallTab.hidden = true;
-}
-
-  function showNudge(type){
-    if (!nudge || !nudgeMessage || !codeText) return;
-    if (preorderWasClicked()) return;
-
-    if (type === 'visit') {
-      if (sessionStorage.getItem('read_becoming10_nudge_dismissed') === 'true') return;
-      if (sessionStorage.getItem('read_becoming10_nudge_shown') === 'true') return;
-
-      currentNudgeType = 'visit';
-      currentCode = 'BECOMING10';
-
-      nudgeMessage.innerHTML = 'Thanks for stopping by! Use BECOMING10 for 10% off your direct paperback order. Thanks for supporting indie authors!';
-      codeText.textContent = 'BECOMING10';
-            nudge.hidden = false;
-              hideRecallTab();
-
-      sessionStorage.setItem('read_becoming10_nudge_shown', 'true');
-      sendEvent('view_read_becoming10_nudge');
-
-      setTimeout(function(){
-  if (currentNudgeType === 'visit' && nudge && !nudge.hidden) {
-    nudge.hidden = true;
-    showRecallTab();
-  }
-}, 15000);
-    }
-
-    if (type === 'tanner') {
-      if (sessionStorage.getItem('read_tanner10_nudge_dismissed') === 'true') return;
-      if (sessionStorage.getItem('read_tanner10_nudge_shown') === 'true') return;
-
-      currentNudgeType = 'tanner';
-      currentCode = 'TANNER10';
-
-      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct paperback order.';
-      codeText.textContent = 'TANNER10';
-      nudge.hidden = false;
-        hideRecallTab();
-
-      sessionStorage.setItem('read_tanner10_nudge_shown', 'true');
-      sendEvent('view_read_tanner10_nudge');
-    }
-  }
-
   setTimeout(function(){
-  sendTimedEvent('read_stayed_5_seconds', 5);
+    sendTimedEvent('read_stayed_5_seconds', 5);
   }, 5000);
 
   setTimeout(function(){
@@ -738,84 +552,9 @@ function hideRecallTab(){
     if (percent >= 25) sendEvent('read_chapter_25');
     if (percent >= 50) sendEvent('read_chapter_50');
     if (percent >= 75) sendEvent('read_chapter_75');
-
-    if (percent >= 90) {
-      sendEvent('read_chapter_90');
-      showNudge('tanner');
-    }
+    if (percent >= 90) sendEvent('read_chapter_90');
   }
 
-  document.querySelectorAll('a[href*="becoming-order"]').forEach(function(link){
-    link.addEventListener('click', function(){
-      sessionStorage.setItem('read_preorder_clicked', 'true');
-        hideRecallTab();
-    });
-  });
-
-  if (nudgeLink) {
-    nudgeLink.addEventListener('click', function(){
-      sessionStorage.setItem('read_preorder_clicked', 'true');
-        hideRecallTab();
-
-      if (currentNudgeType === 'visit') sendEvent('click_read_becoming10_nudge');
-      if (currentNudgeType === 'tanner') sendEvent('click_read_tanner10_nudge');
-    });
-  }
-
-  if (codeCopy) {
-    codeCopy.addEventListener('click', function(){
-      if (!currentCode) return;
-
-      navigator.clipboard.writeText(currentCode).then(function(){
-        if (currentNudgeType === 'visit') sendEvent('copy_read_becoming10_code');
-        if (currentNudgeType === 'tanner') sendEvent('copy_read_tanner10_code');
-
-        codeText.textContent = 'Copied!';
-        setTimeout(function(){
-          codeText.textContent = currentCode;
-        }, 2000);
-      });
-    });
-  }
-
-  if (nudgeClose) {
-    nudgeClose.addEventListener('click', function(){
-      if (nudge) nudge.hidden = true;
-
-     if (currentNudgeType === 'visit') {
-  sessionStorage.setItem('read_becoming10_nudge_dismissed', 'true');
-  sendEvent('dismiss_read_becoming10_nudge');
-  showRecallTab();
-}
-
-     if (currentNudgeType === 'tanner') {
-  sessionStorage.setItem('read_tanner10_nudge_dismissed', 'true');
-  sendEvent('dismiss_read_tanner10_nudge');
-  showRecallTab();
-}
-    });
-  }
-
- if (recallTab) {
-  recallTab.addEventListener('click', function(){
-    if (currentNudgeType === 'tanner') {
-      currentCode = 'TANNER10';
-      nudgeMessage.innerHTML = 'Almost finished? Tanner’s story starts in Chapter Two. Use <strong>TANNER10</strong> for 10% off your direct paperback order.';
-      codeText.textContent = 'TANNER10';
-      sendEvent('recall_read_tanner10_nudge');
-    } else {
-      currentNudgeType = 'visit';
-      currentCode = 'BECOMING10';
-      nudgeMessage.innerHTML = 'Thanks for stopping by! Use <strong>BECOMING10</strong> for 10% off your direct paperback order. Thanks for supporting indie authors!';
-      codeText.textContent = 'BECOMING10';
-      sendEvent('recall_read_becoming10_nudge');
-    }
-
-    if (nudge) nudge.hidden = false;
-    hideRecallTab();
-  });
-}
-  
   window.addEventListener('scroll', checkScrollDepth, { passive: true });
   window.addEventListener('load', checkScrollDepth);
 
