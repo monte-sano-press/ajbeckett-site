@@ -1082,117 +1082,6 @@ footer .container{
   }
 }
 
-.conversion-nudge{
-  position:fixed;
-  left:50%;
-  bottom:1rem;
-  transform:translateX(-50%);
-  z-index:2000;
-  width:min(760px, calc(100% - 2rem));
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:22px;
-  box-shadow:0 14px 38px rgba(0,0,0,.16);
-  padding:1rem 1.15rem;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:1rem;
-}
-
-.conversion-nudge[hidden],
-.discount-recall-tab[hidden]{
-  display:none;
-}
-
-.nudge-copy{
-  display:flex;
-  flex-direction:column;
-  gap:.55rem;
-}
-
-.conversion-nudge p{
-  margin:0;
-  color:var(--text);
-  font-size:.96rem;
-  line-height:1.45;
-}
-
-.conversion-nudge strong{
-  color:#5a2622;
-  letter-spacing:.06em;
-}
-
-.conversion-nudge a{
-  flex:0 0 auto;
-  white-space:nowrap;
-}
-
-.promo-code-pill{
-  align-self:flex-start;
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-}
-
-.discount-recall-tab{
-  position:fixed;
-  right:1rem;
-  bottom:1rem;
-  z-index:1999;
-  border:1px solid #cfaeaa;
-  background:#f3e2df;
-  color:#5a2622;
-  border-radius:999px;
-  padding:.45rem .8rem;
-  font-weight:800;
-  letter-spacing:.08em;
-  cursor:pointer;
-  box-shadow:0 10px 28px rgba(0,0,0,.14);
-}
-  
-.copy-icon{
-  margin-right:.25rem;
-}
-
-.nudge-close{
-  border:0;
-  background:transparent;
-  color:var(--muted);
-  font-size:1.35rem;
-  line-height:1;
-  cursor:pointer;
-  padding:.25rem;
-}
-
-@media (max-width:700px){
-  .conversion-nudge{
-    align-items:flex-start;
-    flex-direction:column;
-    bottom:.75rem;
-    padding:1.2rem;
-  }
-
-  .conversion-nudge p{
-    padding-right:1.8rem;
-  }
-
-  .conversion-nudge a{
-    width:100%;
-    text-align:center;
-  }
-
-  .nudge-close{
-    position:absolute;
-    top:.65rem;
-    right:.8rem;
-  }
-}
   
 </style>
 </head>
@@ -1291,8 +1180,8 @@ footer .container{
 
       <div class="hero-actions">
   <a href="becoming-order.html" class="btn btn-primary"
-     onclick="gtag('event','click_preorder_becoming_hero');">
-    Preorder Becoming
+     onclick="gtag('event','click_order_becoming_hero');">
+    Order Becoming
   </a>
 
   <a href="read.html" class="btn btn-soft"
@@ -1357,18 +1246,18 @@ footer .container{
     </p></p>
             
        <div class="book-actions becoming-actions">
-  <a href="becoming-order.html#preorder-options"
+  <a href="becoming-order.html#order-options"
      class="btn btn-primary"
-     onclick="gtag('event','click_becoming_direct_preorder_card');">
-    Direct Paperback Preorder
+     onclick="gtag('event','click_becoming_order_card');">
+    Order Becoming
   </a>
 
   <a href="https://a.co/d/02BUR0zT"
      class="btn btn-soft"
      target="_blank"
      rel="noopener noreferrer"
-     onclick="gtag('event','click_becoming_kindle_preorder_card');">
-    Kindle Preorder
+     onclick="gtag('event','click_becoming_kindle_card');">
+    Kindle Store
   </a>
 
   <a href="read.html"
@@ -1422,36 +1311,36 @@ footer .container{
 
  <section class="reader-reactions">
   <div class="container">
-    <p class="section-kicker">Early reader reactions</p>
-    <h2>Readers are already falling for <em>Becoming</em>.</h2>
+    <p class="section-kicker">Reader reactions</p>
+    <h2>What readers are saying about <em>Becoming</em></h2>
 
     <div class="testimonial-grid">
       <figure class="testimonial-card">
         <blockquote>
-          “I read it in one sitting and was pulled in right away.”
+          “I feel like I am her. It feels like my story.”
         </blockquote>
-        <cite>— Early reader</cite>
+        <cite>Katie B.</cite>
       </figure>
 
       <figure class="testimonial-card">
         <blockquote>
-          “I loved the South Carolina setting. Greenville, Columbia, and Charleston feel alive.”
+          “Shelby’s journey from the girl who has learned to make herself smaller into a woman beginning to understand that she is allowed to take up space? Hit me right in the feels.”
         </blockquote>
-        <cite>— Early reader</cite>
+        <cite>Jennifer B.</cite>
       </figure>
 
       <figure class="testimonial-card">
         <blockquote>
-          “I instantly connected with Shelby.”
+          “Excellent debut novel! College romance set in the ’90s... perfection.”
         </blockquote>
-        <cite>— Early reader</cite>
+        <cite>Cristina H.</cite>
       </figure>
 
       <figure class="testimonial-card">
         <blockquote>
-          “I’m loving the chemistry between Shelby and Tanner.”
+          “It gave me characters who felt real, relationships worth rooting for, and a story I’ll be thinking about for a very long time.”
         </blockquote>
-        <cite>— Early reader</cite>
+        <cite>Ashlie M.</cite>
       </figure>
     </div>
   </div>
@@ -1519,9 +1408,9 @@ footer .container{
           </div>
 
           <div class="status-box">
-  <p><strong>Preorders are open now.</strong></p>
-  <p>Signed and standard paperbacks are available directly from A.J. Beckett for U.S. shipping.</p>
-  <p>U.S. and International Kindle preorders are now available through Amazon.</p>
+  <p><strong>Order <em>Becoming</em> now.</strong></p>
+  <p>Signed Harlow Editions and standard paperback and hardcover copies are available directly from A.J. Beckett for U.S. shipping.</p>
+  <p>Paperback, hardcover, and Kindle editions are available through Amazon for U.S. and international readers.</p>
   <p><em>Becoming</em> releases September 18, 2026.</p>
 </div>
 
@@ -1608,40 +1497,6 @@ footer .container{
 
 </main>
 
-<div class="conversion-nudge" id="conversion-nudge" hidden>
-  <button class="nudge-close"
-          type="button"
-          id="conversion-nudge-close"
-          aria-label="Dismiss message">
-    ×
-  </button>
-
-  <div class="nudge-copy">
-    <p>
-      Ready to preorder? Use <strong>BECOMING10</strong> for 10% off your direct preorder. Thanks for supporting an indie author.
-    </p>
-
-    <button class="promo-code-pill"
-            type="button"
-            id="conversion-code-copy">
-      <span class="copy-icon">📋</span>
-      <span id="conversion-code-text">BECOMING10</span>
-    </button>
-  </div>
-
-  <a href="becoming-order.html#preorder-options"
-     class="btn btn-primary"
-     id="conversion-nudge-link">
-    Preorder <em>Becoming</em>
-  </a>
-</div>
-
-<button class="discount-recall-tab"
-        type="button"
-        id="discount-recall-tab">
-  10% Off
-</button>
-  
 <footer>
   <div class="container footer-inner">
     <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
@@ -1699,80 +1554,7 @@ footer .container{
 })();
 </script>
 
-<script>
-(function(){
-  const fired = new Set();
-  const nudge = document.getElementById('conversion-nudge');
-  const nudgeClose = document.getElementById('conversion-nudge-close');
-  const nudgeLink = document.getElementById('conversion-nudge-link');
-  const codeCopy = document.getElementById('conversion-code-copy');
-  const codeText = document.getElementById('conversion-code-text');
-  const recallTab = document.getElementById('discount-recall-tab');
 
-  function sendEvent(name, extra){
-    if (fired.has(name)) return;
-    fired.add(name);
-
-    if (typeof gtag === 'function') {
-      gtag('event', name, Object.assign({
-        page_title: 'A.J. Beckett | Becoming & The Harlow Series',
-        page_location: window.location.href
-      }, extra || {}));
-    }
-  }
-
-  setTimeout(function(){
-    sendEvent('home_stayed_5_seconds', { seconds_on_page: 5 });
-  }, 5000);
-
-  setTimeout(function(){
-    sendEvent('home_stayed_15_seconds', { seconds_on_page: 15 });
-  }, 15000);
-
-  setTimeout(function(){
-    sendEvent('home_stayed_30_seconds', { seconds_on_page: 30 });
-  }, 30000);
-
-  setTimeout(function(){
-    sendEvent('home_stayed_60_seconds', { seconds_on_page: 60 });
-  }, 60000);
-
-  if (recallTab && nudge) {
-    recallTab.addEventListener('click', function(){
-      nudge.hidden = false;
-      recallTab.hidden = true;
-      sendEvent('open_home_becoming10_code');
-    });
-  }
-
-  if (nudgeClose && nudge && recallTab) {
-    nudgeClose.addEventListener('click', function(){
-      nudge.hidden = true;
-      recallTab.hidden = false;
-      sendEvent('close_home_becoming10_code');
-    });
-  }
-
-  if (nudgeLink) {
-    nudgeLink.addEventListener('click', function(){
-      sendEvent('click_home_becoming10_nudge');
-    });
-  }
-
-  if (codeCopy && codeText) {
-    codeCopy.addEventListener('click', function(){
-      navigator.clipboard.writeText('BECOMING10').then(function(){
-        sendEvent('copy_home_becoming10_code');
-        codeText.textContent = 'Copied!';
-
-        setTimeout(function(){
-          codeText.textContent = 'BECOMING10';
-        }, 2000);
-      });
-    });
-  }
-})();
-</script>
 
 </body>
 </html>
