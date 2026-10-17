@@ -832,6 +832,42 @@ section{
   margin-bottom:1.25rem;
 }
 
+  .about-layout{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+}
+
+.author-headshot{
+  width:210px;
+  height:280px;
+  flex-shrink:0;
+  object-fit:cover;
+  object-position:center;
+  border-radius:16px;
+  border:2px solid var(--accent);
+  padding:5px;
+  background:var(--bg);
+  box-shadow:0 6px 18px rgba(107,47,42,.12);
+}
+
+.about-layout .about-copy{
+  flex:1;
+  min-width:0;
+  text-align:left;
+}
+
+@media (max-width:700px){
+  .about-layout{
+    flex-direction:column;
+    gap:1.5rem;
+  }
+
+  .about-layout .about-copy{
+    text-align:center;
+  }
+}
+  
 .about-copy{
   max-width:720px;
   margin:0 auto;
@@ -1478,18 +1514,34 @@ footer .container{
         <h2>About A.J. Beckett</h2>
       </div>
 
-      <div class="about-copy">
-        <p>
-          A.J. Beckett writes contemporary romance where emotion lives in both the body and the mind, where silence carries as much meaning as dialogue, and where characters become more fully themselves through the people they cannot ignore.
-        </p>
+      <div class="about-layout">
+        <img
+          src="AJ_headshot.jpg"
+          alt="A.J. Beckett"
+          class="author-headshot"
+          width="210"
+          height="280"
+          loading="lazy"
+        >
 
-        <p>
-          The work is warm, restrained, and deeply character-driven. It trusts tension, physical awareness, and the ordinary moments that change everything.
-        </p>
+        <div class="about-copy">
+          <p>
+            A.J. Beckett writes contemporary romance where emotion
+            lives in both the body and the mind, where silence carries
+            as much meaning as dialogue, and where characters become
+            more fully themselves through the people they cannot ignore.
+          </p>
 
-        <p>
-          A.J. Beckett lives and writes in Northern Alabama.
-        </p>
+          <p>
+            The work is warm, restrained, and deeply character-driven.
+            It trusts tension, physical awareness, and the ordinary
+            moments that change everything.
+          </p>
+
+          <p>
+            A.J. Beckett lives and writes in Northern Alabama.
+          </p>
+        </div>
       </div>
 
     </div>
