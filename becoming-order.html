@@ -11,6 +11,19 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
+  gtag('config', 'G-2BK1WT2198');<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order Becoming | A.J. Beckett</title>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2BK1WT2198"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
   gtag('config', 'G-2BK1WT2198');
 </script>
 
@@ -1422,12 +1435,37 @@ footer .container{
                 <img src="becoming_cover_web_2.jpg" alt="Becoming paperback edition">
               </div>
               <div class="harlow-product-extras">
-                <img src="harlow_bundle.png" alt="Harlow University bookmark and two possible Harlow sticker designs">
-              </div>
-            </div>
+
+  <div class="harlow-extra-item">
+    <img
+      src="bookmarks_web.png"
+      alt="Front and back of the Becoming Harlow University bookmark"
+      loading="lazy"
+    >
+    <p class="harlow-extra-label">
+      Exclusive Harlow Bookmark
+      <span>Front &amp; Back Shown</span>
+    </p>
+  </div>
+
+  <div class="harlow-extras-plus">+</div>
+
+  <div class="harlow-extra-item">
+    <img
+      src="stickers_web.png"
+      alt="Harlow University and Harlow Swimming sticker designs"
+      loading="lazy"
+    >
+    <p class="harlow-extra-label">
+      One Exclusive Harlow Sticker
+      <span>University <strong>OR</strong> Swimming</span>
+    </p>
+  </div>
+
+</div>
 
             <p class="bundle-caption">
-              Includes the official Harlow University bookmark plus an exclusive sticker.
+              Includes an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming).
             </p>
 
 
@@ -1492,7 +1530,7 @@ footer .container{
             </div>
 
             <p class="bundle-caption">
-              Includes the official Harlow University bookmark plus an exclusive Harlow sticker.
+              Includes an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming)..
             </p>
 
 
@@ -1661,7 +1699,1886 @@ footer .container{
   <div class="detail-box">
     <h4>Harlow Editions</h4>
     <p>
-      Harlow Editions are hand-signed by A.J. Beckett and include the official Harlow University bookmark plus an exclusive Harlow sticker. Personalization is not available at this time.
+      Harlow Editions are hand-signed by A.J. Beckett and include an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming). Personalization is not available at this time.
+    </p>
+  </div>
+
+  <div class="detail-box">
+    <h4>Amazon & Kindle</h4>
+    <p>
+      Unsigned paperback and hardcover editions are available through Amazon, along with the Kindle edition.
+    </p>
+      <p><strong>Best option for readers outside the United States.</strong></p>
+  </div>
+
+  <div class="detail-box">
+    <h4>Questions</h4>
+    <p>
+      Use the
+      <a href="index.html#contact"
+         onclick="gtag('event','click_contact_form_order_questions');">
+        contact form
+      </a>
+      on the A.J. Beckett website or message
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         onclick="gtag('event','click_instagram_order_questions');">
+        @ajbeckettwrites
+      </a>
+      on Instagram.
+    </p>
+  </div>
+
+  <div class="detail-box bookseller-box">
+    <h4>Booksellers</h4>
+    <p>
+      We'd love to partner with independent booksellers. Signed and unsigned paperback wholesale copies are available directly from A.J. Beckett.
+      <br><br>
+      <a href="becoming-wholesale.html"
+         onclick="gtag('event','click_wholesale_from_order_page');">
+        View Wholesale Information →
+      </a>
+    </p>
+  </div>
+
+</div>
+        
+        <div class="details-actions">
+         <a href="#order-options" class="btn btn-primary"
+   onclick="gtag('event','click_order_details_bottom');">
+  See Order Options
+</a>
+
+          <a href="read.html" class="btn btn-soft"
+   onclick="gtag('event','click_read_chapter_order_details');">
+  Read Chapter One
+</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span>
+    <a href="https://www.montesano-press.com/" target="_blank" rel="noopener noreferrer">
+      <img src="monte-sano-press-web-dark-tm.png" alt="Monte Sano Press" class="footer-logo">
+    </a>
+  </div>
+</footer>
+<script>
+(function(){
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.getElementById('primary-navigation');
+
+  if (!navToggle || !navLinks) return;
+
+  function closeMenu(){
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open navigation menu');
+    navLinks.classList.remove('is-open');
+  }
+
+  navToggle.addEventListener('click', function(event){
+    event.stopPropagation();
+
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    navToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Open navigation menu' : 'Close navigation menu'
+    );
+
+    navLinks.classList.toggle('is-open', !isOpen);
+  });
+
+  navLinks.addEventListener('click', function(event){
+    event.stopPropagation();
+  });
+
+  navLinks.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function(event){
+    if (event.key === 'Escape') {
+      closeMenu();
+      navToggle.focus();
+    }
+  });
+})();
+</script>
+
+  
+<script>
+(function(){
+  const fired = new Set();
+
+  function sendEvent(name, extra){
+    if (fired.has(name)) return;
+    fired.add(name);
+
+    if (typeof gtag === 'function') {
+      gtag('event', name, Object.assign({
+        page_title: 'Order Becoming',
+        page_location: window.location.href
+      }, extra || {}));
+    }
+  }
+
+  function watch(selector, eventName, threshold){
+    const el = document.querySelector(selector);
+    if (!el || !('IntersectionObserver' in window)) return;
+
+    const observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          sendEvent(eventName);
+          observer.disconnect();
+        }
+      });
+    }, { threshold: threshold || 0.35 });
+
+    observer.observe(el);
+  }
+
+  function trackOptionEngagement(selector, eventName){
+    const option = document.querySelector(selector);
+    if (!option) return;
+
+    let engaged = false;
+
+    function fire(method){
+      if (engaged) return;
+      engaged = true;
+      sendEvent(eventName, { interaction_method: method });
+    }
+
+    option.addEventListener('mouseenter', function(){ fire('mouse_hover'); });
+    option.addEventListener('focusin', function(){ fire('keyboard_focus'); });
+  }
+
+  setTimeout(function(){ sendEvent('order_stayed_8_seconds', {seconds_on_page:8}); },8000);
+  setTimeout(function(){ sendEvent('order_stayed_15_seconds', {seconds_on_page:15}); },15000);
+  setTimeout(function(){ sendEvent('order_stayed_30_seconds', {seconds_on_page:30}); },30000);
+  setTimeout(function(){ sendEvent('order_stayed_60_seconds', {seconds_on_page:60}); },60000);
+
+  watch('.preorder-hero','view_order_hero',0.35);
+  watch('#order-options','view_order_options',0.25);
+  watch('.harlow-paperback-option','view_harlow_paperback_option',0.45);
+  watch('.standard-paperback-option','view_standard_paperback_option',0.45);
+  watch('.harlow-hardcover-option','view_harlow_hardcover_option',0.45);
+  watch('.standard-hardcover-option','view_standard_hardcover_option',0.45);
+  watch('.direct-first-note','view_direct_support_note',0.45);
+  watch('.amazon-fallback','view_amazon_physical_option',0.45);
+  watch('.kindle-option','view_kindle_option',0.45);
+  watch('#read-chapter-one','view_order_read_prompt',0.35);
+  watch('.preorder-reactions','view_order_reactions',0.25);
+
+  trackOptionEngagement('.harlow-paperback-option','engage_harlow_paperback_option');
+  trackOptionEngagement('.standard-paperback-option','engage_standard_paperback_option');
+  trackOptionEngagement('.harlow-hardcover-option','engage_harlow_hardcover_option');
+  trackOptionEngagement('.standard-hardcover-option','engage_standard_hardcover_option');
+  trackOptionEngagement('.kindle-option','engage_kindle_option');
+})();
+</script>
+
+</body>
+</html>
+</script>
+
+<link rel="icon" type="image/jpg" href="becoming_cover_web_2.jpg">
+<link rel="canonical" href="https://www.ajbeckettwrites.com/becoming-order">
+
+<meta name="description" content="Order Becoming by A.J. Beckett in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available alongside standard editions.">
+
+<meta property="og:title" content="Order Becoming | A.J. Beckett">
+<meta property="og:description" content="Order Becoming in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available alongside standard editions.">
+<meta property="og:url" content="https://www.ajbeckettwrites.com/becoming-order">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Order Becoming | A.J. Beckett">
+<meta name="twitter:description" content="Order Becoming in paperback, hardcover, or Kindle. Signed Harlow Editions with exclusive reader extras are available alongside standard editions.">
+<meta name="twitter:image" content="https://www.ajbeckettwrites.com/becoming_cover_web_2.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#fbfaf8;
+  --surface:#ffffff;
+  --text:#1d1b1a;
+  --muted:#6c6662;
+  --accent:#6b2f2a;
+  --accent-dark:#51211d;
+  --border:#e8e1db;
+  --soft:#f3eeea;
+  --dark:#241f1d;
+  --shadow:0 20px 50px rgba(0,0,0,.12);
+  --max:1160px;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.7;
+}
+
+img{
+  max-width:100%;
+  display:block;
+}
+
+a{color:inherit}
+
+.container{
+  width:min(var(--max), calc(100% - 2rem));
+  margin:0 auto;
+}
+
+nav{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(251,250,248,.94);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav-inner{
+  position:relative;
+  min-height:92px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:2rem;
+  text-decoration:none;
+}
+
+.brand-seal{
+  width:64px;
+  height:64px;
+  object-fit:contain;
+  border-radius:50%;
+  transform:scale(2.5);
+}
+
+.brand-text{
+  font-family:'Playfair Display',serif;
+  font-size:2.2rem;
+  letter-spacing:.02em;
+  color:#5a2622;
+}
+
+.nav-quick-links{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:1.5rem;
+}
+
+.nav-quick-links a{
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-size:.92rem;
+  font-weight:650;
+  color:#5a2622;
+}
+
+.nav-quick-links a:hover{
+  color:var(--accent);
+}
+
+.nav-icon-link{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.nav-instagram-icon{
+  width:24px;
+  height:24px;
+  display:block;
+}
+
+.nav-toggle{
+  display:flex;
+  width:48px;
+  height:48px;
+  padding:11px;
+  border:1px solid var(--border);
+  border-radius:12px;
+  background:var(--surface);
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+}
+
+.nav-toggle:hover{
+  background:var(--soft);
+}
+
+.nav-toggle-line{
+  display:block;
+  width:24px;
+  height:2px;
+  border-radius:999px;
+  background:#5a2622;
+  transition:transform .2s ease, opacity .2s ease;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(1){
+  transform:translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(2){
+  opacity:0;
+}
+
+.nav-toggle[aria-expanded="true"] .nav-toggle-line:nth-child(3){
+  transform:translateY(-7px) rotate(-45deg);
+}
+
+.nav-links{
+  position:absolute;
+  top:calc(100% + 1px);
+  right:0;
+  width:min(340px, calc(100vw - 2rem));
+  display:none;
+  flex-direction:column;
+  align-items:stretch;
+  gap:0;
+  padding:.65rem 1rem 1rem;
+  background:rgba(251,250,248,.99);
+  border:1px solid var(--border);
+  border-top:0;
+  border-radius:0 0 18px 18px;
+  box-shadow:0 18px 36px rgba(0,0,0,.10);
+}
+
+.nav-links.is-open{
+  display:flex;
+}
+
+.nav-links a{
+  width:100%;
+  padding:1rem .35rem;
+  border-bottom:1px solid var(--border);
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.82rem;
+  font-weight:650;
+  color:#5a2622;
+}
+
+.nav-links a:hover{
+  color:var(--accent);
+  background:#fbf7f4;
+}
+
+.nav-links .nav-icon-link{
+  justify-content:flex-start;
+  gap:.65rem;
+}
+
+.nav-links .nav-business-link{
+  margin-top:.35rem;
+  padding-top:1.2rem;
+  border-top:2px solid #d9c8bf;
+  border-bottom:0;
+}
+
+h1,h2,h3,h4{
+  font-family:'Playfair Display',serif;
+  line-height:1.1;
+  margin:0;
+}
+
+.btn{
+  display:inline-block;
+  padding:1rem 1.35rem;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  font-size:.74rem;
+  font-weight:700;
+  border-radius:999px;
+  transition:.2s ease;
+  border:1px solid transparent;
+  text-align:center;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:#fff;
+}
+
+.btn-primary:hover{
+  background:var(--accent-dark);
+  transform:translateY(-1px);
+}
+
+.btn-soft{
+  color:var(--accent);
+  border-color:#cfaeaa;
+  background:#f3e2df;
+}
+
+.btn-soft:hover{
+  background:#ead3cf;
+  transform:translateY(-1px);
+}
+
+.preorder-hero{
+  padding:4.6rem 0 3.8rem;
+  border-bottom:1px solid var(--border);
+  background:
+  linear-gradient(rgba(255,248,242,.80), rgba(251,244,239,.91)),
+  url('barn-hero.JPG');
+  background-size:cover;
+  background-position:center center;
+}
+
+.preorder-hero .container{
+  width:min(1480px, calc(100% - 4rem));
+}
+
+.preorder-layout{
+  display:grid;
+  grid-template-columns:minmax(330px, 430px) minmax(0, 1fr);
+  gap:4rem;
+  align-items:center;
+}
+
+.cover-wrap{
+  width:100%;
+  max-width:430px;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:1.1rem;
+  box-shadow:0 18px 45px rgba(0,0,0,.08);
+}
+
+.cover-wrap img{
+  border-radius:20px;
+  width:100%;
+}
+
+.preorder-copy{
+  width:100%;
+  max-width:900px;
+}
+
+.preorder-copy h1{
+  max-width:820px;
+  margin:0 0 1rem;
+  font-size:clamp(2.6rem, 4vw, 4rem);
+  line-height:1.06;
+  color:#5a2622;
+  letter-spacing:-.015em;
+}
+
+.hero-tropes{
+  margin:0 0 1.25rem;
+  color:#6b2f2a;
+  font-size:.78rem;
+  font-weight:750;
+  letter-spacing:.07em;
+  text-transform:uppercase;
+  line-height:1.45;
+  white-space:normal;
+}
+
+@media (max-width:1300px){
+  .hero-tropes{
+    white-space:normal;
+  }
+}
+  
+.hero-blurb{
+  width:100%;
+  max-width:900px;
+  margin:0 0 1.5rem;
+  padding:1.7rem 2rem;
+  background:rgba(255,250,246,.88);
+  border-left:4px solid #b66d61;
+  border-radius:0 20px 20px 0;
+  box-shadow:0 10px 28px rgba(78,43,35,.08);
+}
+
+.hero-blurb p{
+  margin:0 0 1rem;
+  color:#4f4945;
+  font-size:1.04rem;
+  line-height:1.65;
+}
+
+.hero-blurb p:last-child{
+  margin-bottom:0;
+}
+    
+.release-line{
+  margin:0 0 .35rem;
+  color:#5a2622;
+  font-size:1.02rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.035em;
+}
+
+.format-line{
+  margin:0;
+  color:#5d5753;
+  font-size:.98rem;
+  font-style:italic;
+  line-height:1.5;
+}
+
+.hero-bottom-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:2rem;
+}
+
+.hero-release-copy{
+  flex:1 1 auto;
+}
+
+.hero-actions{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:1rem;
+  flex:0 0 auto;
+}
+
+.hero-actions .btn{
+  min-width:190px;
+}
+
+.read-prompt-actions,
+.details-actions{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:1rem;
+  flex-wrap:wrap;
+  margin-top:1.5rem;
+}
+
+.details-actions{
+  margin-top:2rem;
+}
+
+.read-prompt-actions .btn,
+.details-actions .btn{
+  min-width:190px;
+}
+  
+.preorder-section{
+  padding:4.5rem 0;
+}
+
+.section-heading{
+  text-align:center;
+  max-width:780px;
+  margin:0 auto 2.5rem;
+}
+
+.section-heading h2{
+  font-size:clamp(2rem, 4vw, 3rem);
+  margin-bottom:.8rem;
+}
+
+.section-heading p{
+  margin:0;
+  color:var(--muted);
+}
+.section-heading .direct-support-note{
+  margin:.75rem auto 0;
+  max-width:900px;
+  color:var(--accent);
+  font-weight:750;
+  text-align:center;
+  font-size:1rem;
+  line-height:1.45;
+}
+
+.option-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(260px, 1fr));
+  gap:2rem;
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.option-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:2rem;
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+  display:flex;
+  flex-direction:column;
+}
+
+.option-card.featured{
+  border-color:#cfaeaa;
+  box-shadow:0 18px 45px rgba(107,47,42,.11);
+}
+
+.option-card h3{
+  font-size:clamp(1.65rem, 2.2vw, 1.95rem);
+  margin-bottom:.5rem;
+}
+  
+.price{
+  font-size:1.5rem;
+  font-weight:750;
+  color:#5a2622;
+  margin:.2rem 0 1rem;
+}
+
+.option-card p{
+  color:var(--muted);
+  margin:0 0 1rem;
+}
+
+.option-card .btn{
+  margin-top:auto;
+  width:100%;
+}
+
+
+/* Physical edition layout */
+.physical-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:2.25rem;
+  max-width:1120px;
+  margin:0 auto;
+}
+
+.format-group{
+  display:flex;
+  flex-direction:column;
+  gap:1.25rem;
+}
+
+.format-heading{
+  text-align:center;
+  margin-bottom:.15rem;
+}
+
+.format-heading h3{
+  color:#5a2622;
+  font-size:clamp(1.65rem, 2.5vw, 2.15rem);
+  margin-bottom:.3rem;
+}
+
+.format-heading p{
+  margin:0;
+  color:var(--muted);
+  font-size:.92rem;
+}
+
+.harlow-card{
+  position:relative;
+  overflow:hidden;
+  padding-top:4.65rem;
+  background:linear-gradient(145deg,#fff8f5,#f4ddd7);
+  border:2px solid #c98f84;
+  box-shadow:0 18px 45px rgba(107,47,42,.14);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.harlow-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 24px 52px rgba(107,47,42,.17);
+}
+
+.harlow-banner{
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:.7rem 1rem;
+  background:#6b2f2a;
+  color:#fff;
+  font-size:.72rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.16em;
+  text-align:center;
+}
+
+.edition-badge{
+  display:inline-flex;
+  align-self:flex-start;
+  margin:0 0 .85rem;
+  padding:.42rem .75rem;
+  border-radius:999px;
+  color:#fff;
+  font-size:.7rem;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.13em;
+  font-weight:850;
+}
+
+.best-value .edition-badge{
+  background:#6b2f2a;
+}
+
+.premium-edition .edition-badge{
+  background:#8a5c3f;
+}
+
+.harlow-card h3{
+  color:#51211d;
+}
+
+.harlow-card .price{
+  font-size:1.65rem;
+}
+
+.harlow-product-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  max-width:430px;
+  margin:.55rem auto 1.05rem;
+  min-height:250px;
+}
+
+.harlow-product-book,
+.harlow-product-extras {
+  flex: 0 1 43%;
+  margin-left: -1rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-width: 0;
+  position: relative;
+  text-align: center;
+}
+
+.harlow-extra-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.harlow-extra-item img {
+  display: block;
+  width: 100%;
+  max-height: 145px;
+  object-fit: contain;
+}
+
+.harlow-extra-label {
+  margin: 0.2rem 0 0;
+  color: #24344d;
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.harlow-extra-label span {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.65rem;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.harlow-extra-label strong {
+  color: #8b2635;
+  font-weight: 800;
+}
+
+.harlow-extras-plus {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #8b2635;
+  line-height: 1;
+  margin: 0.1rem 0;
+}
+.harlow-product-book{
+  flex:0 1 56%;
+  z-index:2;
+}
+
+.harlow-product-book img{
+  width:100%;
+  max-height:300px;
+  object-fit:contain;
+}
+
+.bundle-caption{
+  margin:-.2rem auto 1.15rem !important;
+  max-width:380px;
+  text-align:center;
+  color:#725b54 !important;
+  font-size:.84rem;
+  line-height:1.45;
+  font-weight:600;
+}
+
+.standard-card{
+  background:#fff;
+}
+
+.standard-card::before{
+  content:"STANDARD EDITION";
+  display:block;
+  margin-bottom:.8rem;
+  color:#8a7d77;
+  font-size:.69rem;
+  font-weight:800;
+  letter-spacing:.15em;
+  text-transform:uppercase;
+}
+
+.direct-first-note{
+  max-width:860px;
+  margin:2.5rem auto 0;
+  padding:1.4rem 1.6rem;
+  background:#fff7f3;
+  border-left:4px solid #b66d61;
+  border-radius:0 18px 18px 0;
+}
+
+.direct-first-note h3{
+  margin:0 0 .4rem;
+  font-family:'Inter',sans-serif;
+  color:#5a2622;
+  font-size:.9rem;
+  font-weight:800;
+  text-transform:uppercase;
+  letter-spacing:.09em;
+}
+
+.direct-first-note p{
+  margin:0;
+  color:#5d5753;
+  font-size:.96rem;
+  line-height:1.55;
+}
+
+.amazon-fallback{
+  max-width:860px;
+  margin:1rem auto 0;
+  padding:1.1rem 1.4rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.4rem;
+  background:#f8f6f3;
+  border:1px solid var(--border);
+  border-radius:18px;
+}
+
+.amazon-fallback-copy h3{
+  margin:0 0 .2rem;
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;
+  font-weight:800;
+  color:#6f625c;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+}
+
+.amazon-fallback-copy p{
+  margin:0;
+  color:#7b736f;
+  font-size:.9rem;
+  line-height:1.45;
+}
+
+.amazon-fallback .btn{
+  flex:0 0 auto;
+  min-width:175px;
+  padding:.85rem 1.15rem;
+  font-size:.69rem;
+}
+
+.kindle-wrap{
+  max-width:860px;
+  margin:1.5rem auto 0;
+}
+
+.kindle-card{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:2rem;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:1.6rem 1.8rem;
+  box-shadow:0 10px 26px rgba(0,0,0,.04);
+}
+
+.kindle-card h3{
+  margin:0 0 .4rem;
+  font-size:1.55rem;
+}
+
+.kindle-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+.kindle-card .btn{
+  min-width:190px;
+}
+
+@media (max-width:540px){
+  .harlow-product-visual{
+    max-width:360px;
+    min-height:210px;
+  }
+
+  .harlow-product-book{
+    flex-basis:57%;
+  }
+
+  .harlow-product-extras{
+    flex-basis:42%;
+    margin-left:-.75rem;
+  }
+
+  .harlow-product-book img{
+    max-height:245px;
+  }
+
+  .harlow-product-extras img{
+    max-height:215px;
+  }
+}
+
+@media (max-width:800px){
+  .physical-grid{
+    grid-template-columns:1fr;
+    max-width:560px;
+  }
+
+  .amazon-fallback{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .amazon-fallback .btn{
+    width:100%;
+  }
+
+  .kindle-card{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .kindle-card .btn{
+    width:100%;
+  }
+}
+
+.preorder-reactions{
+  padding:4.25rem 0;
+  background:#fbf7f4;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.preorder-reactions .container{
+  width:min(1040px, calc(100% - 2rem));
+}
+
+.preorder-reactions .section-kicker{
+  text-align:center;
+  margin:0 0 .65rem;
+  font-size:.76rem;
+  text-transform:uppercase;
+  letter-spacing:.18em;
+  font-weight:750;
+  color:#8b7568;
+}
+
+.preorder-reactions h2{
+  text-align:center;
+  font-size:clamp(2rem, 4vw, 2.85rem);
+  color:#5a2622;
+  margin:0 0 2rem;
+}
+
+.preorder-testimonial-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:.85rem;
+  max-width:880px;
+  margin:0 auto;
+}
+
+.preorder-testimonial-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:1.15rem 1.6rem;
+  box-shadow:0 8px 20px rgba(0,0,0,.04);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.25rem;
+}
+
+.preorder-testimonial-card blockquote{
+  margin:0;
+  color:var(--text);
+  font-family:'Playfair Display',serif;
+  font-size:1.28rem;
+  line-height:1.35;
+  font-style:italic;
+}
+
+.preorder-testimonial-card cite{
+  display:block;
+  flex:0 0 auto;
+  color:var(--muted);
+  font-family:'Inter',sans-serif;
+  font-size:.74rem;
+  font-style:normal;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+  white-space:nowrap;
+}
+  
+.s-band{
+  background:var(--soft);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+  padding:4.5rem 0;
+}
+
+.s-card{
+  max-width:900px;
+  margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:28px;
+  padding:2rem;
+  box-shadow:0 12px 30px rgba(0,0,0,.05);
+}
+
+.s-card h2{
+  font-size:2.35rem;
+  margin-bottom:1rem;
+}
+
+.s-card p{
+  margin:0 0 1rem;
+  color:var(--muted);
+}
+
+.details-list{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(240px, 1fr));
+  gap:1rem;
+  margin-top:1.5rem;
+}
+
+.detail-box{
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:#fcfbf9;
+  padding:1.2rem 1.3rem;
+}
+
+.detail-box h4{
+  font-family:'Inter',sans-serif;
+  font-size:.82rem;
+  font-weight:750;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  margin:0 0 .65rem;
+  color:#5a2622;
+}
+
+.bookseller-box{
+  grid-column:1 / -1;
+}
+  
+.detail-box p{
+  margin:0;
+  font-size:.97rem;
+}
+
+.detail-box a{
+  color:var(--accent);
+  font-weight:650;
+  text-decoration:none;
+}
+
+.detail-box a:hover{
+  text-decoration:underline;
+}
+
+footer{
+  background:var(--dark);
+  color:#c7b7ae;
+  border-top:1px solid rgba(255,255,255,.08);
+  padding:.25rem 0;
+}
+
+footer .container{
+  width:min(1100px, calc(100% - 2.5rem));
+  margin:0 auto;
+}
+
+.footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1.25rem;
+  padding:0;
+}
+
+.footer-copy{
+  margin:0;
+  font-size:.95rem;
+  color:#f3e3cf;
+  font-weight:550;
+  letter-spacing:.02em;
+}
+
+.footer-logo{
+  display:block;
+  width:185px;
+  height:auto;
+  opacity:.95;
+  filter:brightness(1.05) contrast(1.02);
+  flex:0 0 auto;
+}
+
+@media (max-width:1100px){
+    .preorder-hero .container{
+    width:min(520px, calc(100% - 2rem));
+  }
+
+   .hero-bottom-row{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-actions{
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  
+  .preorder-layout{
+    grid-template-columns:1fr;
+    max-width:520px;
+    margin:0 auto;
+    text-align:center;
+  }
+
+  .cover-wrap{
+    max-width:340px;
+    margin:0 auto;
+  }
+
+ .option-grid,
+.details-list{
+  grid-template-columns:1fr;
+}
+
+.bookseller-box{
+  grid-column:auto;
+}
+}
+
+@media (max-width: 700px){
+  .nav-inner{
+    min-height:auto;
+    padding:.55rem 0 .65rem;
+    flex-direction:column;
+    justify-content:center;
+    gap:.4rem;
+  }
+
+  .brand{
+    flex-direction:column;
+    gap:.2rem;
+  }
+
+  .brand-seal{
+    width:44px;
+    height:44px;
+  }
+
+  .brand-text{
+    font-size:1.65rem;
+  }
+
+  .nav-links{
+    justify-content:center;
+    gap:.9rem;
+  }
+
+  .nav-links a{
+    font-size:.78rem;
+    letter-spacing:.15em;
+  }
+
+  .nav-instagram-icon{
+    width:22px;
+    height:22px;
+  }
+
+  .preorder-hero{
+    padding:2.8rem 0 3.4rem;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+  
+.read-prompt-actions,
+.details-actions{
+  flex-direction:column;
+  align-items:stretch;
+  gap:.85rem;
+}
+
+.read-prompt-actions .btn,
+.details-actions .btn{
+  width:100%;
+  min-width:0;
+}
+
+  .option-card,
+  .s-card{
+    padding:1.5rem;
+  }
+
+  .preorder-reactions{
+  padding:3.2rem 0;
+}
+
+.preorder-testimonial-card{
+  display:block;
+  padding:1.35rem;
+}
+
+.preorder-testimonial-card blockquote{
+  font-size:1.16rem;
+}
+
+.preorder-testimonial-card cite{
+  margin-top:.9rem;
+  white-space:normal;
+}
+
+  .preorder-copy h1{
+    font-size:clamp(2.15rem, 10vw, 3rem);
+  }
+
+  .hero-blurb{
+    padding:1.4rem 1.35rem;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    min-width:0;
+  }
+  
+  .footer-inner{
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    gap:.35rem;
+    padding:.65rem 0;
+  }
+
+  .footer-logo{
+    order:1;
+    width:155px;
+    max-width:70vw;
+  }
+
+  .footer-copy{
+    order:2;
+    white-space:normal;
+    font-size:.8rem;
+    font-weight:500;
+    line-height:1.25;
+  }
+
+ #read-chapter-one .s-card{
+    padding:1.75rem 1.35rem 2rem;
+  }
+
+  #read-chapter-one .s-card h2{
+    font-size:clamp(2rem, 10vw, 2.75rem);
+    line-height:1.08;
+  }
+
+  #read-chapter-one .s-card p{
+    font-size:1rem;
+    line-height:1.6;
+  }
+
+  #read-chapter-one .read-prompt-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:stretch;
+    gap:.95rem;
+    margin-top:1.5rem;
+  }
+
+   #read-chapter-one .read-prompt-actions .btn{
+    width:100%;
+    min-width:0;
+    display:block;
+  }
+}
+
+/* Shared responsive hamburger navigation */
+@media (max-width:700px){
+  .nav-inner{
+    position:relative;
+    min-height:74px;
+    padding:.55rem 0;
+    flex-direction:row;
+    justify-content:space-between;
+    gap:.75rem;
+  }
+
+  .brand{
+    flex-direction:row;
+    gap:.65rem;
+    min-width:0;
+  }
+
+  .brand-seal{
+    width:44px;
+    height:44px;
+  }
+
+  .brand-text{
+    font-size:1.45rem;
+    white-space:nowrap;
+  }
+
+  .nav-quick-links{
+    gap:.8rem;
+  }
+
+  .nav-quick-links a{
+    font-size:.72rem;
+    letter-spacing:.11em;
+  }
+
+  .nav-instagram-icon{
+    width:21px;
+    height:21px;
+  }
+
+  .nav-toggle{
+    width:44px;
+    height:44px;
+    padding:10px;
+    flex:0 0 auto;
+  }
+
+  .nav-links{
+    left:0;
+    right:0;
+    width:auto;
+  }
+
+  .nav-links a{
+    font-size:.8rem;
+    letter-spacing:.14em;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav class="site-nav">
+  <div class="container nav-inner">
+    <a class="brand" href="/">
+      <img src="aj_seal.png" alt="A.J. Beckett seal" class="brand-seal">
+      <span class="brand-text">A.J. Beckett</span>
+    </a>
+
+    <div class="nav-quick-links" aria-label="Quick links">
+      <a href="/#books"
+         onclick="gtag('event','click_books_quick_nav_order');">
+        Books
+      </a>
+
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="nav-icon-link"
+         aria-label="A.J. Beckett on Instagram"
+         onclick="gtag('event','click_instagram_quick_nav_order');">
+        <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+      </a>
+    </div>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="primary-navigation"
+      aria-label="Open navigation menu"
+    >
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+
+    <div class="nav-links" id="primary-navigation">
+      <a href="/"
+         onclick="gtag('event','click_home_menu_nav_order');">
+        Home
+      </a>
+
+      <a href="/#books"
+         onclick="gtag('event','click_books_menu_nav_order');">
+        Books
+      </a>
+
+      <a href="/becoming-order"
+         aria-current="page"
+         onclick="gtag('event','click_order_menu_nav_order');">
+        Order Becoming
+      </a>
+
+      <a href="/read"
+         onclick="gtag('event','click_read_chapter_menu_nav_order');">
+        Read Chapter One
+      </a>
+
+      <a href="/becoming-bookclub"
+         onclick="gtag('event','click_bookclub_menu_nav_order');">
+        Book Clubs
+      </a>
+
+      <a href="/#contact"
+         onclick="gtag('event','click_updates_menu_nav_order');">
+        Get Updates
+      </a>
+
+      <a href="https://www.instagram.com/ajbeckettwrites/"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="nav-icon-link nav-menu-instagram"
+         aria-label="A.J. Beckett on Instagram"
+         onclick="gtag('event','click_instagram_menu_nav_order');">
+        <img src="instagram-icon.png" alt="" class="nav-instagram-icon">
+        <span>Instagram</span>
+      </a>
+
+      <a href="/becoming-wholesale"
+         class="nav-business-link"
+         onclick="gtag('event','click_wholesale_menu_nav_order');">
+        Wholesale
+      </a>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+  <header class="preorder-hero">
+    <div class="container preorder-layout">
+      <div class="cover-wrap">
+        <img src="becoming_cover_web_2.jpg" alt="Becoming book cover">
+      </div>
+
+     <div class="preorder-copy">
+
+  <h1>Some people change you<br>the moment you meet them.</h1>
+
+  <p class="hero-tropes">
+    South Carolina • 1990s Nostalgia • Slow-Burn College Romance • Found Family • Emotional Intimacy
+  </p>
+
+  <div class="hero-blurb">
+    <p>
+      Shelby Marsh has spent eighteen years becoming exactly who her mother wanted her to be.
+    </p>
+
+    <p>
+      College is her first real chance to decide who she wants to become.
+    </p>
+
+    <p>
+      Tanner Cole has built his life around discipline, certainty, and a future he can't afford to lose.
+    </p>
+
+    <p>
+      The connection between them is immediate and terrifying in completely different ways.
+    </p>
+
+    <p>
+      Walking away should be easy. It isn't.
+    </p>
+  </div>
+
+  <div class="hero-bottom-row">
+    <div class="hero-release-copy">
+      <p class="release-line">
+        Order <em>Becoming</em> Now
+      </p>
+
+      <p class="format-line">
+        Paperback, hardcover, and Kindle editions available for order now.<br>
+      </p>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#order-options"
+         class="btn btn-primary"
+         onclick="gtag('event','click_choose_order_option_top');">
+        See Order Options
+      </a>
+
+      <a href="read.html"
+         class="btn btn-soft"
+         onclick="gtag('event','click_read_chapter_order_top');">
+        Read Chapter One
+      </a>
+    </div>
+  </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="order-options" class="preorder-section">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Order <em>Becoming</em></h2>
+        <p>
+          Choose paperback or hardcover, with Standard and Harlow Editions available for U.S. shipping.
+          Harlow Editions are signed and include exclusive reader extras.
+        </p>
+      </div>
+
+      <div class="physical-grid">
+
+        <div class="format-group">
+          <div class="format-heading">
+            <h3>Paperback</h3>
+            <p>Choose the Harlow Edition or a Standard Edition unsigned paperback.</p>
+          </div>
+
+          <article class="option-card harlow-card best-value harlow-paperback-option">
+            <div class="harlow-banner">Harlow Edition · Includes Extras</div>
+            <span class="edition-badge">Best Value</span>
+            <h3>Harlow Paperback Edition</h3>
+            <p class="price">$24.99</p>
+
+            <p>
+              One paperback copy of <em>Becoming</em> hand-signed by A.J.
+            </p>
+
+            <div class="harlow-product-visual" aria-label="Harlow Paperback Edition with reader extras">
+              <div class="harlow-product-book">
+                <img src="becoming_cover_web_2.jpg" alt="Becoming paperback edition">
+              </div>
+              <div class="harlow-product-extras">
+                <img src="harlow_bundle.png" alt="Harlow University bookmark and two possible Harlow sticker designs">
+              </div>
+            </div>
+
+            <p class="bundle-caption">
+              Includes an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming).
+            </p>
+
+
+            <p>Flat U.S. shipping: $3.50.</p>
+
+            <a href="https://buy.stripe.com/fZubJ01YwgYF0oh8BmdjO0j"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_harlow_paperback_order');">
+              Get the Harlow Paperback
+            </a>
+          </article>
+
+          <article class="option-card standard-card standard-paperback-option">
+            <h3>Standard Paperback</h3>
+            <p class="price">$19.99</p>
+
+            <p>
+              One unsigned paperback copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <p>
+              A simple book-only option for readers who want a paperback copy without the Harlow Edition extras.
+            </p>
+
+            <p>Flat U.S. shipping: $3.50.</p>
+
+            <a href="https://buy.stripe.com/8x200i7iQ37P7QJ3h2djO0i"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_standard_paperback_order');">
+              Get the Standard Paperback
+            </a>
+          </article>
+        </div>
+
+        <div class="format-group">
+          <div class="format-heading">
+            <h3>Hardcover</h3>
+            <p>Choose the Harlow Edition or a Standard Edition unsigned hardcover.</p>
+          </div>
+
+          <article class="option-card harlow-card premium-edition harlow-hardcover-option">
+            <div class="harlow-banner">Harlow Edition · Includes Extras</div>
+            <span class="edition-badge">Premium Edition</span>
+            <h3>Harlow Hardcover Edition</h3>
+            <p class="price">$29.99</p>
+
+            <p>
+              One hardcover copy of <em>Becoming</em> hand-signed by A.J.
+            </p>
+
+            <div class="harlow-product-visual" aria-label="Harlow Hardcover Edition with reader extras">
+              <div class="harlow-product-book">
+                <img src="becoming_cover_web_2.jpg" alt="Becoming hardcover edition">
+              </div>
+              <div class="harlow-product-extras">
+                <img src="harlow_bundle.png" alt="Harlow University bookmark and two possible Harlow sticker designs">
+              </div>
+            </div>
+
+            <p class="bundle-caption">
+              Includes an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming).
+            </p>
+
+
+            <p>Flat U.S. shipping: $3.50.</p>
+
+            <a href="https://buy.stripe.com/6oUaEWcDa23L7QJ18UdjO0s"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_harlow_hardcover_order');">
+              Get the Harlow Hardcover
+            </a>
+          </article>
+
+          <article class="option-card standard-card standard-hardcover-option">
+            <h3>Standard Hardcover</h3>
+            <p class="price">$25.99</p>
+
+            <p>
+              One unsigned hardcover copy of <em>Becoming</em> by A.J. Beckett.
+            </p>
+
+            <p>
+              A book-only hardcover option for readers who prefer hardcover without the Harlow Edition extras.
+            </p>
+
+            <p>Flat U.S. shipping: $3.50.</p>
+
+            <a href="https://buy.stripe.com/dRmfZg0UsgYF3At2cYdjO0r"
+               class="btn btn-primary"
+               target="_blank"
+               rel="noopener noreferrer"
+               onclick="gtag('event','click_standard_hardcover_order');">
+              Get the Standard Hardcover
+            </a>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="direct-first-note">
+        <h3>Direct orders support indie authors.</h3>
+        <p>
+          Ordering directly from A.J. gives more of each sale back to the author and it's the only way to get the signed Harlow Editions and their reader extras.
+        </p>
+      </div>
+
+      <div class="amazon-fallback">
+        <div class="amazon-fallback-copy">
+          <h3>Prefer Amazon?</h3>
+          <p>
+            If Amazon is more convenient, unsigned paperback and hardcover editions are available there too.
+          </p>
+        </div>
+
+        <a href="https://www.amazon.com/dp/B0HBFGZZ42"
+           class="btn btn-soft"
+           target="_blank"
+           rel="noopener noreferrer"
+           onclick="gtag('event','click_amazon_physical_order');">
+          Order on Amazon
+        </a>
+      </div>
+
+      <div class="kindle-wrap">
+        <article class="kindle-card kindle-option">
+          <div>
+            <h3>Kindle Edition</h3>
+            <p>Prefer ebooks? Read <em>Becoming</em> on Kindle and Kindle Unlimited.</p>
+          </div>
+
+          <a href="https://www.amazon.com/dp/B0H277TD1G"
+             class="btn btn-primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             onclick="gtag('event','click_kindle_order_amazon');">
+            Kindle Store
+          </a>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+ <section class="preorder-section" id="read-chapter-one">
+    <div class="container">
+      <div class="s-card">
+        <h2>Not sure yet? Read Chapter One Free</h2>
+
+        <p>
+  Start Shelby's story with the opening chapter of <em>Becoming</em>, then come back here to order your copy.
+</p>
+
+<div class="read-prompt-actions">
+
+  <a href="read.html"
+     class="btn btn-primary"
+     onclick="gtag('event','click_read_chapter_order_midpage');">
+    Read Chapter One
+  </a>
+</div>
+
+      </div>
+    </div>
+  </section>
+
+<section class="preorder-reactions">
+  <div class="container">
+    <p class="section-kicker">Reader reactions</p>
+    <h2>What readers are saying</h2>
+
+    <div class="preorder-testimonial-grid">
+      <figure class="preorder-testimonial-card">
+        <blockquote>
+          “I'm full blown obsessed with this story! I devoured it.”
+        </blockquote>
+        <cite>Katie B.</cite>
+      </figure>
+
+      <figure class="preorder-testimonial-card">
+        <blockquote>
+          “The slow burn was killing me, but in a good way.”
+        </blockquote>
+        <cite>Lacey S.</cite>
+      </figure>
+
+      <figure class="preorder-testimonial-card">
+        <blockquote>
+          “These chapters had me smiling, gasping, and kicking my feet, literally.”
+        </blockquote>
+        <cite>Ashlie M.</cite>
+      </figure>
+
+      <figure class="preorder-testimonial-card">
+        <blockquote>
+          “This really is a coming-of-age story in the truest sense, not just about falling in love with someone else, but about that weird, messy, beautiful season when you’re figuring out who YOU are outside of everyone else’s expectations.”
+        </blockquote>
+        <cite>Jennifer B.</cite>
+      </figure>
+    </div>
+  </div>
+</section>
+  
+  <section class="s-band">
+    <div class="container">
+      <div class="s-card">
+        <h2>Ordering Information</h2>
+
+        <p>
+          Direct orders are available for U.S. shipping only at this time. Paperback, hardcover, and Kindle editions are also available through Amazon for readers outside the United States.
+        </p>
+
+        <p>
+          If production or shipping is delayed, direct-order customers will be notified by email.
+        </p>
+
+        <div class="details-list">
+
+  <div class="detail-box">
+    <h4>Shipping</h4>
+    <p>
+      Flat U.S. shipping is $3.50.
+    </p>
+  </div>
+
+  <div class="detail-box">
+    <h4>Harlow Editions</h4>
+    <p>
+      Harlow Editions are hand-signed by A.J. Beckett and <p class="harlow-edition-description"> include an exclusive Harlow University bookmark and one randomly selected Harlow sticker (University or Swimming).
+</p>. Personalization is not available at this time.
     </p>
   </div>
 
