@@ -83,6 +83,14 @@
 @media(max-width:850px){.edition-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.edition.secondary{grid-column:1/-1}}
 @media(max-width:600px){.edition-grid{grid-template-columns:1fr}.edition.primary-edition,.edition.secondary{grid-column:auto}.edition.primary-edition{padding:25px}.primary-edition .button{width:100%}}
 </style>
+<style>
+/* Shared Monte Sano Press footer */
+.footer{background:#241f1d;color:#c7b7ae;border-top:1px solid rgba(255,255,255,.08);padding:.25rem 0}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:1.25rem;padding:0}
+.footer-copy{margin:0;font-size:.95rem;color:#f3e3cf;font-weight:550;letter-spacing:.02em}
+.footer-logo{display:block;width:125px;height:auto;opacity:.95;filter:brightness(1.05) contrast(1.02);flex:0 0 auto}
+@media(max-width:760px){.footer-inner{flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:.35rem;padding:.65rem 0}.footer-logo{order:1;width:125px;max-width:70vw}.footer-copy{order:2;white-space:normal;font-size:.8rem;font-weight:500;line-height:1.25}}
+</style>
 </head>
 <body>
 <header class="topbar"><nav class="wrap holiday-nav" aria-label="Main navigation"><a class="wordmark" href="/"><img src="aj_seal.png" alt="A.J. Beckett seal" class="brand-seal"><span>A.J. Beckett</span></a><div class="nav-quick-links"><a href="/#books">Books</a><a href="https://www.instagram.com/ajbeckettwrites/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><img src="instagram-icon.png" alt="" class="nav-instagram-icon"></a></div><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="holiday-navigation" aria-label="Open navigation menu"><span></span><span></span><span></span></button><div class="nav-links" id="holiday-navigation"><a href="/">Home</a><a href="/#books">Books</a><a href="/becoming-order">Regular Ordering Page</a><a href="/read">Read Chapter One</a><a href="/becoming-bookclub">Book Clubs</a><a href="/#contact">Get Updates</a><a href="https://www.instagram.com/ajbeckettwrites/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="/becoming-wholesale" class="nav-business-link">Wholesale</a></div></nav></header>
@@ -98,7 +106,7 @@
 </div><section class="wrapping-panel" id="gift-wrapping" aria-labelledby="wrapping-title"><h3 id="wrapping-title">🎁 Free Holiday Gift Wrapping</h3><p>After placing your order, send a DM to <strong>@ajbeckettwrites</strong> on Instagram and include the <strong>name on your order</strong> so we can match your request to your purchase. Gift wrapping is complimentary, but it is <strong>not selectable at Stripe checkout</strong>.</p><a class="button" href="https://www.instagram.com/ajbeckettwrites/" target="_blank" rel="noopener noreferrer" data-event="holiday15_giftwrap_instagram_shop">Message A.J. on Instagram</a></section><p class="details">Enter HOLIDAY15 at Stripe checkout for 15% off. Shipping and applicable tax are calculated separately.</p><div class="secondary-links">Want to preview the book? <a href="/read" data-event="holiday15_read_chapter">Read Chapter One free</a>.</div></div></section>
 <section class="section testimonials"><div class="wrap"><h2>What Readers Are Saying</h2><p class="section-intro">A few reactions to <em>Becoming</em>.</p><div class="quotes"><figure class="quote"><blockquote>“I'm full blown obsessed with this story! I devoured it.”</blockquote><figcaption>Katie B.</figcaption></figure><figure class="quote"><blockquote>“The slow burn was killing me, but in a good way.”</blockquote><figcaption>Lacey S.</figcaption></figure><figure class="quote"><blockquote>“These chapters had me smiling, gasping, and kicking my feet, literally.”</blockquote><figcaption>Ashlie M.</figcaption></figure></div></div></section>
 <section class="bottom-cta"><h2>A true love story makes a beautiful gift.</h2><p>Use HOLIDAY15 for 15% off your direct order.</p><a class="button light" href="#shop" data-event="holiday15_bottom_shop">Choose Your Edition</a></section>
-</main><footer class="footer"><div class="wrap">© 2026 Monte Sano Press · <a href="/">A.J. Beckett</a> · <a href="https://www.instagram.com/ajbeckettwrites/">Instagram</a></div></footer>
+</main><footer class="footer"><div class="wrap footer-inner"><span class="footer-copy">© 2026 Monte Sano Press. All Rights Reserved.</span><a href="https://www.montesano-press.com/" target="_blank" rel="noopener noreferrer"><img src="logo_web.webp" alt="Monte Sano Press" class="footer-logo"></a></div></footer>
 <script>
 (function(){
 const toggle=document.querySelector('.nav-toggle');
@@ -113,9 +121,99 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeMenu()
 </script>
 <script>
 (function(){
-const btn=document.getElementById('copy-code');btn.addEventListener('click',async function(){try{await navigator.clipboard.writeText('HOLIDAY15');btn.textContent='Copied!';gtag('event','holiday15_copy_code')}catch(e){btn.textContent='Select code above to copy'}});
-document.querySelectorAll('[data-event]').forEach(function(el){el.addEventListener('click',function(){if(typeof gtag==='function')gtag('event',el.dataset.event,{page_title:'Holiday15 Landing Page'})})});
-if('IntersectionObserver'in window){const shop=document.querySelector('#shop');const observer=new IntersectionObserver(function(entries){if(entries.some(x=>x.isIntersecting)){gtag('event','holiday15_view_order_options');observer.disconnect()}},{threshold:.2});observer.observe(shop)}
+  const fired=new Set();
+
+  function sendOnce(name,extra){
+    if(fired.has(name))return;
+    fired.add(name);
+    if(typeof gtag==='function'){
+      gtag('event',name,Object.assign({page_title:'Holiday15 Landing Page',page_location:window.location.href},extra||{}));
+    }
+  }
+
+  function watch(selector,eventName,threshold){
+    const el=document.querySelector(selector);
+    if(!el||!('IntersectionObserver'in window))return;
+    const observer=new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){sendOnce(eventName);observer.disconnect();}
+      });
+    },{threshold:threshold||.35});
+    observer.observe(el);
+  }
+
+  function trackOptionEngagement(selector,eventName){
+    const option=document.querySelector(selector);
+    if(!option)return;
+    let engaged=false;
+    function fire(method){
+      if(engaged)return;
+      engaged=true;
+      sendOnce(eventName,{interaction_method:method});
+    }
+    option.addEventListener('mouseenter',function(){fire('mouse_hover');});
+    option.addEventListener('focusin',function(){fire('keyboard_focus');});
+  }
+
+  [8,15,30,60].forEach(function(seconds){
+    setTimeout(function(){sendOnce('holiday15_stayed_'+seconds+'_seconds',{seconds_on_page:seconds});},seconds*1000);
+  });
+
+  watch('.hero','holiday15_view_hero',.25);
+  watch('#true-story','holiday15_view_true_story',.3);
+  watch('#shop','holiday15_view_order_options',.2);
+  watch('.primary-edition','holiday15_view_harlow_paperback_option',.45);
+  watch('.secondary','holiday15_view_harlow_hardcover_option',.45);
+  watch('.edition-grid > .edition:nth-of-type(3)','holiday15_view_standard_paperback_option',.45);
+  watch('.edition-grid > .edition:nth-of-type(4)','holiday15_view_standard_hardcover_option',.45);
+  watch('#gift-wrapping','holiday15_view_gift_wrapping',.45);
+  watch('.testimonials','holiday15_view_testimonials',.25);
+  watch('.bottom-cta','holiday15_view_bottom_cta',.35);
+
+  trackOptionEngagement('.primary-edition','holiday15_engage_harlow_paperback_option');
+  trackOptionEngagement('.secondary','holiday15_engage_harlow_hardcover_option');
+  trackOptionEngagement('.edition-grid > .edition:nth-of-type(3)','holiday15_engage_standard_paperback_option');
+  trackOptionEngagement('.edition-grid > .edition:nth-of-type(4)','holiday15_engage_standard_hardcover_option');
+
+  const scrollMilestones=[25,50,75,90];
+  function trackScrollDepth(){
+    const root=document.documentElement;
+    const scrollable=root.scrollHeight-window.innerHeight;
+    if(scrollable<=0)return;
+    const percent=(window.scrollY/scrollable)*100;
+    scrollMilestones.forEach(function(milestone){
+      if(percent>=milestone)sendOnce('holiday15_scroll_'+milestone+'_percent',{percent_scrolled:milestone});
+    });
+  }
+  window.addEventListener('scroll',trackScrollDepth,{passive:true});
+  trackScrollDepth();
+
+  const btn=document.getElementById('copy-code');
+  btn.addEventListener('click',async function(){
+    try{
+      await navigator.clipboard.writeText('HOLIDAY15');
+      btn.textContent='Copied!';
+      if(typeof gtag==='function')gtag('event','holiday15_copy_code',{page_title:'Holiday15 Landing Page',page_location:window.location.href});
+    }catch(e){btn.textContent='Select code above to copy';}
+  });
+
+  document.querySelectorAll('[data-event]').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(typeof gtag==='function')gtag('event',el.dataset.event,{page_title:'Holiday15 Landing Page',page_location:window.location.href});
+    });
+  });
+
+  document.querySelectorAll('.holiday-nav a,.footer a').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(typeof gtag==='function')gtag('event','holiday15_navigation_click',{
+        page_title:'Holiday15 Landing Page',
+        page_location:window.location.href,
+        link_area:el.closest('.footer')?'footer':'navigation',
+        link_label:(el.textContent||el.getAttribute('aria-label')||'image link').trim(),
+        link_url:el.href
+      });
+    });
+  });
 })();
 </script>
 </body></html>
